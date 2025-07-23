@@ -1,0 +1,92 @@
+/* Base styles for body */
+body {
+  margin: 0; /* Remove default margin */
+  font-family: 'Helvetica', Arial, sans-serif; /* Font family */
+  color: #567896; /* Text color */
+  line-height: 1.6; /* Line spacing */
+}
+
+/* Header styling */
+header {
+  background: white; /* White background */
+  display: flex; /* Use flex layout */
+  justify-content: space-between; /* Space between logo and nav */
+  align-items: center; /* Vertically center items */
+  padding: 10px 20px; /* Spacing inside header */
+  border-bottom: 1px solid #ddd; /* Thin bottom border */
+}
+
+/* Navigation links inside header */
+header nav a {
+  margin: 0 10px; /* Horizontal spacing */
+  text-decoration: none; /* Remove underline */
+  color: #567896; /* Link color */
+  font-weight: bold; /* Bold text */
+}
+
+/* Login button styling */
+header .login-btn {
+  background: #567896; /* Navy blue background */
+  color: white; /* White text */
+  padding: 6px 12px; /* Padding */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Hero section */
+.hero {
+  text-align: center; /* Center text */
+  padding: 100px 20px; /* Large top/bottom padding */
+  background: #f9f9f9; /* Light gray background */
+}
+
+/* Hero headline */
+.hero h1 {
+  font-size: 48px; /* Large font */
+  margin-bottom: 20px; /* Space below */
+}
+
+/* Hero subheadline */
+.hero p {
+  font-size: 20px; /* Medium font */
+  margin-bottom: 20px; /* Space below */
+}
+
+/* Hero button */
+.hero button {
+  background: #567896; /* Navy blue background */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding */
+  font-size: 18px; /* Medium-large text */
+  cursor: pointer; /* Pointer on hover */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* About and products sections */
+.about, .products {
+  padding: 50px 20px; /* Spacing */
+  text-align: center; /* Center text */
+}
+
+/* Product grid */
+.product-grid {
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center items horizontally */
+  gap: 20px; /* Space between items */
+  margin-top: 20px; /* Space above grid */
+}
+
+/* Single product item */
+.product {
+  background: #eee; /* Light background */
+  padding: 20px; /* Padding */
+  width: 150px; /* Fixed width */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Footer */
+footer {
+  text-align: center; /* Center text */
+  padding: 20px; /* Padding */
+  background: #f1f1f1; /* Light gray background */
+}
