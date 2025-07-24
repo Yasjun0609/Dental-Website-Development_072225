@@ -226,8 +226,10 @@ header .login-btn {
 /* Product type (category) */
 .product-type {
   font-size: 14px;
+  font-weight: bold;
   color: #888;
   margin-bottom: 5px;
+
 }
 
 /* Product name */
@@ -242,6 +244,7 @@ header .login-btn {
 .product-price {
   font-size: 16px;
   color: #2a5d9f; /* Slightly deeper blue */
+  font-weight: bold;
 }
 
 
