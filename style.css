@@ -218,7 +218,7 @@ header .login-btn {
 /* Product image */
 .product-card img {
   width: 100%;
-  max-width: 180px;
+  max-width: 240px;
   height: auto;
   margin-bottom: 10px;
 }
