@@ -6,7 +6,12 @@ body {
   line-height: 1.6; /* Line spacing */
 }
 
+
+/* =================================== */     
+/*         Header styling */
+/* =================================== */
 /* Header styling */
+
 header {
   background: white; /* White background */
   display: flex; /* Use flex layout */
@@ -16,15 +21,20 @@ header {
   border-bottom: 1px solid #ddd; /* Thin bottom border */
 }
 
-/* CONTAINER SECTION */
+/* =================================== */
+/*          CONTAINER SECTION */
+/* =================================== */
+
 .container {
     max-width: 1080px;     /* Do not expand wider than this */
     margin: 0 auto;        /* Center horizontally */
     padding: 0 20px;       /* Add side padding for small screens */
 }
 
+/* =================================== */
+/*           LOGO SECTION */
+/* =================================== */
 
-/* LOGO SECTION */
 .logo img{
     height: 40px;
     display: block;
@@ -46,7 +56,11 @@ header .login-btn {
   border-radius: 4px; /* Rounded corners */
 }
 
-/* HERO SECTION - Two-column layout */
+
+/* =================================== */
+/*   HERO SECTION - Two-column layout  */
+/* =================================== */
+
 .hero {
     display: flex;   /* Use flex layout for side-by-side sections */
     justify-content: space-between;  /* Put space between text and image */
@@ -94,8 +108,42 @@ header .login-btn {
   border-radius: 4px; /* Rounded corners */
 }
 
+
+/* =================================== */
+/*           About Us SECTION          */
+/* =================================== */
+
+.about {
+  padding: 50px 20px; /* Spacing */
+  text-align: center; /* Center text */
+}
+.about h1 {
+    color: #567896;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.about h2 {
+    color: #fd9b32;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.about p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8; /* better readability */
+    max-width:  800px; 
+    margin: 0 auto 30px;  /* center align + bottom spacing */
+}
+
+/* =================================== */
+/*           Products SECTION          */
+/* =================================== */
+
 /* About and products sections */
-.about, .products {
+.products {
   padding: 50px 20px; /* Spacing */
   text-align: center; /* Center text */
 }
@@ -115,6 +163,66 @@ header .login-btn {
   width: 150px; /* Fixed width */
   border-radius: 4px; /* Rounded corners */
 }
+
+
+
+
+
+
+
+
+
+
+/* =================================== */
+/*           Connections SECTION          */
+/* =================================== */
+
+/* connnections section layout */
+.connections {
+    padding: 60px 20px;
+    text-align: center;
+}
+/* connnections Title */
+.connections h2{
+    font-size: 28px;
+    color: #567896;
+    margin-bottom: 10px;
+}
+/* connnections description */
+.connections p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+/* grid layout for logos */
+.connection-grid {
+    display: grid;                                                /* Use CSS Grid */
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));     /* Responsive grid */
+    gap: 20px;                                                    /* Space between grid items */
+    justify-items: center;                                      /* Center grid items horizontally */
+} 
+
+/* logo box styling */
+.connection-grid img {
+    width: 100%;                 /* Fill the grid cell */
+    max-width: 180px;            /* But don’t get too big */
+    border: 1px solid #ddd;      /* Optional border for polish */
+    border-radius: 6px;          /* Rounded corners */
+    padding: 10px;               /* Inner spacing */
+    background-color: #fff;      /* White background */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Subtle shadow */
+    transition: transform 0.2s ease; /* Smooth hover effect */
+}
+
+/* Hover effect */
+.connection-grid img:hover {
+  transform: scale(1.05);      /* Slight zoom on hover */
+}
+
+
+/* =================================== */
+/*           Footer SECTION          */
+/* =================================== */
 
 /* Footer */
 footer {
