@@ -148,7 +148,7 @@ header .login-btn {
 }
 
 /* Reverse order for right-aligned text (row 2) */
-.feature-row.row-right {
+.feature-row-right {
     flex-direction: row-reverse; /* Swap columns */
 }
 
