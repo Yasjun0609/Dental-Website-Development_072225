@@ -32,13 +32,31 @@ header .login-btn {
   border-radius: 4px; /* Rounded corners */
 }
 
-/* Hero section */
+/* HERO SECTION - Two-column layout */
 .hero {
-  text-align: center; /* Center text */
-  padding: 100px 20px; /* Large top/bottom padding */
-  background: #f9f9f9; /* Light gray background */
+    display: flex;   /* Use flex layout for side-by-side sections */
+    justify-content: space-between;  /* Put space between text and image */
+    align-items: center;
+    padding: 80px 40px; /* Large top/bottom padding */
+    background: #f9f9f9; /* Light gray background */
 }
 
+/* Left text area of hero */
+.hero-text {
+  flex: 1; /* Take half the width */
+  padding-right: 40px; /* Add spacing between text and image */
+}
+
+/* Right image of hero */
+.hero-image {
+    flex: 1; 
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
 /* Hero headline */
 .hero h1 {
   font-size: 48px; /* Large font */
