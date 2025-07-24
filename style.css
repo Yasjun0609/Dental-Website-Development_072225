@@ -1,9 +1,9 @@
 /* Base styles for body */
 body {
-  margin: 0; /* Remove default margin */
-  font-family: 'Helvetica', Arial, sans-serif; /* Font family */
-  color: #567896; /* Text color */
-  line-height: 1.6; /* Line spacing */
+    margin: 0; /* Remove default margin */
+    font-family: 'Helvetica', Arial, sans-serif; /* Font family */
+    color: #567896; /* Text color */
+    line-height: 1.6; /* Line spacing */
 }
 
 
@@ -13,12 +13,12 @@ body {
 /* Header styling */
 
 header {
-  background: white; /* White background */
-  display: flex; /* Use flex layout */
-  justify-content: space-between; /* Space between logo and nav */
-  align-items: center; /* Vertically center items */
-  padding: 10px 20px; /* Spacing inside header */
-  border-bottom: 1px solid #ddd; /* Thin bottom border */
+    background: white; /* White background */
+    display: flex; /* Use flex layout */
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Vertically center items */
+    padding: 10px 20px; /* Spacing inside header */
+    border-bottom: 1px solid #ddd; /* Thin bottom border */
 }
 
 /* =================================== */
@@ -42,18 +42,18 @@ header {
 
 /* Navigation links inside header */
 header nav a {
-  margin: 0 10px; /* Horizontal spacing */
-  text-decoration: none; /* Remove underline */
-  color: #567896; /* Link color */
-  font-weight: bold; /* Bold text */
+    margin: 0 10px; /* Horizontal spacing */
+    text-decoration: none; /* Remove underline */
+    color: #567896; /* Link color */
+    font-weight: bold; /* Bold text */
 }
 
 /* Login button styling */
 header .login-btn {
-  background: #567896; /* Navy blue background */
-  color: white; /* White text */
-  padding: 6px 12px; /* Padding */
-  border-radius: 4px; /* Rounded corners */
+    background: #567896; /* Navy blue background */
+    color: white; /* White text */
+    padding: 6px 12px; /* Padding */
+    border-radius: 4px; /* Rounded corners */
 }
 
 
@@ -71,8 +71,8 @@ header .login-btn {
 
 /* Left text area of hero */
 .hero-text {
-  flex: 1; /* Take half the width */
-  padding-right: 40px; /* Add spacing between text and image */
+    flex: 1; /* Take half the width */
+    padding-right: 40px; /* Add spacing between text and image */
 }
 
 /* Right image of hero */
@@ -87,25 +87,69 @@ header .login-btn {
 }
 /* Hero headline */
 .hero h1 {
-  font-size: 48px; /* Large font */
-  margin-bottom: 20px; /* Space below */
+    font-size: 48px; /* Large font */
+    margin-bottom: 20px; /* Space below */
 }
 
 /* Hero subheadline */
 .hero p {
-  font-size: 20px; /* Medium font */
-  margin-bottom: 20px; /* Space below */
+    font-size: 20px; /* Medium font */
+    margin-bottom: 20px; /* Space below */
 }
 
 /* Hero button */
 .hero button {
-  background: #567896; /* Navy blue background */
-  color: white; /* White text */
-  border: none; /* No border */
-  padding: 10px 20px; /* Padding */
-  font-size: 18px; /* Medium-large text */
-  cursor: pointer; /* Pointer on hover */
-  border-radius: 4px; /* Rounded corners */
+    background: #567896; /* Navy blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    font-size: 18px; /* Medium-large text */
+    cursor: pointer; /* Pointer on hover */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* =================================== */
+/*           Feature SECTION          */
+/* =================================== */
+/* Base layout for feature rows */
+.feature-row {
+    display: flex;                 /* Two-column layout */
+    align-items: center;          /* Center items vertically */
+    justify-content: center;      /* Center overall row */
+    padding: 60px 20px;           /* Section spacing */
+    gap: 40px;                    /* Space between columns */
+}
+
+/* Limit row width */
+.feature-row .text-block,
+.feature-row .image-block {
+    flex: 1;                      /* Equal width columns */
+    max-width: 500px;
+}
+
+/* Text styling */
+.feature-row .text-block h2 {
+    color: #567896;              /* Section heading color */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feature-row .text-block p {
+    color: #444;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Image styling */
+.feature-row .image-block img {
+    width: 100%;                 /* Responsive image */
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Reverse order for right-aligned text (row 2) */
+.row-right {
+    flex-direction: row-reverse; /* Swap columns */
 }
 
 
@@ -117,19 +161,17 @@ header .login-btn {
   padding: 50px 20px; /* Spacing */
   text-align: center; /* Center text */
 }
+.about h2 {
+    color: #fd9b32;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
 .about h1 {
     color: #567896;
     font-size: 28px;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
-
-.about h2 {
-    color: #fd9b32;
-    font-size: 16px;
-    margin-bottom: 40px;
-}
-
 .about p {
     color: #555;
     font-size: 16px;
@@ -256,5 +298,12 @@ footer {
         max-width: 300px;   /* But not too wide */
     }
 
+    .feature-row {
+        flex-direction: column;
+        text-align: center;
+    }
+    .row-right{
+        flex-direction: column;
+    }
 
 }
