@@ -16,6 +16,20 @@ header {
   border-bottom: 1px solid #ddd; /* Thin bottom border */
 }
 
+/* CONTAINER SECTION */
+.container {
+    max-width: 1200px;     /* Do not expand wider than this */
+    margin: 0 auto;        /* Center horizontally */
+    padding: 0 20px;       /* Add side padding for small screens */
+}
+
+
+/* LOGO SECTION */
+.logo img{
+    height: 40px;
+    display: block;
+}
+
 /* Navigation links inside header */
 header nav a {
   margin: 0 10px; /* Horizontal spacing */
