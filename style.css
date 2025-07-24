@@ -122,3 +122,31 @@ footer {
   padding: 20px; /* Padding */
   background: #f1f1f1; /* Light gray background */
 }
+
+
+/* ================================== */
+/* REACTIVE Layout via MEDIA QUERY    */
+/* ================================== */
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column; /* Stack hero content VERTICALLY */
+        text-align: center;  
+    }
+
+    .hero-text{
+        padding-right: 0; /* remove side padding*/
+    }
+
+    .product-grid {
+        flex-direction:  column; 
+        align-items: center;
+    }
+
+    .product {
+        width: 90%;        /* Make each product box wider */
+        max-width: 300px;   /* But not too wide */
+    }
+
+
+}
