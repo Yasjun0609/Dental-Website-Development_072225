@@ -18,7 +18,7 @@ header {
 
 /* CONTAINER SECTION */
 .container {
-    max-width: 1200px;     /* Do not expand wider than this */
+    max-width: 1080px;     /* Do not expand wider than this */
     margin: 0 auto;        /* Center horizontally */
     padding: 0 20px;       /* Add side padding for small screens */
 }
