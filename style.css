@@ -17,7 +17,7 @@ header {
     display: flex; /* Use flex layout */
     justify-content: space-between; /* Space between logo and nav */
     align-items: center; /* Vertically center items */
-    padding: 10px 20px; /* Spacing inside header */
+    padding: 20px 30px; /* Spacing inside header */
     border-bottom: 1px solid #ddd; /* Thin bottom border */
 }
 
@@ -36,7 +36,7 @@ header {
 /* =================================== */
 
 .logo img{
-    height: 40px;
+    height: 70px;
     display: block;
 }
 
