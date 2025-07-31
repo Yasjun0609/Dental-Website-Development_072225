@@ -85,6 +85,7 @@ body {
   font-weight: bold;
   transition: background 0.3s ease;
   margin-left: auto;
+  order: 3;
 }
 
 .login-button:hover {
@@ -340,7 +341,7 @@ footer {
   .nav-links {
     display: none;
     position: absolute;
-    top: calc(100% + 10px);
+    /*top: calc(100% + 10px);*/
     right: 0;
     background: white;
     flex-direction: column;
@@ -360,9 +361,9 @@ footer {
   }
 
   .login-button {
-    order: 2;
-    margin-left: 0;
-    margin-right: auto;
+    order: 3;
+    margin-left: auto;
+    margin-right: 0;
   }
 
   .hero {
