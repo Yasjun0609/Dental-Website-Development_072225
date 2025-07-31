@@ -73,6 +73,7 @@ header .login-btn {
 .hero-text {
     flex: 1; /* Take half the width */
     padding-right: 40px; /* Add spacing between text and image */
+    padding: 40px 20px;
 }
 
 /* Right image of hero */
@@ -102,7 +103,7 @@ header .login-btn {
     background: #567896; /* Navy blue background */
     color: white; /* White text */
     border: none; /* No border */
-    padding: 10px 20px; /* Padding */
+    padding: 40px 20px; /* Padding */
     font-size: 18px; /* Medium-large text */
     cursor: pointer; /* Pointer on hover */
     border-radius: 4px; /* Rounded corners */
