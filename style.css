@@ -48,7 +48,7 @@ body {
 }
 .nav-menu{
   display: flex;
-  align-items:end;
+  align-items:center;
   order: 1;
 }
 .nav-links {
@@ -361,7 +361,7 @@ footer {
   }
 
   .login-button {
-    order: 3;
+    order: 1;
     margin-left: auto;
     margin-right: 0;
   }
