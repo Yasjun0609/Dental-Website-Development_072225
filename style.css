@@ -85,7 +85,7 @@ body {
   font-weight: bold;
   transition: background 0.3s ease;
   margin-left: auto;
-  order: 1;
+  order: 3;
 }
 
 .login-button:hover {
