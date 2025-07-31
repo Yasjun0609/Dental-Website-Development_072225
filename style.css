@@ -66,7 +66,7 @@ body {
   display: none;
   font-size: 24px;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: auto;
   background: none;
   border: none;
   color: rgb(0, 0, 0);
@@ -372,7 +372,7 @@ footer {
   }
 
   .feature-row .row-right {
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
   }
 
   .feature-row .image-block img {
