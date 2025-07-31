@@ -1,97 +1,104 @@
 /* Base styles for body */
-body {
-    margin: 0; /* Remove default margin */
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    font-family: 'Inter', sans-serif; /* Font family */
-    color: #567896; /* Text color */
-    line-height: 1.6; /* Line spacing */
+/* ========== RESET AND BASE ========== */
+body, h1, h2, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
+body {
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+}
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 /* =================================== */     
 /*         Header styling */
 /* =================================== */
 /* Header styling */
-
 .site-header {
-    background: white; /* White background */
-    display: flex; /* Use flex layout */
-    justify-content: space-between; /* Space between logo and nav */
-    align-items: center; /* Vertically center items */
-    padding: 15px 20px; /* Spacing inside header */
-    border-bottom: 1px solid #ddd; /* Thin bottom border */
-    position: relative;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-/* =================================== */
-/*          CONTAINER SECTION */
-/* =================================== */
-
-.container {
-    max-width: 1080px;     /* Do not expand wider than this */
-    margin: 0 auto;        /* Center horizontally */
-    padding: 0 20px;       /* Add side padding for small screens */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-/* =================================== */
-/*           LOGO SECTION */
-/* =================================== */
-
-.logo img{
-    height: 70px;
-    width: auto;
-    display: block;
+.logo img {
+  height: 70px;
+  display: block;
 }
 
-/* Navigation links inside header */
-header nav a {
-    margin: 0 10px; /* Horizontal spacing */
-    text-decoration: none; /* Remove underline */
-    color: #567896; /* Link color */
-    font-weight: bold; /* Bold text */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
-
-/* Login button styling */
 .login-button {
   padding: 8px 16px;
   background-color: #567896;
   color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.3s;
-  margin-left: auto;
-  order: 3;
-}
-.login-button:hover{
-    color: #fd9b32;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
 
-/* =================================== */
-/*   dropdown  */
-/* =================================== */
-.nav-menu {
-  display: flex;
-  align-items: center;
-  order: 1;
+.login-button:hover {
+  background-color: #345265;
 }
 
 .nav-links {
   display: flex;
   gap: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-links li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
+  color: #567896;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #345265;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 100%;
+    background: white;
+    flex-direction: column;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 10px;
+  }
+  .nav-links.active {
+    display: flex;
+  }
 }
 
 
@@ -100,179 +107,165 @@ header nav a {
 /* =================================== */
 
 .hero {
-    display: flex;   /* Use flex layout for side-by-side sections */
-    justify-content: space-between;  /* Put space between text and image */
-    align-items: center;
-    padding: 80px 40px; /* Large top/bottom padding */
-    background: #f9f9f9; /* Light gray background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 40px;
+  gap: 40px;
 }
 
-/* Left text area of hero */
 .hero-text {
-    flex: 1; /* Take half the width */
-    padding-right: 40px; /* Add spacing between text and image */
-    
+  flex: 1;
 }
 
-/* Right image of hero */
+.hero-text h1 {
+  font-size: 36px;
+  color: #567896;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #444;
+}
+
 .hero-image {
-    flex: 1; 
-    text-align: center;
+  flex: 1;
 }
 
 .hero-image img {
-    max-width: 100%;
-    height: auto;
-}
-/* Hero headline */
-.hero h1 {
-    font-size: 48px; /* Large font */
-    margin-bottom: 20px; /* Space below */
-}
-
-/* Hero subheadline */
-.hero p {
-    font-size: 20px; /* Medium font */
-    margin-bottom: 20px; /* Space below */
-}
-
-/* Hero button */
-.hero button {
-    background: #567896; /* Navy blue background */
-    color: white; /* White text */
-    border: none; /* No border */
-    padding: 10px 20px; /* Padding */
-    font-size: 18px; /* Medium-large text */
-    cursor: pointer; /* Pointer on hover */
-    border-radius: 4px; /* Rounded corners */
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* =================================== */
 /*           Feature SECTION          */
 /* =================================== */
-/* Base layout for feature rows */
 .feature-row {
-    display: flex;                 /* Two-column layout */
-    align-items: center;          /* Center items vertically */
-    justify-content: center;      /* Center overall row */
-    padding: 60px 20px;           /* Section spacing */
-    gap: 40px;                    /* Space between columns */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 40px;
 }
 
-/* Limit row width */
 .feature-row .text-block,
 .feature-row .image-block {
-    flex: 1;                      /* Equal width columns */
-    max-width: 500px;
+  flex: 1;
+  max-width: 500px;
 }
 
-/* Text styling */
 .feature-row .text-block h2 {
-    color: #567896;              /* Section heading color */
-    font-size: 24px;
-    margin-bottom: 10px;
+  color: #567896;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .feature-row .text-block p {
-    color: #444;
-    font-size: 16px;
-    line-height: 1.6;
+  color: #444;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-/* Image styling */
 .feature-row .image-block img {
-    width: 100%;                 /* Responsive image */
-    border-radius: 6px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* Reverse order for right-aligned text (row 2) */
-.feature-row-right {
-    flex-direction: row-reverse; /* Swap columns */
+.row-right {
+  flex-direction: row-reverse;
 }
 
+@media (max-width: 768px) {
+  .feature-row {
+    flex-direction: column;
+    text-align: center;
+  }
+  .feature-row.row-right {
+    flex-direction: column-reverse;
+  }
+  .feature-row .image-block img {
+    max-width: 80vw;
+  }
+}
 
 /* =================================== */
 /*           About Us SECTION          */
 /* =================================== */
 
 .about {
-  padding: 50px 20px; /* Spacing */
-  text-align: center; /* Center text */
+  padding: 60px 40px;
+  text-align: center;
 }
+
 .about h2 {
-    color: #fd9b32;
-    font-size: 16px;
-    margin-bottom: 20px;
+  color: #567896;
+  font-size: 26px;
+  margin-bottom: 10px;
 }
+
 .about h1 {
-    color: #567896;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  font-size: 32px;
+  color: #222;
+  margin-bottom: 20px;
 }
+
 .about p {
-    color: #555;
-    font-size: 16px;
-    
-    line-height: 1.8; /* better readability */
-    max-width:  800px; 
-    margin: 0 auto 30px;  /* center align + bottom spacing */
+  font-size: 16px;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* =================================== */
 /*           Products SECTION          */
 /* =================================== */
-
-/* About and products sections */
 .products {
-    padding: 50px 20px; /* Spacing */
-    text-align: center; /* Center text */
+  padding: 60px 40px;
+  text-align: center;
 }
 
 .products h2 {
-    text-align: center;
-    font-size: 28px;
-    color: #567896;
-    margin-bottom: 40px;
+  color: #567896;
+  font-size: 26px;
+  margin-bottom: 40px;
 }
 
-/* Product grid */
 .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Responsive 3-column */
-    gap: 40px;
-    padding: 0 40px;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  justify-items: center;
 }
 
-/* Individual product card */
 .product-card {
   background: #fff;
   border-radius: 6px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   padding: 20px;
   text-align: center;
+  transition: transform 0.3s;
 }
 
-/* Product image */
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
 .product-card img {
   width: 100%;
-  max-width: 240px;
+  max-width: 180px;
   height: auto;
   margin-bottom: 10px;
 }
 
-/* Product type (category) */
 .product-type {
   font-size: 14px;
-  font-weight: bold;
   color: #888;
   margin-bottom: 5px;
-
 }
 
-/* Product name */
 .product-name {
   font-size: 16px;
   font-weight: bold;
@@ -280,15 +273,10 @@ header nav a {
   color: #333;
 }
 
-/* Price */
 .product-price {
   font-size: 16px;
-  color: #2a5d9f; /* Slightly deeper blue */
-  font-weight: bold;
+  color: #2a5d9f;
 }
-
-
-
 
 
 
@@ -300,46 +288,32 @@ header nav a {
 /*           Connections SECTION          */
 /* =================================== */
 
-/* connnections section layout */
 .connections {
-    padding: 60px 20px;
-    text-align: center;
+  padding: 60px 40px;
+  text-align: center;
 }
-/* connnections Title */
-.connections h2{
-    font-size: 28px;
-    color: #567896;
-    margin-bottom: 10px;
+
+.connections h2 {
+  color: #567896;
+  font-size: 26px;
+  margin-bottom: 30px;
 }
-/* connnections description */
-.connections p {
-    color: #555;
-    font-size: 16px;
-    margin-bottom: 40px;
-}
-/* grid layout for logos */
+
 .connection-grid {
-    display: grid;                                                /* Use CSS Grid */
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));     /* Responsive grid */
-    gap: 20px;                                                    /* Space between grid items */
-    justify-items: center;                                      /* Center grid items horizontally */
-} 
-
-/* logo box styling */
-.connection-grid img {
-    width: 100%;                 /* Fill the grid cell */
-    max-width: 180px;            /* But don’t get too big */
-    border: 1px solid #ddd;      /* Optional border for polish */
-    border-radius: 6px;          /* Rounded corners */
-    padding: 10px;               /* Inner spacing */
-    background-color: #fff;      /* White background */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Subtle shadow */
-    transition: transform 0.2s ease; /* Smooth hover effect */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
 }
 
-/* Hover effect */
+.connection-grid img {
+  max-width: 100px;
+  transition: transform 0.3s ease;
+}
+
 .connection-grid img:hover {
-  transform: scale(1.05);      /* Slight zoom on hover */
+  transform: scale(1.1);
 }
 
 
@@ -347,11 +321,13 @@ header nav a {
 /*           Footer SECTION          */
 /* =================================== */
 
-/* Footer */
 footer {
-  text-align: center; /* Center text */
-  padding: 20px; /* Padding */
-  background: #f1f1f1; /* Light gray background */
+  background: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 60px;
 }
 
 
@@ -408,7 +384,7 @@ footer {
         max-width: 300px;   /* But not too wide */
     }
 
-    
+
     .feature-row {
         flex-direction: column;
         text-align: center;

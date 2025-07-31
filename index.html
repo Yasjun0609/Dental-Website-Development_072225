@@ -3,37 +3,37 @@
 <html lang="en"> <!--HTML doc lang = eng -->
 
 <head>
-    <!--Character encoding-->
     <meta charset = "UTF-8"> 
-
-    <!-- 'Responsive' settings -->
     <meta name = "viewport" content = "width = device-width, initial-scale = 1.0"> 
-
-    <!--Page Title -->
     <title> CID DIGITAL DENTISTRY</title> 
-
-    <!-- New Font 'Inter' Apply -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
     <!--link to CSS-->
     <link rel = "stylesheet" href = "style.css"> 
+    <!-- New Font 'Inter' Apply -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- ✅ AOS CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-
+    <script>
+        function toggleMenu(){
+            document.getElementbyID("navLinks").classList.toggle("active");
+        }
+    </script>
 </head>
 
 
 <!--Body-->
 <body>
-    <header class = "site-header">
-        <!-- PLACEHOLDER # change later for actual address-->
-        <a href = "#" class = "logo">   
-            <img src = "images/CID.png" alt = "CID Logo"> 
-        </a>
+    <header class = "site-header" data-aos="fade-down">
+        <div class = "header-left">
+            <a href = "#" class = "logo">   
+                <img src = "images/CID.png" alt = "CID Logo"> 
+            </a>
+
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </div>
 
         <a href="#" class="login-button">Login</a>
-
         <nav class="nav-menu">
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About Us</a></li>
@@ -44,33 +44,9 @@
         </nav>
 
     </header>
-    
-    <!--
-    <div class = "container" >
-    
-    <header>
-        
-        <a href = "#" class = "logo">   
-            <img src = "images/CID.png" alt = "CID Logo"> 
-        </a>
 
-        <nav> 
-            <a href="#"> HOME </a>     
-            <a href="#"> ABOUT </a>
-            <a href="#"> PRODUCTS </a>
-            <a href="#"> CLINICAL GUIDE </a>
-            <a href="#"> ORDER FORM </a>
-            <a href="#"> CONTACT </a>
-            <a href="#" class = "login-btn"> LOGIN </a> 
-
-        </nav>
-
-
-    </header> -->
-
-
-<!-- Hero section -->
-<section class = "hero">
+<!-- ✅ HERO SECTION -->
+<section class = "hero" data-aos = "fadeIn">
     <div class = "hero-text">
         <h1> Welcome to CID Dental Lab</h1>
         <p> Digitally powered, USA-made restorations with fast turnaround.</p>
@@ -83,9 +59,8 @@
 
 </section>
 
-<!-- Feature section -->
-
-<section class = "feature-row row-left">
+<!-- ✅ FEATURE ROWS -->
+<section class = "feature-row row-left" data-aos="fade-up">
     <div class = "text-block">
         <h2> CROWN IMPLANT DENTURE</h2>
         <p> Fabricating every product in USA California with our latest and finest technology and educated lab technicians provide doctors and patients exceptional quality of the restoration that they never experienced.</p>
@@ -97,7 +72,7 @@
 </section>
 
 
-<section class = "feature-row row-right">
+<section class = "feature-row row-right" data-aos="fade-up">
     <div class = "image-block">
         <img src = "images/sl1.jpg" alt = "Feature 2">
     </div>
@@ -109,7 +84,7 @@
 </section>
 
 
-<section class = "feature-row row-left">
+<section class = "feature-row row-left" data-aos="fade-up">
     <div class = "text-block">
         <h2> CROWN IMPLANT DENTURE</h2>
         <p> Fabricating every product in USA California with our latest and finest technology and educated lab technicians provide doctors and patients exceptional quality of the restoration that they never experienced.</p>
@@ -121,8 +96,8 @@
 </section>
 
 
-<!-- About section -->
-<section class="about">
+<!-- ✅ ABOUT SECTION -->
+<section class="about" data-aos = "fade-up">
 
   <h2>About Us</h2> <!-- Section title -->
 
@@ -135,8 +110,8 @@
 
 </section>
 
-<!-- Products section -->
-<section class="products">
+<!-- ✅ PRODUCTS SECTION -->
+<section class="products" data-aos="fade-up">
 
   <h2>Our Products</h2>
   
@@ -188,9 +163,8 @@
 
 </section>
 
-<!-- Digital Connection Source Section -->
-
-<section class="connections">
+<!-- ✅ CONNECTIONS SECTION -->
+<section class="connections" data-aos="fade-up">
 
   <h2>Digital Connection Source</h2> <!-- Section title -->
 
@@ -230,21 +204,18 @@
 
 
 
-<!-- Footer -->
-<footer>
-
+<!-- ✅ FOOTER SECTION -->
+<footer data-aos="fade-up">
   <p>&copy; @Copyright 2024 CID Digital Dentistry</p> <!-- Copyright -->
 
 </footer>
 
 </div>
 
-  <!-- menu toggle script -->
+  <!-- ✅ AOS JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    function toggleMenu() {
-      const nav = document.getElementById("navLinks");
-      nav.classList.toggle("active");
-    }
+    AOS.init();
   </script>
 
 </body>
