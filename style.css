@@ -47,6 +47,21 @@ body {
   display: block;
 }
 
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #567896;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #fb9200;
+}
+
 .hamburger {
   display: none;
   font-size: 24px;
@@ -70,21 +85,6 @@ body {
 
 .login-button:hover {
   background-color: #fb9200;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links li a {
-  color: #567896;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.nav-links li a:hover {
-  color: #fb9200;
 }
 
 @media (max-width: 768px) {
@@ -198,7 +198,7 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
-.feature-row.row-right {
+.feature-row-right {
   flex-direction: row-reverse;
 }
 
@@ -207,7 +207,7 @@ body {
     flex-direction: column;
     text-align: center;
   }
-  .feature-row.row-right {
+  .feature-row-right {
     flex-direction: column-reverse;
   }
   .feature-row .image-block img {
