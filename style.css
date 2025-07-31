@@ -51,6 +51,7 @@ body {
   display: none;
   font-size: 24px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .login-button {
@@ -61,6 +62,7 @@ body {
   border-radius: 4px;
   font-weight: bold;
   transition: background 0.3s ease;
+  margin-left: auto;
 }
 
 .login-button:hover {
@@ -129,6 +131,23 @@ body {
   color: #444;
 }
 
+.hero-text button, .hero-text .cta-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #567896;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-text button:hover, .hero-text .cta-button:hover {
+  background-color: #345265;
+}
+
 .hero-image {
   flex: 1;
 }
@@ -174,7 +193,7 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
-.row-right {
+.feature-row.row-right {
   flex-direction: row-reverse;
 }
 
