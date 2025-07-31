@@ -52,6 +52,9 @@ body {
   font-size: 24px;
   cursor: pointer;
   margin-left: 10px;
+  background: none;
+  border: none;
+  color: white;
 }
 
 .login-button {
@@ -91,12 +94,14 @@ body {
   .nav-links {
     display: none;
     position: absolute;
-    right: 10px;
-    top: 100%;
+    top: calc(100% + 10px); 
+    right: 0;
     background: white;
     flex-direction: column;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     padding: 10px;
+    z-index: 1000;
+    border-radius: 8px;
   }
   .nav-links.active {
     display: flex;
