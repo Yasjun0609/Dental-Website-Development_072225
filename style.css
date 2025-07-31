@@ -372,7 +372,7 @@ footer {
   }
 
   .feature-row .row-right {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .feature-row .image-block img {
