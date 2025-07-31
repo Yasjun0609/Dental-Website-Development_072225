@@ -103,7 +103,7 @@ header .login-btn {
     background: #567896; /* Navy blue background */
     color: white; /* White text */
     border: none; /* No border */
-    padding: 40px 20px; /* Padding */
+    padding: 20px 20px; /* Padding */
     font-size: 18px; /* Medium-large text */
     cursor: pointer; /* Pointer on hover */
     border-radius: 4px; /* Rounded corners */
