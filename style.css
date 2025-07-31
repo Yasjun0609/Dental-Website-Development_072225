@@ -46,7 +46,11 @@ body {
   height: 70px;
   display: block;
 }
-
+.nav-menu{
+  display: flex;
+  align-items: center;
+  order: 1;
+}
 .nav-links {
   display: flex;
   gap: 20px;
@@ -352,7 +356,7 @@ footer {
 
   .hamburger {
     display: block;
-    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .login-button {
