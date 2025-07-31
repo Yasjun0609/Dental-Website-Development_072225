@@ -84,7 +84,7 @@ body {
   border-radius: 4px;
   font-weight: bold;
   transition: background 0.3s ease;
-  margin-left: auto;
+  margin-left: 10px;
   order: 3;
 }
 
@@ -357,13 +357,13 @@ footer {
 
   .hamburger {
     display: block;
-    margin-right: 10px;
+    margin-left: auto;
+    order: 2;
   }
 
   .login-button {
-    order: 1;
-    margin-left: 20px;
-    margin-right: 0;
+    order: 3;
+    margin-left: auto;
   }
 
   .hero {
