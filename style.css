@@ -413,7 +413,7 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    .row-right{
+    .feature-row.row-right{
         flex-direction: column-reverse;
     }
     .text-block,.image-block{
