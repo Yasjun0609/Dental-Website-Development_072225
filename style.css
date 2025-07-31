@@ -54,7 +54,7 @@ body {
   margin-left: 10px;
   background: none;
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .login-button {
