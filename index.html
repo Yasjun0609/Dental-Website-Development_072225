@@ -13,11 +13,6 @@
     <!-- ✅ AOS CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-    <script>
-        function toggleMenu(){
-            document.getElementbyID("navLinks").classList.toggle("active");
-        }
-    </script>
 </head>
 
 
@@ -26,14 +21,10 @@
     <header class = "site-header" data-aos="fade-down">
         <div class = "header-left">
             <a href = "#" class = "logo">   
-                <img src = "images/CID.png" alt = "CID Logo"> 
-            </a>
-
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
+                <img src = "images/CID.png" alt = "CID Logo"></a>
         </div>
-
-        <a href="#" class="login-button">Login</a>
-        <nav class="nav-menu">
+        
+        <div class="nav-menu">
             <ul class="nav-links" id="navLinks">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About Us</a></li>
@@ -41,7 +32,9 @@
                 <li><a href="#">Clinical Guide</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
-        </nav>
+            <button href = "#" class="login-button">Login</a>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+        </div>
 
     </header>
 
@@ -60,7 +53,7 @@
 </section>
 
 <!-- ✅ FEATURE ROWS -->
-<section class = "feature-row row-left" data-aos="fade-up">
+<section class = "feature-row-row-left" data-aos="fade-up">
     <div class = "text-block">
         <h2> CROWN IMPLANT DENTURE</h2>
         <p> Fabricating every product in USA California with our latest and finest technology and educated lab technicians provide doctors and patients exceptional quality of the restoration that they never experienced.</p>
@@ -159,7 +152,7 @@
 
 
 
-  </div>
+  </div>-
 
 </section>
 
@@ -216,6 +209,11 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init();
+
+    function toggleMenu() {
+        const nav = document.querySelector('.nav-links');
+        nav.classList.toggle('active');
+    }
   </script>
 
 </body>
