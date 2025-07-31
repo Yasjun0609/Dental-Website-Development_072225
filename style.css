@@ -1,7 +1,10 @@
 /* Base styles for body */
 body {
     margin: 0; /* Remove default margin */
-    font-family: 'Helvetica', Arial, sans-serif; /* Font family */
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    font-family: 'Inter', sans-serif; /* Font family */
     color: #567896; /* Text color */
     line-height: 1.6; /* Line spacing */
 }
@@ -12,13 +15,15 @@ body {
 /* =================================== */
 /* Header styling */
 
-header {
+.site-header {
     background: white; /* White background */
     display: flex; /* Use flex layout */
     justify-content: space-between; /* Space between logo and nav */
     align-items: center; /* Vertically center items */
-    padding: 20px 30px; /* Spacing inside header */
+    padding: 15px 20px; /* Spacing inside header */
     border-bottom: 1px solid #ddd; /* Thin bottom border */
+    position: relative;
+    flex-wrap: wrap;
 }
 
 /* =================================== */
@@ -37,6 +42,7 @@ header {
 
 .logo img{
     height: 70px;
+    width: auto;
     display: block;
 }
 
@@ -48,12 +54,44 @@ header nav a {
     font-weight: bold; /* Bold text */
 }
 
+
 /* Login button styling */
-header .login-btn {
-    background: #567896; /* Navy blue background */
-    color: white; /* White text */
-    padding: 6px 12px; /* Padding */
-    border-radius: 4px; /* Rounded corners */
+.login-button {
+  padding: 8px 16px;
+  background-color: #567896;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  margin-left: auto;
+  order: 3;
+}
+.login-button:hover{
+    color: #fd9b32;
+}
+
+/* =================================== */
+/*   dropdown  */
+/* =================================== */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  order: 1;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
 }
 
 
@@ -321,6 +359,34 @@ footer {
 /* REACTIVE Layout via MEDIA QUERY    */
 /* ================================== */
 @media (max-width: 768px) {
+    .site-header{
+        flex-wrap: wrap;
+    }
+    .nav-links{
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        padding: 10px;
+        position: absolute;
+        right: 20px;
+        top: 60px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);        
+    }
+    .nav-links.active{
+        display: flex;
+    }
+    .hamburger{
+        display: block;
+        order: 3;
+        margin-left: 10px;
+    }
+    .login-button{
+        order: 2;
+        margin-left: 0;
+        margin-right: auto;     
+    }
+
 
     .hero {
         flex-direction: column; /* Stack hero content VERTICALLY */
@@ -330,6 +396,7 @@ footer {
     .hero-text{
         padding-right: 0; /* remove side padding*/
     }
+
 
     .product-grid {
         flex-direction:  column; 
@@ -341,12 +408,20 @@ footer {
         max-width: 300px;   /* But not too wide */
     }
 
+    
     .feature-row {
         flex-direction: column;
         text-align: center;
     }
     .row-right{
         flex-direction: column;
+    }
+    .text-block,.image-block{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .image-block img{
+        max-width: 90%;
     }
 
 }

@@ -24,26 +24,49 @@
 
 <!--Body-->
 <body>
-    <div class = "container" >
-    <!--Header: contains; logo & navigation links -->
-    <header>
-        <a href = "#" class = "logo">   <!-- PLACEHOLDER # change later for actual address-->
-            <img src = "images/CID.png" alt = "CID Logo"> <!-- Clickable logo icon -->
+    <header class = "site-header">
+        <!-- PLACEHOLDER # change later for actual address-->
+        <a href = "#" class = "logo">   
+            <img src = "images/CID.png" alt = "CID Logo"> 
         </a>
 
-        <nav> <!-- Navigation links -->
-            <a href="#"> HOME </a>     <!-- TODO: replace # with .html addresses --> 
+        <a href="#" class="login-button">Login</a>
+
+        <nav class="nav-menu">
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Clinical Guide</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    
+    <!--
+    <div class = "container" >
+    
+    <header>
+        
+        <a href = "#" class = "logo">   
+            <img src = "images/CID.png" alt = "CID Logo"> 
+        </a>
+
+        <nav> 
+            <a href="#"> HOME </a>     
             <a href="#"> ABOUT </a>
             <a href="#"> PRODUCTS </a>
             <a href="#"> CLINICAL GUIDE </a>
             <a href="#"> ORDER FORM </a>
             <a href="#"> CONTACT </a>
-            <a href="#" class = "login-btn"> LOGIN </a> <!-- Log In Button -->
+            <a href="#" class = "login-btn"> LOGIN </a> 
 
         </nav>
 
 
-    </header>
+    </header> -->
 
 
 <!-- Hero section -->
@@ -52,7 +75,6 @@
         <h1> Welcome to CID Dental Lab</h1>
         <p> Digitally powered, USA-made restorations with fast turnaround.</p>
         <button> Contact Us </button>
-
     </div>
     
     <div class = "hero-image">
@@ -217,7 +239,13 @@
 
 </div>
 
-
+  <!-- menu toggle script -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>
