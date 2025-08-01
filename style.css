@@ -6,7 +6,7 @@ body, h1, h2, p, ul, li, a {
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
@@ -62,7 +62,7 @@ body {
 }
 
 .nav-links li a:hover {
-  color: #fb9200;
+  color: #345265;
 }
 
 .hamburger {
@@ -89,7 +89,7 @@ body {
 }
 
 .login-button:hover {
-  background-color: #fb9200;
+  background-color: #345265;
 }
 
 
@@ -100,10 +100,11 @@ body {
 
 .hero {
   display: flex;
-  /*justify-content: space-between;*/
   align-items: center;
-  padding: 80px 40px;
-  gap: 40px;
+  justify-content: center;
+  padding: 80px 20px;
+  background-color: #f0f2f5; 
+  flex-wrap: wrap;
 }
 
 .hero-text {
