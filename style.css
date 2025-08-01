@@ -196,6 +196,7 @@ body {
 .feature-row .text-block h2 {
   color: #567896;
   font-size: 2rem;
+  font-weight: 400;
   margin-bottom: 10px;
 }
 
@@ -257,6 +258,7 @@ body {
 .products h2 {
   color: #567896;
   font-size: 2rem;
+  font-weight: 400;
   margin-bottom: 40px;
 }
 
@@ -320,6 +322,7 @@ body {
 .connections h2 {
   color: #567896;
   font-size: 2rem;
+  font-weight: 400;
   margin-bottom: 30px;
 }
 .connections p{
