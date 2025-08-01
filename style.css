@@ -105,7 +105,6 @@ body {
   padding: 80px 20px;
   background-color: #f0f2f5; 
   flex-wrap: wrap;
-  max-width: 500px;
 }
 
 /* ✅ hero-text는 Dandy 느낌 카드화 */
