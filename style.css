@@ -121,7 +121,7 @@ body {
 /* ✅ 타이틀 & 본문 스타일 보강 */
 .hero-text h1 {
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 450;
   color: #567896;
   margin-bottom: 20px;
 }
@@ -218,33 +218,21 @@ body {
 
 
 /* =================================== */
-/*           About Us SECTION          */
+/*           WhyCID SECTION          */
 /* =================================== */
-/*
-.about {
+
+.whyCID {
   padding: 60px 40px;
   text-align: center;
 }
 
-.about h2 {
-  color: #567896;
-  font-size: 26px;
-  margin-bottom: 10px;
-}
-
-.about h1 {
-  font-size: 32px;
+.whyCID h1 {
+  font-size: 3rem;
+  font-weight: 400;
   color: #567896;
   margin-bottom: 20px;
 }
 
-.about p {
-  font-size: 16px;
-  color: #555;
-  max-width: 800px;
-  margin: 0 auto;
-}
-*/
 
 
 /* =================================== */
