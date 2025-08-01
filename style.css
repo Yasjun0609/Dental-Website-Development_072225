@@ -103,13 +103,13 @@ body {
   align-items: center;
   justify-content: center;
   padding: 80px 20px;
-  background-color: #f0f2f5; 
+  background-color: #ffffff; 
   flex-wrap: wrap;
 }
 
 /* ✅ hero-text는 Dandy 느낌 카드화 */
 .hero-text {
-  background-color: #ffffff;
+  background-color: #f0f2f5;
   border-radius: 16px;
   padding: 40px 30px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
