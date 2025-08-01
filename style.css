@@ -120,14 +120,14 @@ body {
 
 /* ✅ 타이틀 & 본문 스타일 보강 */
 .hero-text h1 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 600;
-  color: #23466d;
+  color: #567896;
   margin-bottom: 20px;
 }
 
 .hero-text p {
-  font-size: 1rem;
+  font-size: 2rem;
   color: #333;
   margin-bottom: 24px;
   line-height: 1.5;
@@ -195,13 +195,13 @@ body {
 
 .feature-row .text-block h2 {
   color: #567896;
-  font-size: 24px;
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
 .feature-row .text-block p {
   color: #444;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
@@ -256,7 +256,7 @@ body {
 
 .products h2 {
   color: #567896;
-  font-size: 26px;
+  font-size: 2rem;
   margin-bottom: 40px;
 }
 
@@ -319,10 +319,12 @@ body {
 
 .connections h2 {
   color: #567896;
-  font-size: 26px;
+  font-size: 2rem;
   margin-bottom: 30px;
 }
-
+.connections p{
+    font-size: 1rem;
+}
 .connection-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
