@@ -355,9 +355,9 @@ footer {
   📱 MOBILE (iPhone 등, ≤600px)
 ────────────────────────────── */
 @media (max-width: 600px) {
-  .site-header {
+  /*.site-header {
     flex-wrap: wrap;
-  }
+  }*/
 
   .nav-menu {
     width: 100%;
@@ -472,10 +472,10 @@ footer {
   }
 
   .hero {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 80px 40px;
+    /*justify-content: space-between;*/
+    /*padding: 80px 40px;*/
   }
 
   .feature-row {
