@@ -21,13 +21,21 @@
          <!-- HEADER  -->
     <header class = "site-header">
 
-        <div class ="nav-menu2">
-                <ul class="nav-links2" id="navLinks2">
+        <nav class ="nav-menu">
+                <ul class="nav-links" id="navLinks">
                 <li><a href="#">Products</a></li>
                 <li><a href="#">Clinical Guide</a></li>
             </ul>
-        </div>
 
+            <a href = "#" class = "logo">   
+                <img src = "images/CID.png" alt = "CID Logo"></a>
+
+
+            <button href = "contactUs.html" class="login-button">Contact Us</a></button>
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+        </nav>
+    
+<!--
         <div class = "header-logo">
             <a href = "#" class = "logo">   
                 <img src = "images/CID.png" alt = "CID Logo"></a>
@@ -35,24 +43,25 @@
         
         <div class="nav-menu">
             <ul class="nav-links" id="navLinks">
-                <!-- <li><a href="#">Home</a></li> -->
-                <!-- <li><a href="#">About Us</a></li> -->
                 <li><a href="#">Products</a></li>
                 <li><a href="#">Clinical Guide</a></li>
-                <!-- <li><a href="#">Contact</a></li> -->
+
             </ul>
             <button href = "#" class="login-button">Contact Us</a></button></div>
             <button class="hamburger" onclick="toggleMenu()">☰</button>
         </div>
+    -->
 
     </header>
 
 <!-- ✅ HERO SECTION -->
-<section class = "hero" data-aos = "fade-up">
+<section class = "hero" data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">
     <div class = "hero-text">
-        <h1> Old Scanner?</h1>
-        <h1> New Scanner?</h1>
-        <h1> It doesn't matter</h1>
+        <h1>
+            <strong>Old</strong> Scanner? <br />
+            <strong>New</strong> Scanner? <br />
+            It doesn’t matter
+        </h1>
 
         <p>We make crowns, implants, and dentures with file from every type of scanners.</p>
         <form class = "hero-form">
@@ -70,14 +79,14 @@
 </section>
 
 <!-- ✅ Why CID SECTION -->
-<section class="whyCID" data-aos = "fade-up">  
+<section class="whyCID" data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">  
     <h1> "CID, Future Digital Dental Lab" </h1>
         
 </section>
 
 
 <!-- ✅ FEATURE ROWS -->
-<section class = "feature-row row-left" data-aos="fade-up">
+<section class = "feature-row row-left" data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">
     <div class = "text-block">
         <h2> Fully digitalized dental lab</h2>
         <p> Equipped with the finest technology in the market, specializing in digital dentistry, implants, cosmetic procedures, and complex full-mouth restorations.</p>
@@ -89,7 +98,7 @@
 </section>
 
 
-<section class = "feature-row row-right" data-aos="fade-up">
+<section class = "feature-row row-right" data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">
     <div class = "image-block">
         <img src = "images/placeholder.png" alt = "Feature 2">
     </div>
@@ -101,10 +110,10 @@
 </section>
 
 
-<section class = "feature-row row-left" data-aos="fade-up">
+<section class = "feature-row row-left" data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">
     <div class = "text-block">
         <h2> Certified Partnership</h2>
-        <p> Partnered with leading implant brands such as Astra, Straumann, Nobel, Zimmer Biomet, Bio Horizon, Medit, 3Shape, Carestream, and iTero. </p>
+        <p> Partnered with leading implant brands such as <strong>Astra, Straumann, Nobel, Zimmer Biomet, Bio Horizon, Medit, 3Shape, Carestream,</strong> and <strong>iTero.</strong> </p>
     </div>
     <div class = "image-block">
         <img src = "images/placeholder.png" alt = "Feature 3">
@@ -112,7 +121,7 @@
 
 </section>
 
-<section class = "feature-row row-right" data-aos="fade-up">
+<section class = "feature-row row-right" data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">
     <div class = "image-block">
         <img src = "images/placeholder.png" alt = "Feature 4">
     </div>
@@ -125,7 +134,7 @@
 
 
 <!-- ✅ PRODUCTS SECTION -->
-<section class="products" data-aos="fade-up">
+<section class="products" data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">
 
   <h2>Our Products</h2>
   
@@ -172,7 +181,8 @@
     </div>
 
         <!-- product 6  Contact Us Button-->
-    <div class="product-card6">
+    <div class="product-card">
+        <a href = "contactUs.html" class = "ContactUs"> 
         <h1> Contact Us! </h1>
         
     </div>
@@ -184,7 +194,7 @@
 </section>
 
 <!-- ✅ CONNECTIONS SECTION -->
-<section class="connections" data-aos="fade-up">
+<section class="connections" data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">
 
   <h2>Digital Connection Source</h2> <!-- Section title -->
 
@@ -193,31 +203,31 @@
   </p>
 
   <div class = "connection-grid">
+    <div class = "connection-track">
+        <a href= "https://bff.cloud.myitero.com/login-legacy" target="_blank">
+            <img src="images/Itero_logo.jpg" alt="iTero">
+        </a>
 
-    <a href= "https://bff.cloud.myitero.com/login-legacy" target="_blank">
-        <img src="images/Itero_logo.jpg" alt="iTero">
-    </a>
+        <a href="https://portal.3shapecommunicate.com/login" target="_blank">
+            <img src="images/newenwewn.png" alt="3Shape">
+        </a>
 
-    <a href="https://portal.3shapecommunicate.com/login" target="_blank">
-        <img src="images/newenwewn.png" alt="3Shape">
-    </a>
+        <a href="https://envistab2c.b2clogin.com/envistab2c.onmicrosoft.com/b2c_1a_signup_signin/oauth2/v2.0/authorize?scope=openid&response_type=id_token&client_id=82e7ed62-f273-469d-8d97-8a0d6c0cb873&state=eyJzb3VyY2UiOiJob21lcGFnZSIsImRlc3QiOiJodHRwczpcL1wvZGVudGFsY29ubmVjdC5kZXhpcy5jb21cLyIsInN0YXRlIjoiNjc1YzdkYzQzZTRiNSJ9&redirect_uri=https%3A%2F%2Fdentalconnect.dexis.com&ui_locales=ko&prompt=login" target="_blank">
+            <img src="images/dexis.png" alt="Dexis">
+        </a>
+        
+        <a href="https://www.meditlink.com/login" target="_blank">
+            <img src="images/Logo_MEDIT_color@4x.png" alt="Medit">
+        </a>
 
-    <a href="https://envistab2c.b2clogin.com/envistab2c.onmicrosoft.com/b2c_1a_signup_signin/oauth2/v2.0/authorize?scope=openid&response_type=id_token&client_id=82e7ed62-f273-469d-8d97-8a0d6c0cb873&state=eyJzb3VyY2UiOiJob21lcGFnZSIsImRlc3QiOiJodHRwczpcL1wvZGVudGFsY29ubmVjdC5kZXhpcy5jb21cLyIsInN0YXRlIjoiNjc1YzdkYzQzZTRiNSJ9&redirect_uri=https%3A%2F%2Fdentalconnect.dexis.com&ui_locales=ko&prompt=login" target="_blank">
-        <img src="images/dexis.png" alt="Dexis">
-    </a>
-    
-    <a href="https://www.meditlink.com/login" target="_blank">
-        <img src="images/Logo_MEDIT_color@4x.png" alt="Medit">
-    </a>
+        <a href="https://sts.connectcasecenter.com/core/login-spa/login?ReturnUrl=%2Fcore%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dcustomer_fe%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520offline_access%2520portal_api%26redirect_uri%3Dhttps%253A%252F%252Fauthenticationservice.connectcasecenter.com%252Fauth%252Flogin%252Fpostlogin%252FcustomerFe%26state%3DOYoY598UBRjhIpq_wsTux2warn0Ul2MNqZ7FC0ZAihk%26nonce%3DhLUna1Bz-iVcK5bjiHEexYcWcMbamd7QcMbH1Vrn49k%26response_mode%3Dform_post" target="_blank">
+            <img src="images/Sirona-1.jpg" alt="Sirona">
+        </a>
 
-    <a href="https://sts.connectcasecenter.com/core/login-spa/login?ReturnUrl=%2Fcore%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dcustomer_fe%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520offline_access%2520portal_api%26redirect_uri%3Dhttps%253A%252F%252Fauthenticationservice.connectcasecenter.com%252Fauth%252Flogin%252Fpostlogin%252FcustomerFe%26state%3DOYoY598UBRjhIpq_wsTux2warn0Ul2MNqZ7FC0ZAihk%26nonce%3DhLUna1Bz-iVcK5bjiHEexYcWcMbamd7QcMbH1Vrn49k%26response_mode%3Dform_post" target="_blank">
-        <img src="images/Sirona-1.jpg" alt="Sirona">
-    </a>
-
-    <a href="#" target="_blank">
-        <img src="images/Helious.png" alt="Helios">
-    </a>
-
+        <a href="#" target="_blank">
+            <img src="images/Helious.png" alt="Helios">
+        </a>
+    </div>
   </div>
 
 </section>
@@ -235,7 +245,11 @@
   <!-- ✅ AOS JS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({
+            duration: 2000, // 2배 느리게
+            mirror: true    // scroll up 시 reverse animation (fade down)
+        }
+    );
 
     function toggleMenu() {
         const nav = document.querySelector('.nav-links');

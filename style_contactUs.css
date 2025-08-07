@@ -1,0 +1,136 @@
+/* Base styles for body */
+/* ========== RESET AND BASE ========== */
+body, h1, h2, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/* =================================== */     
+/*         Header styling */
+/* =================================== */
+/* Header styling */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  order: 2;
+  justify-content: center;
+
+}
+
+.logo img {
+  height: 70px;
+  display: block;
+}
+.nav-menu{
+  display: flex;
+  align-items:center;
+
+  justify-content: space-between;
+  gap: 20px;
+
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+  order: 1;
+}
+
+.nav-links li a {
+  color: #567896;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #345265;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 10px;
+  background: none;
+  border: none;
+  color: rgb(0, 0, 0);
+  order:2;
+}
+
+.login-button {
+  padding: 8px 16px;
+  background-color: #567896;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  margin-left: 10px;
+  order: 3;
+}
+
+.login-button:hover {
+  background-color: #345265;
+}
+
+
+/* =================================== */     
+/*         Contact Us styling */
+/* =================================== */
+
+.contact-form {
+  background: #cbd5e1;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 700px;
+  margin: 60px auto;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.25);
+}
+
+.contact-form input,
+.contact-form select {
+  width: 48%;
+  margin: 10px 1%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  font-weight: bold;
+  background: #2c5282;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
