@@ -452,6 +452,7 @@ footer {
 /* ──────────────────────────────
   🖥️ DESKTOP (MacBook, ≥1025px)
 ────────────────────────────── */
+/*
 @media (min-width: 1025px) {
   .hamburger {
     display: none;
@@ -474,12 +475,10 @@ footer {
   .hero {
     flex-direction: column;
     align-items: center;
-    /*justify-content: space-between;*/
-    /*padding: 80px 40px;*/
   }
 
   .feature-row {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 60px 40px;
@@ -495,3 +494,5 @@ footer {
     padding: 0 20px;
   }
 }
+  */
+
