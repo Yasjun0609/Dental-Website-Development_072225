@@ -114,7 +114,6 @@ body {
   padding: 40px 20px;
   background-color: #ffffff; 
   flex-wrap: wrap;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
 }
 
 /* ✅ hero-text는 Dandy 느낌 카드화 */
@@ -125,6 +124,7 @@ body {
   max-width: 800px;
   width: 100%;
   margin-bottom: 30px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
 }
 
 /* ✅ 타이틀 & 본문 스타일 보강 */
@@ -219,7 +219,7 @@ body {
   aspect-ratio: 4/3;
   width: 100%;
   border-radius: 8px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
 }
 
 .feature-row .row-right {
@@ -275,7 +275,7 @@ body {
 .product-card {
   background: #fff;
   border-radius: 6px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
   padding: 20px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -312,12 +312,16 @@ body {
   font-weight: bold;
   color: #2a5d9f;
 }
-.ContactUs{
+.product-card-6{
   text-align: center;
   background-color: #2a5d9f;
-  color:#fff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
 }
-.ContactUs:hover{
+.product-card-6:hover{
   outline: 8px solid #2c5282;
 }
 
@@ -369,7 +373,7 @@ body {
   aspect-ratio: 3/2;
   max-width: 120px;
   transition: transform 0.3s ease;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
 }
 
 .connection-track img:hover {
@@ -423,7 +427,7 @@ footer {
     right: 0;
     background: white;
     flex-direction: column;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
     padding: 10px;
     z-index: 1000;
     border-radius: 8px;
