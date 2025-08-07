@@ -396,7 +396,7 @@ footer {
   .hero,
   .feature-row,
   .feature-row.row-right {
-    flex-direction: column !important;
+    flex-direction: column-reverse !important;
     text-align: center;
   }
 
@@ -432,7 +432,7 @@ footer {
   .hero,
   .feature-row,
   .feature-row.row-right {
-    flex-direction: column !important;
+    flex-direction: column-reverse !important;
     text-align: center;
   }
 
@@ -479,7 +479,7 @@ footer {
   }
 
   .feature-row {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 60px 40px;
