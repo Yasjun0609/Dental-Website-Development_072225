@@ -349,12 +349,9 @@ footer {
 
 
 /* ======================================================================================== */
-/*                             REACTIVE Layout                                   */
+/*                             REACTIVE Layout MOBILE                                       */
 /* ======================================================================================== */
-/* ──────────────────────────────
-  📱 MOBILE (iPhone 등, ≤600px)
-────────────────────────────── */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .site-header {
     flex-wrap: wrap;
   }
@@ -393,105 +390,21 @@ footer {
     margin-left: auto;
   }
 
-  .hero,
-  .feature-row,
-  .feature-row.row-right {
-    flex-direction: column !important;
+  .hero {
+    flex-direction: column;
     text-align: center;
   }
 
-  .hero-text,
-  .text-block,
-  .image-block {
-    width: 100%;
-    padding: 0 10px;
+  .feature-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature-row.row-right {
+    flex-direction: column;
   }
 
   .feature-row .image-block img {
     max-width: 90%;
-  }
-}
-
-
-/* ──────────────────────────────
-  💻 TABLET (iPad, 601px ~ 1024px)
-────────────────────────────── */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .nav-menu {
-    justify-content: flex-end;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .login-button {
-    margin-left: auto;
-  }
-
-  .hero,
-  .feature-row,
-  .feature-row.row-right {
-    flex-direction: column !important;
-    text-align: center;
-  }
-
-  .hero-text,
-  .text-block,
-  .image-block {
-    width: 100%;
-    padding: 0 30px;
-  }
-
-  .feature-row .image-block img {
-    max-width: 95%;
-  }
-}
-
-
-/* ──────────────────────────────
-  🖥️ DESKTOP (MacBook, ≥1025px)
-────────────────────────────── */
-@media (min-width: 1025px) {
-  .hamburger {
-    display: none;
-  }
-
-  .nav-links {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    background: none;
-    box-shadow: none;
-    padding: 0;
-  }
-
-  .login-button {
-    margin-left: 20px;
-    order: 0;
-  }
-
-  .hero {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 80px 40px;
-  }
-
-  .feature-row {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 60px 40px;
-  }
-
-  .feature-row.row-right {
-    flex-direction: row-reverse;
-  }
-
-  .text-block,
-  .image-block {
-    width: 50%;
-    padding: 0 20px;
   }
 }
