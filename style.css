@@ -295,12 +295,12 @@ body {
   font-weight: bold;
   color: #2a5d9f;
 }
-.product-card6{
+.ContactUs{
   text-align: center;
   background-color: #2a5d9f;
   color:#fff;
 }
-.product-card6:hover{
+.ContactUs:hover{
   outline-color: #23466d;
   outline-width: 2rem;
 }
