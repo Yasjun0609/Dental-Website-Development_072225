@@ -396,7 +396,7 @@ footer {
   .hero,
   .feature-row,
   .feature-row.row-right {
-    flex-direction: column-reverse !important;
+    flex-direction: column !important;
     text-align: center;
   }
 
@@ -422,7 +422,7 @@ footer {
   }
 
   .hamburger {
-    display: block;
+    display: none;
   }
 
   .login-button {
@@ -432,7 +432,7 @@ footer {
   .hero,
   .feature-row,
   .feature-row.row-right {
-    flex-direction: column-reverse !important;
+    flex-direction: row !important;
     text-align: center;
   }
 
