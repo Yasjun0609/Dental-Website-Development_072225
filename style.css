@@ -36,7 +36,7 @@ body {
   z-index: 999;
 }
 
-.header-left {
+.header-logo {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -348,9 +348,9 @@ footer {
 }
 
 
-/* ================================== */
-/* REACTIVE Layout via MEDIA QUERY    */
-/* ================================== */
+/* ======================================================================================== */
+/*                             REACTIVE Layout MOBILE                                       */
+/* ======================================================================================== */
 @media (max-width: 768px) {
   .site-header {
     flex-wrap: wrap;
