@@ -26,7 +26,7 @@ body {
 /* Header styling */
 .site-header {
   display: flex;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
   align-items: center;
   padding: 20px 40px;
   background: white;
@@ -42,7 +42,7 @@ body {
   gap: 15px;
 
   order: 2;
-  justify-content: center;
+  /*justify-content: center;*/
 
 }
 
@@ -54,7 +54,7 @@ body {
   display: flex;
   align-items:center;
 
-  justify-content: space-between;
+  /*justify-content: space-between;*/
   gap: 20px;
 
 }
@@ -82,7 +82,7 @@ body {
   background: none;
   border: none;
   color: rgb(0, 0, 0);
-  order:2;
+  order: 3 ;
 }
 
 .login-button {
@@ -94,7 +94,7 @@ body {
   font-weight: bold;
   transition: background 0.3s ease;
   margin-left: 10px;
-  order: 3;
+  order: 4;
 }
 
 .login-button:hover {
@@ -114,6 +114,7 @@ body {
   padding: 40px 20px;
   background-color: #ffffff; 
   flex-wrap: wrap;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
 }
 
 /* ✅ hero-text는 Dandy 느낌 카드화 */
@@ -121,7 +122,6 @@ body {
   background-color: #f0f2f5;
   border-radius: 16px;
   padding: 40px 30px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
   max-width: 800px;
   width: 100%;
   margin-bottom: 30px;
@@ -219,7 +219,7 @@ body {
   aspect-ratio: 4/3;
   width: 100%;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
 }
 
 .feature-row .row-right {
@@ -249,6 +249,7 @@ body {
 /*           Products SECTION          */
 /* =================================== */
 .products {
+  align-items: center;
   padding: 60px 40px;
   text-align: center;
   max-width: 1200px;
@@ -327,11 +328,13 @@ body {
 /* =================================== */
 
 .connections {
+  align-items: center;
   padding: 60px 40px;
-  text-align: center;
   max-width: 800px;
 }
-
+.conntections_text{
+   text-align: center;
+}
 .connections h2 {
   color: #567896;
   font-size: 2rem;
@@ -352,7 +355,7 @@ body {
 .connection-grid{
   overflow: hidden;
   position: relative;
-  max-width: 90%;
+  max-width: 100%;
   margin: 0 auto;
 }
 .connection-track{
@@ -364,7 +367,7 @@ body {
 .connection-track img {
   height: 80px;
   aspect-ratio: 3/2;
-  max-width: 100px;
+  max-width: 120px;
   transition: transform 0.3s ease;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
