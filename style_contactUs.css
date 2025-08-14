@@ -116,8 +116,6 @@ body {
 
 .contact-form input,
 .contact-form select {
-  width: 48%;
-  margin: 10px 1%;
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
