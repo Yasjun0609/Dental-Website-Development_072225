@@ -26,8 +26,7 @@ body {
 /* Header styling */
 .site-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   padding: 20px 40px;
   background: white;
   border-bottom: 1px solid #ddd;
@@ -35,41 +34,40 @@ body {
   top: 0;
   z-index: 999;
 }
+.site-header .nav-menu{
 
-.header-logo {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+  width: 100%;           /* ⬅︎ 그리드를 가로로 펼쳐서 1fr이 공간을 먹을 수 있게 */
+  max-width: 1200px;     /* ⬅︎ 전체 퍼짐 1200px 제한 */
+  margin: 0 auto;        /* ⬅︎ 가운데 고정 */
+}
+.nav-right{
+  justify-self: end;
   display: flex;
   align-items: center;
-  gap: 15px;
-
+  gap: 10px;
+}
+.logo{
   order: 2;
-  justify-content: center;
-
+  justify-self: center;
 }
-
 .logo img {
-  height: 70px;
+  height: 80px;
   display: block;
-}
-.nav-menu{
-  display: flex;
-  align-items:center;
-
-  justify-content: space-between;
-  gap: 20px;
-
 }
 .nav-links {
   display: flex;
   gap: 20px;
   order: 1;
 }
-
 .nav-links li a {
   color: #567896;
   font-weight: bold;
   transition: color 0.3s;
 }
-
 .nav-links li a:hover {
   color: #345265;
 }
@@ -82,10 +80,10 @@ body {
   background: none;
   border: none;
   color: rgb(0, 0, 0);
-  order:2;
 }
 
 .login-button {
+  order: 3;
   padding: 8px 16px;
   background-color: #567896;
   color: white;
@@ -94,12 +92,13 @@ body {
   font-weight: bold;
   transition: background 0.3s ease;
   margin-left: 10px;
-  order: 3;
 }
 
 .login-button:hover {
   background-color: #345265;
 }
+
+
 
 
 /* =================================== */     
@@ -133,4 +132,71 @@ body {
   color: white;
   border: none;
   border-radius: 6px;
+}
+
+
+
+
+
+
+
+
+
+/* ======================================================================================== */
+/*                             REACTIVE Layout                                   */
+/* ======================================================================================== */
+/* ──────────────────────────────
+  📱 MOBILE (iPhone 등, ≤600px)
+────────────────────────────── */
+@media (min-width: 240px) and (max-width: 600px) {
+ 
+  .nav-menu {
+    width: 100%;
+    position:relative;
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 8px;
+    right: auto;
+    background: #fff;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(44, 44, 44, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+  .logo{
+    justify-self: center;
+    grid-column: 2;
+    margin:0;
+  }
+  .login-button {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+
+  .hero{
+      padding: 40px 20px;
+      flex-wrap: wrap;
+  }
 }

@@ -20,37 +20,26 @@
 <body>
          <!-- HEADER  -->
     <header class = "site-header">
+  <nav class="nav-menu"> <!-- 네비게이션 래퍼: Grid로 3구역 배치 -->
 
-        <nav class ="nav-menu">
-                <ul class="nav-links" id="navLinks">
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Clinical Guide</a></li>
+        <div class="nav-left" style = "white-space: nowrap;"> <!-- [신규] 좌측 영역: 메뉴 링크 묶음 -->
+            <ul class="nav-links" id="navLinks"> <!-- 기존 클래스 유지 -->
+                <li><a href="index.html#products">Products</a></li> <!-- 실제 이동 앵커/페이지로 수정 가능 -->
+                <li><a href="index.html#guide">Clinical Guide</a></li> <!-- 실제 이동 앵커/페이지로 수정 가능 -->
             </ul>
-
-            <a href = "#" class = "logo">   
-                <img src = "images/CID.png" alt = "CID Logo"></a>
-
-
-            <button href = "contactUs.html" class="login-button">Contact Us</a></button>
-            <button class="hamburger" onclick="toggleMenu()">☰</button>
-        </nav>
-    
-<!--
-        <div class = "header-logo">
-            <a href = "#" class = "logo">   
-                <img src = "images/CID.png" alt = "CID Logo"></a>
         </div>
-        
-        <div class="nav-menu">
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Clinical Guide</a></li>
 
-            </ul>
-            <button href = "#" class="login-button">Contact Us</a></button></div>
-            <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <div class="nav-center"> <!-- [신규] 중앙 영역: 로고 -->
+            <a href="index.html" class="logo"> <!-- 로고 클릭 시 홈으로 -->
+                <img src="images/CID.png" alt="CID Logo"> <!-- 로고 이미지 -->
+            </a>
         </div>
-    -->
+
+        <div class="nav-right"> <!-- [신규] 우측 영역: 액션 버튼들 -->
+            <a href="contactUs.html" class="login-button" style = "white-space: nowrap;">Contact Us</a> <!-- button href 문제 해결: a 태그로 교체 -->
+            <button class="hamburger" onclick="toggleMenu()">☰</button> <!-- 모바일 메뉴 토글 버튼 -->
+        </div>
+    </nav>
 
     </header>
 
@@ -63,21 +52,17 @@
             It doesn’t matter
         </h1>
         <p>We make crowns, implants, and dentures with file from every type of scanners.</p>
+        
         <form class = "hero-email">
-            <input type="email" placeholder="Email Address" class="hero-email-input" />
+            <input type="email" placeholder="Email Address" class="hero-email-input" ></input>
+                    <form class = "hero-button">
+            <button> Let's Connect! </button> </form>
             </form>
             
-        <form class = "hero-button">
-            <button> Let's Connect! </button>
-        </form>
+        
             
     </div>
 
- <!--  
-    <div class = "hero-image">
-        <img src = "images/dent3.jpg" alt = "Dental image 2">
-    </div>
- --> 
 
 </section>
 
@@ -185,9 +170,9 @@
 
         <!-- product 6  Contact Us Button-->
     <div class="product-card-6">
-        <a href = "contactUs.html" class = "ContactUs"> </a>
+        <a href="contactUs.html" class="contactus-card-link">
         <h1> Contact Us! </h1>
-        
+        </a>
     </div>
 
 
@@ -198,13 +183,13 @@
 
 <!-- ✅ CONNECTIONS SECTION -->
 <section class="connections" data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">
-    <div class = connections_text>
-  <h2>Digital Connection Source</h2> <!-- Section title -->
+    <div class = "connections_text">
+        <h2>Digital Connection Source</h2> <!-- Section title -->
 
-  <p> Doctors can send digital impression directly to CID Digital Dentistry with most major intraoral scanners.
-    Find the name of your scanner below and follow the instructions on how to add CID Digital Dentistry on your account.  
-  </p>
-  </div>
+        <p> Doctors can send digital impression directly to CID Digital Dentistry with most major intraoral scanners.
+        Find the name of your scanner below and follow the instructions on how to add CID Digital Dentistry on your account.  
+        </p>
+    </div>
 
   <div class = "connection-grid">
     <div class = "connection-track">
@@ -244,7 +229,6 @@
 
 </footer>
 
-</div>
 
   <!-- ✅ AOS JS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>

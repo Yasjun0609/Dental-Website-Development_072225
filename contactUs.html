@@ -20,28 +20,33 @@
 <body>
          <!-- HEADER  -->
     <header class = "site-header">
+  <nav class="nav-menu"> <!-- 네비게이션 래퍼: Grid로 3구역 배치 -->
 
-        <nav class ="nav-menu">
-                <ul class="nav-links" id="navLinks">
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Clinical Guide</a></li>
+        <div class="nav-left" style = "white-space: nowrap;"> <!-- [신규] 좌측 영역: 메뉴 링크 묶음 -->
+            <ul class="nav-links" id="navLinks"> <!-- 기존 클래스 유지 -->
+                <li><a href="index.html#products">Products</a></li> <!-- 실제 이동 앵커/페이지로 수정 가능 -->
+                <li><a href="index.html#guide">Clinical Guide</a></li> <!-- 실제 이동 앵커/페이지로 수정 가능 -->
             </ul>
+        </div>
 
-            <a href = "#" class = "logo">   
-                <img src = "images/CID.png" alt = "CID Logo"></a>
+        <div class="nav-center"> <!-- [신규] 중앙 영역: 로고 -->
+            <a href="index.html" class="logo"> <!-- 로고 클릭 시 홈으로 -->
+                <img src="images/CID.png" alt="CID Logo"> <!-- 로고 이미지 -->
+            </a>
+        </div>
 
-
-            <button href = "contactUs.html" class="login-button">Contact Us</a></button>
-            <button class="hamburger" onclick="toggleMenu()">☰</button>
-        </nav>
-    
-
+        <div class="nav-right"> <!-- [신규] 우측 영역: 액션 버튼들 -->
+            <a href="contactUs.html" class="login-button" style = "white-space: nowrap;">Contact Us</a> <!-- button href 문제 해결: a 태그로 교체 -->
+            <button class="hamburger" onclick="toggleMenu()">☰</button> <!-- 모바일 메뉴 토글 버튼 -->
+        </div>
+    </nav>
 
     </header>
 
 
 
-    <section class="contact-form">
+    
+<section class="contact-form">
     <h1>Let’s get Started</h1>
       <p>Step up your business to fully-digital dentistry with CID</p>
     <form>
@@ -55,20 +60,32 @@
         <select><option>Product*</option></select>
         <button type="submit">Let’s Connect!</button>
     </form>
-    </section>
+</section>
 
 
 
 
 
+<!-- ✅ FOOTER SECTION -->
+<footer>
+  <p>&copy; @Copyright 2024 CID Digital Dentistry</p> <!-- Copyright -->
 
+</footer>
 
+  <!-- ✅ AOS JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+            duration: 2000, // 2배 느리게
+            mirror: true    // scroll up 시 reverse animation (fade down)
+        }
+    );
 
-
-
-
-
-
-
+    function toggleMenu() {
+        const nav = document.querySelector('.nav-links');
+        nav.classList.toggle('active');
+    }
+  </script>
 
 </body>
+</html>
