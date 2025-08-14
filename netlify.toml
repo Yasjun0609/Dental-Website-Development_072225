@@ -1,3 +1,14 @@
 # netlify.toml
+
 [functions]                            # Functions 공통 설정
   node_bundler = "esbuild"             # ESBuild 번들러 사용(ESM 호환)
+
+[[redirects]]
+  from = "/contactus"
+  to   = "/contactUs.html"
+  status = 200
+
+[[redirects]]
+  from = "/contactus/*"
+  to   = "/contactUs.html"
+  status = 200
