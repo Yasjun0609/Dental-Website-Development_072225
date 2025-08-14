@@ -122,7 +122,15 @@ body {
   border-radius: 6px;
   border: 1px solid #ccc;
 }
-
+.contact-form h1 {
+  font-size: 28px;
+  color: #223;
+  margin-bottom: 6px;
+}
+.contact-form p {
+  color: #445;
+  margin-bottom: 20px;
+}
 .contact-form button {
   margin-top: 20px;
   width: 100%;
@@ -133,13 +141,51 @@ body {
   border: none;
   border-radius: 6px;
 }
+.hidden {
+  display: none;                     /* 허니팟 숨김 */
+}
 
 
+/* ===================================================================
+   CONTACT FORM GRID (2-COLUMN)
+   - 데스크톱/태블릿: 2열
+   - 모바일: 아래 미디어쿼리에서 1열로 전환
+   =================================================================== */
+#cidForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;    /* 2컬럼 */
+  gap: 12px;
+}
 
+#cidForm input,
+#cidForm select,
+#cidForm textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+}
 
+#cidForm textarea {
+  grid-column: 1 / -1;               /* 메모는 가로 전체 */
+  min-height: 110px;
+}
 
+#cidForm button {
+  grid-column: 1 / -1;               /* 버튼은 가로 전체 */
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2c5282;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
 
-
+#cidForm button:hover {
+  filter: brightness(0.95);
+}
 
 
 /* ======================================================================================== */
@@ -199,4 +245,20 @@ body {
       padding: 40px 20px;
       flex-wrap: wrap;
   }
+    /* 폼: 1열 전환 */
+  #cidForm {
+    grid-template-columns: 1fr;
+  }
+
+  
+/* ===================================================================
+   TABLET (601px ~ 1024px)
+   - 기본(2열 폼/3컬럼 헤더) 유지
+   - 추가 조정이 필요하면 여기서 커스터마이즈
+   =================================================================== */
+@media (min-width: 601px) and (max-width: 1024px) {
+  /* 현재는 데스크톱과 동일한 레이아웃을 유지 */
+}
+
+
 }

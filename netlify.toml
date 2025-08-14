@@ -1,0 +1,3 @@
+# netlify.toml
+[functions]                            # Functions 공통 설정
+  node_bundler = "esbuild"             # ESBuild 번들러 사용(ESM 호환)

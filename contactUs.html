@@ -5,7 +5,7 @@
 <head>
     <meta charset = "UTF-8"> 
     <meta name = "viewport" content = "width = device-width, initial-scale = 1.0"> 
-    <title> CID DIGITAL DENTISTRY</title> 
+    <title> CID DIGITAL DENTISTRY </title> 
     <!--link to CSS-->
     <link rel = "stylesheet" href = "style_contactUs.css"> 
     <!-- New Font 'Inter' Apply -->
@@ -46,22 +46,50 @@
 
 
     
-<section class="contact-form">
-    <h1>Let’s get Started</h1>
-      <p>Step up your business to fully-digital dentistry with CID</p>
-    <form>
-        <input type="text" placeholder="First Name*" />
-        <input type="text" placeholder="Last Name*" />
-        <input type="email" placeholder="Email Address*" />
-        <input type="tel" placeholder="Phone Number*" />
-        <input type="text" placeholder="Company Name*" />
-        <select><option>Role Position*</option></select>
-        <input type="url" placeholder="Website" />
-        <select><option>Product*</option></select>
-        <button type="submit">Let’s Connect!</button>
-    </form>
-</section>
+  <!-- ========================= CONTACT FORM ========================= -->
+  <section class="contact-form"> <!-- 폼 카드 전체 래퍼 -->
+    <h1>Let’s get Started</h1> <!-- 타이틀 -->
+    <p>Step up your business to fully-digital dentistry with CID</p> <!-- 서브카피 -->
 
+    <!-- ★ Netlify Forms 핵심 속성: name, method="POST", data-netlify="true", hidden form-name -->
+    <!-- ★ netlify-honeypot="bot-field" : 간단 스팸 방지 -->
+    <form name="CID-Contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="cidForm"> <!-- 폼 시작 -->
+      <input type="hidden" name="form-name" value="CID-Contact"> <!-- Netlify가 폼 매칭에 쓰는 숨김 필드 -->
+      <p class="hidden"> <!-- 허니팟(사람은 보지 못함) -->
+        <label>Don’t fill this out: <input name="bot-field" /></label> <!-- 봇이 채우면 스팸으로 처리 -->
+      </p>
+
+      <!-- ▼ 2-Column Grid: 각 필드는 반드시 name 속성 필요(수집/이메일 변환용) -->
+      <input type="text"  name="firstName"  placeholder="First Name*"  /> <!-- 이름(필수 아님, 빈칸은 N/A로 치환) -->
+      <input type="text"  name="lastName"   placeholder="Last Name*"   /> <!-- 성 -->
+      <input type="email" name="email"      placeholder="Email Address*" /> <!-- 이메일 -->
+      <input type="tel"   name="phone"      placeholder="Phone Number*" /> <!-- 전화번호 -->
+      <input type="text"  name="company"    placeholder="Company Name*" /> <!-- 회사명 -->
+
+      <select name="role"> <!-- 직무 선택(기본값 빈 문자열 → N/A로 치환됨) -->
+        <option value="">Role Position*</option> <!-- 기본 옵션(값 없음) -->
+        <option>Doctor</option> <!-- 의사 -->
+        <option>Office Manager</option> <!-- 오피스 매니저 -->
+        <option>Lab Owner/Tech</option> <!-- 랩 오너/테크 -->
+        <option>Other</option> <!-- 기타 -->
+      </select>
+
+      <input type="url"   name="website"    placeholder="Website" /> <!-- 웹사이트(선택) -->
+
+      <select name="product"> <!-- 제품 드롭다운(카드 5종 그대로) -->
+        <option value="">Product*</option> <!-- 기본 옵션(값 없음) -->
+        <option>3D Model</option> <!-- 3D Model -->
+        <option>3D Implant Model</option> <!-- 3D Implant Model -->
+        <option>Cement-Retained Full Zirconia Implant Crown</option> <!-- Cement-Retained -->
+        <option>Screw-Retained Full Zirconia Implant Crown</option> <!-- Screw-Retained -->
+        <option>Full Zirconia Crown</option> <!-- Full Zirconia Crown -->
+      </select>
+
+      <textarea name="message" placeholder="Message / Notes (optional)"></textarea> <!-- 메모(선택) -->
+
+      <button type="submit">Let’s Connect!</button> <!-- 제출 버튼 -->
+    </form>
+  </section>
 
 
 
@@ -72,20 +100,30 @@
 
 </footer>
 
-  <!-- ✅ AOS JS CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-            duration: 2000, // 2배 느리게
-            mirror: true    // scroll up 시 reverse animation (fade down)
-        }
-    );
+  <!-- ========================= SCRIPTS ========================= -->
 
-    function toggleMenu() {
-        const nav = document.querySelector('.nav-links');
-        nav.classList.toggle('active');
+  <script> /* 모바일 네비 토글 스크립트 */
+    function toggleMenu(){ /* 햄버거 클릭 시 메뉴 토글 */
+      const nav = document.querySelector('.nav-links'); /* 좌측 메뉴 UL 참조 */
+      nav.classList.toggle('active'); /* active 클래스 토글로 드롭다운 표시/숨김 */
     }
   </script>
 
+  <script> /* 제출 직전 "빈칸 → N/A" 치환 스크립트 */
+    document.getElementById('cidForm').addEventListener('submit', function(e){ /* 폼 제출 이벤트 */
+      const fields = this.querySelectorAll('input, select, textarea'); /* 모든 입력 요소 수집 */
+      fields.forEach(el => { /* 각 요소에 대해 */
+        if (el.name === 'form-name' || el.name === 'bot-field') return; /* Netlify용/허니팟 제외 */
+        if (!el.value || String(el.value).trim() === '') { /* 값이 비었으면 */
+          el.value = 'N/A'; /* N/A로 치환(placeholder가 아니라 실제 value로) */
+        }
+      });
+      /* 이후 Netlify가 직렬화하여 저장/함수로 전달 → 이메일 본문에도 N/A 반영됨 */
+    });
+  </script>
+
+
+
 </body>
+
 </html>
