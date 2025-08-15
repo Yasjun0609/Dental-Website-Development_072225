@@ -85,7 +85,7 @@ body {
 .login-button {
   order: 3;
   padding: 8px 16px;
-  background-color: #567896;
+  background-color: #F89B00;
   color: white;
   border: none;
   border-radius: 8px;
@@ -95,7 +95,9 @@ body {
 }
 
 .login-button:hover {
-  background-color: #345265;
+  background-color: #FF7F00;
+  
+  /*outline: 8px solid #F55729;*/
 }
 
 
@@ -185,6 +187,8 @@ body {
 
 #cidForm button:hover {
   filter: brightness(0.95);
+
+  outline: 3px solid #Ffffff;
 }
 
 
