@@ -30,13 +30,13 @@
         </div>
 
         <div class="nav-center"> <!-- [신규] 중앙 영역: 로고 -->
-            <a href="index.html" class="logo"> <!-- 로고 클릭 시 홈으로 -->
+            <a href="/index.html" class="logo"> <!-- 로고 클릭 시 홈으로 -->
                 <img src="images/CID.png" alt="CID Logo"> <!-- 로고 이미지 -->
             </a>
         </div>
 
         <div class="nav-right"> <!-- [신규] 우측 영역: 액션 버튼들 -->
-            <a href="contactUs.html" class="login-button" style = "white-space: nowrap;">Contact Us</a> <!-- button href 문제 해결: a 태그로 교체 -->
+            <a href="/contactUs.html" class="login-button" style = "white-space: nowrap;">Contact Us</a> <!-- button href 문제 해결: a 태그로 교체 -->
             <button class="hamburger" onclick="toggleMenu()">☰</button> <!-- 모바일 메뉴 토글 버튼 -->
         </div>
     </nav>
@@ -53,7 +53,8 @@
 
     <!-- ★ Netlify Forms 핵심 속성: name, method="POST", data-netlify="true", hidden form-name -->
     <!-- ★ netlify-honeypot="bot-field" : 간단 스팸 방지 -->
-    <form name="CID-Contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="cidForm"> <!-- 폼 시작 -->
+    <form name="CID-Contact" method="POST" action="/thank-you.html"
+      data-netlify="true" netlify-honeypot="bot-field" id="cidForm"> <!-- 폼 시작 -->
       <input type="hidden" name="form-name" value="CID-Contact"> <!-- Netlify가 폼 매칭에 쓰는 숨김 필드 -->
       <p class="hidden"> <!-- 허니팟(사람은 보지 못함) -->
         <label>Don’t fill this out: <input name="bot-field" /></label> <!-- 봇이 채우면 스팸으로 처리 -->
@@ -91,7 +92,70 @@
     </form>
   </section>
 
+<!--
 
+  <div class="field"> 
+    <label for="firstName">First Name*</label> 
+    <input id="firstName" type="text" name="firstName" placeholder="First Name*" /> 
+  </div>
+
+  <div class="field"> 
+    <label for="lastName">Last Name*</label>
+    <input id="lastName" type="text" name="lastName" placeholder="Last Name*" />
+  </div>
+
+  <div class="field"> 
+    <label for="email">Email Address*</label>
+    <input id="email" type="email" name="email" placeholder="Email Address*" />
+  </div>
+
+  <div class="field"> 
+    <label for="phone">Phone Number*</label>
+    <input id="phone" type="tel" name="phone" placeholder="Phone Number*" />
+  </div>
+
+  <div class="field"> 
+    <label for="company">Company Name*</label>
+    <input id="company" type="text" name="company" placeholder="Company Name*" />
+  </div>
+
+  <div class="field"> 
+    <label for="role">Role Position*</label>
+    <select id="role" name="role">
+      <option value="">Role Position*</option>
+      <option>Doctor</option>
+      <option>Office Manager</option>
+      <option>Lab Owner/Tech</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div class="field"> 
+    <label for="website">Website</label>
+    <input id="website" type="url" name="website" placeholder="Website" />
+  </div>
+
+  <div class="field">
+    <label for="product">Product*</label>
+    <select id="product" name="product">
+      <option value="">Product*</option>
+      <option>3D Model</option>
+      <option>3D Implant Model</option>
+      <option>Cement-Retained Full Zirconia Implant Crown</option>
+      <option>Screw-Retained Full Zirconia Implant Crown</option>
+      <option>Full Zirconia Crown</option>
+    </select>
+  </div>
+
+  <div class="field span-2"> 
+    <label for="message">Message / Notes (optional)</label>
+    <textarea id="message" name="message" placeholder="Message / Notes (optional)"></textarea>
+  </div>
+
+  <button type="submit" class="span-2">Let’s Connect!</button> 
+</form>
+
+-->
 
 
 <!-- ✅ FOOTER SECTION -->
