@@ -189,6 +189,14 @@ body {
   outline: 3px solid #Ffffff;
 }
 
+footer {
+  background: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 60px;
+}
 
 /* ======================================================================================== */
 /*                             REACTIVE Layout                                   */

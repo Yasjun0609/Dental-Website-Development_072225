@@ -85,7 +85,11 @@ body {
 .login-button {
   order: 3;
   padding: 8px 16px;
-  background-color: #FF7F00;
+  background-color: #567896;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  fo  background-color: #FF7F00;
   color: white;
   border: none;
   border-radius: 8px;
@@ -168,7 +172,10 @@ body {
   flex: auto;
   display: flex;
   background-color: #2a5d9f;
+  justify-content: center;
+  justify-items: center;
   text-align: center;
+  max-width: 150px;
   color: white;
   font-weight: 600;
   border: none;
@@ -349,8 +356,8 @@ body {
   margin-top: auto;
 }
 .product-card-6{
-  width: 200px;                 /* same as .product-card */
-  height: 300px;                /* same as .product-card */
+  width: 300px;                 /* same as .product-card */
+  height: 400px;                /* same as .product-card */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -548,7 +555,7 @@ footer {
   .hero-text p {
     text-wrap: wrap;
   }
-  .hero-email-input{
+  /*.hero-email-input{
     width:fit-content;
   }
   .hero-email button{
@@ -559,7 +566,34 @@ footer {
     width: fit-content;
     padding-top: 10px;
     padding-bottom: 10px;
-  }
+  }*/
+.hero-email-input[type="email"] {
+  flex: auto;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 4px solid #ccc;
+  border-radius: 8px;
+  min-width: 100px;
+  max-width: 400px;
+}
+
+.hero-email button {
+  flex: auto;
+  display: flex;
+  background-color: #2a5d9f;
+  text-align: center;
+  justify-content: center;
+  max-width: 400px;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  padding-bottom: 10px;
+}
+
   .feature-row .image-block{
     display: none;
   }
@@ -573,41 +607,7 @@ footer {
     justify-items: center;
 
     max-width: 240px;
-    margin: 0 auto;
-  }
-
-}
-
-
-/* ──────────────────────────────
-  💻 TABLET (iPad, 601px ~ 1024px)
-────────────────────────────── */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .nav-menu {
-    justify-content: flex-end;
-  }
-
-  .hamburger {
-    display: none;
-  }
-
-  .login-button {
-    margin-left: auto;
-  }
-  .hero{
-    padding: 100px 100px;
-
-  }
-
-  .feature-row,
-  .feature-row.row-right {
-    flex-direction: row !important;
-    text-align: center;
-  }
-
-  .hero-text,
-  .text-block,
-  .image-block {
+ge-block {
     padding: 40 30px;
   }
   .hero-text p{
