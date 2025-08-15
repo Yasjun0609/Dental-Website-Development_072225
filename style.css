@@ -420,6 +420,84 @@ body {
     padding-bottom: 60px;
 }
 
+/* =============== Connections Conveyor =============== */
+
+/* Section-level variables (desktop defaults) */
+.connections {
+  --conn-speed: 40s;     /* desktop belt speed (higher = slower) */
+  --conn-gap: 32px;      /* gap between cards */
+  --card-w: 300px;       /* match your product-card width */
+  --card-h: 400px;       /* match your product-card height */
+}
+
+.connection-grid {
+  position: relative;
+  overflow: hidden;      /* hide overflow to create conveyor window */
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.connection-track {
+  display: flex;
+  gap: var(--conn-gap);
+  animation-name: scrollLogos;         /* linear infinite belt */
+  animation-duration: var(--conn-speed);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;              /* performance hint */
+}
+
+/* Card: same footprint as product card */
+.connection-card {
+  width: var(--card-w);
+  height: var(--card-h);
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829); /* same style as product cards */
+  display: flex;
+  flex-direction: column;              /* image + label stack */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 16px;
+  transition: transform .3s ease, box-shadow .3s ease, outline-color .3s ease;
+}
+
+/* Logo: keep aspect ratio, no crop */
+.connection-card img {
+  max-width: 90%;
+  max-height: 70%;
+  object-fit: contain;                 /* don't crop or stretch */
+  display: block;
+}
+
+/* Optional small label under the logo */
+.connection-card span {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Hover effects: keep as requested */
+.connection-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 28px rgba(0,0,0,.35);
+  outline: 8px solid #2c5282;         /* same outline color as products */
+}
+
+/* Pause the belt when the whole area is hovered */
+.connection-grid:hover .connection-track { animation-play-state: paused; }
+
+/* Seamless loop: move by half because items are duplicated once */
+@keyframes scrollLogos {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+/*
 .connection-grid{
   justify-content: center;
   align-items: center;
@@ -444,7 +522,7 @@ body {
 }
 
 .connection-track img:hover {
-  transform: scale(1.1); /* blowout effect */
+  transform: scale(1.1); 
   outline: 8px solid #2c5282;
 }
 .connection-grid:hover .connection-track {
@@ -453,7 +531,7 @@ body {
 @keyframes scrollLogos {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
-}
+}*/
 
 
 /* =================================== */
@@ -560,18 +638,7 @@ footer {
   .hero-text p {
     text-wrap: wrap;
   }
-  /*.hero-email-input{
-    width:fit-content;
-  }
-  .hero-email button{
-    flex: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }*/
+
 .hero-email-input[type="email"] {
   flex: auto;
   padding: 8px 12px;
@@ -610,9 +677,7 @@ footer {
     grid-template-columns: repeat(1, minmax(180px, 1fr));
     gap: 10px;
     justify-items: center;
-
     max-width: 240px;
-ge-block {
     padding: 40 30px;
   }
   .hero-text p{
@@ -622,6 +687,12 @@ ge-block {
   .feature-row .image-block img {
     max-width: 95%;
   }
+
+  .connections { --conn-speed: 22s; }  /* faster belt for mobile */
+
 }
 
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .connection-track { animation: none; }
 }
