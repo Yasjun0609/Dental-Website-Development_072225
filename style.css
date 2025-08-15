@@ -8,6 +8,9 @@ body, h1, h2, p, ul, li, a {
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
+html { 
+  scroll-behavior: smooth; /* 해시(#) 앵커 이동 시 스무스 */
+}
 
 body {
   background-color: #fff;
@@ -89,7 +92,7 @@ body {
   color: white;
   border: none;
   border-radius: 8px;
-  fo  background-color: #FF7F00;
+  background-color: #FF7F00;
   color: white;
   border: none;
   border-radius: 8px;
@@ -390,7 +393,9 @@ body {
 /* =================================== */
 
 .connections {
+  justify-items: center;
   justify-content: center;
+  text-align: center;
   align-items: center;
   padding: 60px 40px;
   max-width: 1200px;
@@ -402,8 +407,8 @@ body {
 .connections h2 {
   padding-top: 100px;
   padding-bottom: 20px;
+  justify-content: center;
   align-items: center;
-
   color: #567896;
   font-size: 3rem;
   font-weight: 400;
@@ -426,7 +431,7 @@ body {
 }
 .connection-track{
   display: flex;
-  animation: scrollLogos 20s linear infinite;
+  animation: scrollLogos 10s linear infinite;
   gap: 32px;
 }
 
@@ -619,3 +624,4 @@ ge-block {
   }
 }
 
+}
