@@ -153,6 +153,18 @@
     });
   </script>
 
+  <script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var e = (params.get('user-email') || '').trim(); // ← name이 'user-email'
+    if (!e) return;
+    var input = document.getElementById('email');    // ← 연락처 폼의 이메일 input id
+    if (input) {
+      input.value = e;
+      input.focus();
+    }
+  })();
+</script>
 
 
 </body>
