@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  background-color: #fff;
+  background-color: #f6faff;
   color: #333;
   line-height: 1.6;
 }
@@ -117,7 +117,6 @@ body {
   align-items: center;
   justify-content: center;
   padding: 100px 100px;
-  background-color: #ffffff; 
   flex-wrap: wrap;
 }
 
@@ -139,15 +138,19 @@ body {
 .hero-text h1 {
   text-align: left;
   font-size: 48px;
-  font-weight: 450;
+  font-weight: 400;
   color: #567896;
   margin-bottom: 0px;
   line-height: 60px;
+}
+.hero-text h1 strong{
+  font-weight: 800;
 }
 
 .hero-text p {
   text-align: left;
   font-size: 16px;
+  font-weight: 500;
   color: #333;
   margin-bottom: 0px;
   padding-bottom: 60px;
@@ -497,41 +500,6 @@ body {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-/*
-.connection-grid{
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  padding-top: 60px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-.connection-track{
-  display: flex;
-  animation: scrollLogos 10s linear infinite;
-  gap: 32px;
-}
-
-.connection-track img {
-  height: 300px;
-  width: 200px;
-  aspect-ratio: 4/3;
-  transition: transform 0.3s ease;
-  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
-}
-
-.connection-track img:hover {
-  transform: scale(1.1); 
-  outline: 8px solid #2c5282;
-}
-.connection-grid:hover .connection-track {
-  animation-play-state: paused;
-}
-@keyframes scrollLogos {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}*/
 
 
 /* =================================== */
@@ -610,15 +578,17 @@ footer {
     padding-bottom: 60px;
     padding-left: 40px;
     padding-right: 40px; 
+    margin-left: 10px;
+    margin-right: 10px;
   }
   .hero-text h1 {
   text-align: left;
   font-size: 42px;
-  font-weight: 450;
+  font-weight: 400;
   color: #567896;
   margin-bottom: 0px;
   line-height: 50px;
-}
+  }
 .hero-text p{
   padding-top:10px;
   padding-bottom: 40px;
