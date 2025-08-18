@@ -1,6 +1,5 @@
 /* Base styles for body */
 /* ========== RESET AND BASE ========== */
-*, *::before, *::after { box-sizing: border-box; }
 body, h1, h2, p, ul, li, a {
   margin: 0;
   padding: 0;
@@ -108,83 +107,96 @@ body {
 /*         Contact Us styling */
 /* =================================== */
 
-/* ===================== CONTACT FORM CARD ===================== */
-.contact-form { /* 폼 카드 컨테이너 */
-  background:#cbd5e1; 
-  border-radius:16px; 
-  padding:40px; 
-  max-width:900px; /* 데스크탑 넓이 */
-  margin:60px auto; 
-  box-shadow:4px 4px 0 rgba(0,0,0,.25);
-}
-.contact-form h1 { 
-  font-size:42px; 
-  color:#223; 
-  margin:0 0 8px; 
-  text-align:center; } /* 큰 제목 */
-.contact-form p { 
-  color:#445; 
-  margin:0 0 28px; 
-  text-align:center; } /* 서브 텍스트 */
-.hidden { display:none; } /* 허니팟 숨김 */
-
-/* === 폼 그리드 === */
-#cidForm { /* 폼 레이아웃 */
-  display: grid;
-  grid-template-columns: repeat(2, minmax(260px, 400px)); /* 각 컬럼 최소~최대 폭 */
-  justify-content: center;                                /* 가운데 정렬 */
-  gap: 16px 24px;                                         /* 행/열 간격 */
+.contact-form {
+  background: #cbd5e1;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 700px;
+  margin: 60px auto;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.25);
 }
 
-/* === 각 필드(라벨+컨트롤) === */
-#cidForm .field { 
+.contact-form input,
+.contact-form select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.contact-form h1 {
+  font-size: 28px;
+  color: #223;
+  margin-bottom: 6px;
+}
+.contact-form p {
+  color: #445;
+  margin-bottom: 20px;
+}
+.contact-form button {
+  margin-top: 20px;
   width: 100%;
-} /* 라벨 위, 컨트롤 아래 */
+  padding: 12px;
+  font-weight: bold;
+  background: #2c5282;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+.hidden {
+  display: none;                     /* 허니팟 숨김 */
+}
 
-#cidForm .field label { color:#111; font-weight:600; font-size:13px; } /* 검은 라벨(요청사항) */
 
-/* === 입력/셀렉트/텍스트영역 공통 === */
+/* ===================================================================
+   CONTACT FORM GRID (2-COLUMN)
+   - 데스크톱/태블릿: 2열
+   - 모바일: 아래 미디어쿼리에서 1열로 전환
+   =================================================================== */
+#cidForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;    /* 2컬럼 */
+  gap: 12px;
+}
+
 #cidForm input,
 #cidForm select,
 #cidForm textarea {
-  width:100%; /* 가로 100% */
-  border:1px solid #cbd5e1; border-radius:8px; background:#fff; /* 테두리/라운드 */
-  padding:10px 12px; /* 내부여백 */
-  outline:none; /* 기본 아웃라인 제거 */
-  font:inherit; /* 폰트 통일 */
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
 }
 
-#cidForm select{
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  padding-right: 36px; /* 기본 화살표 공간 */
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 24 24'><path fill='%23677' d='M7 10l5 5 5-5z'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 12px;
-}
-#cidForm textarea { min-height:160px; resize:vertical; } /* 텍스트영역 높이/리사이즈 */
-
-/* 포커스 가시성 향상 */
-#cidForm input:focus,
-#cidForm select:focus,
-#cidForm textarea:focus {
-  border-color:#2c5282; box-shadow:0 0 0 3px rgba(44,82,130,.12);
+#cidForm textarea {
+  grid-column: 1 / -1;               /* 메모는 가로 전체 */
+  min-height: 110px;
 }
 
-/* 2칸 전체 차지(메모/버튼) */
-#cidForm .span-2 { 
-  grid-column:1 / -1; 
-  max-width: none;
-} /* 왼쪽부터 오른쪽 끝까지 */
-
-/* 제출 버튼 */
 #cidForm button {
-  padding:14px; border:none; border-radius:8px; background:#2c5282; color:#fff;
-  font-weight:700; cursor:pointer;
+  grid-column: 1 / -1;               /* 버튼은 가로 전체 */
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2c5282;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
 }
-#cidForm button:hover { filter:brightness(.95); outline:3px solid #fff; } /* 호버 효과 */
+
+#cidForm button:hover {
+  filter: brightness(0.95);
+
+  outline: 3px solid #Ffffff;
+}
+
+footer {
+  background: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 60px;
+}
 
 /* ======================================================================================== */
 /*                             REACTIVE Layout                                   */
@@ -244,10 +256,10 @@ body {
       padding: 40px 20px;
       flex-wrap: wrap;
   }
-  #cidForm{ grid-template-columns: 1fr; }
-  .contact-form{ margin:24px 20px; }
-}
-
+    /* 폼: 1열 전환 */
+  #cidForm {
+    grid-template-columns: 1fr;
+  }
 
   
 /* ===================================================================
@@ -260,3 +272,4 @@ body {
 }
 
 
+}

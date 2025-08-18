@@ -51,111 +51,78 @@
     <h1>Let’s get Started</h1> <!-- 타이틀 -->
     <p>Step up your business to fully-digital dentistry with CID</p> <!-- 서브카피 -->
 
-    <!-- ★ Netlify Forms 핵심 속성: name, method="POST", data-netlify="true", hidden form-name -->
-    <!-- ★ netlify-honeypot="bot-field" : 간단 스팸 방지 -->
+
+    <!-- Netlify 폼: name/method/data-netlify/hidden form-name 필수 -->
     <form name="CID-Contact" method="POST" action="thank-you.html"
-      data-netlify="true" netlify-honeypot="bot-field" id="cidForm"> <!-- 폼 시작 -->
-      <input type="hidden" name="form-name" value="CID-Contact"> <!-- Netlify가 폼 매칭에 쓰는 숨김 필드 -->
-      <p class="hidden"> <!-- 허니팟(사람은 보지 못함) -->
-        <label>Don’t fill this out: <input name="bot-field" /></label> <!-- 봇이 채우면 스팸으로 처리 -->
-      </p>
+          data-netlify="true" netlify-honeypot="bot-field" id="cidForm"> <!-- 폼 시작 -->
 
-      <!-- ▼ 2-Column Grid: 각 필드는 반드시 name 속성 필요(수집/이메일 변환용) -->
-      <input type="text"  name="firstName"  placeholder="First Name*"  /> <!-- 이름(필수 아님, 빈칸은 N/A로 치환) -->
-      <input type="text"  name="lastName"   placeholder="Last Name*"   /> <!-- 성 -->
-      <input type="email" name="email"      placeholder="Email Address*" /> <!-- 이메일 -->
-      <input type="tel"   name="phone"      placeholder="Phone Number*" /> <!-- 전화번호 -->
-      <input type="text"  name="company"    placeholder="Company Name*" /> <!-- 회사명 -->
+      <input type="hidden" name="form-name" value="CID-Contact"> <!-- Netlify 식별자 -->
+      <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p> <!-- 허니팟 -->
 
-      <select name="role"> <!-- 직무 선택(기본값 빈 문자열 → N/A로 치환됨) -->
-        <option value="">Role Position*</option> <!-- 기본 옵션(값 없음) -->
-        <option>Doctor</option> <!-- 의사 -->
-        <option>Office Manager</option> <!-- 오피스 매니저 -->
-        <option>Lab Owner/Tech</option> <!-- 랩 오너/테크 -->
-        <option>Other</option> <!-- 기타 -->
-      </select>
+      <!-- === 2열(데스크탑) / 1열(모바일) 그리드 === -->
+      <!-- 각 필드는 .field 래퍼: 라벨(검은 글씨) + 입력칸(placeholder 유지) -->
 
-      <input type="url"   name="website"    placeholder="Website" /> <!-- 웹사이트(선택) -->
+      <div class="field"> <!-- First Name (좌) -->
+        <label for="firstName">First Name *</label> <!-- 검은 라벨 -->
+        <input id="firstName" name="firstName" type="text" placeholder="First Name*" /> <!-- 입력칸 -->
+      </div>
 
-      <select name="product"> <!-- 제품 드롭다운(카드 5종 그대로) -->
-        <option value="">Product*</option> <!-- 기본 옵션(값 없음) -->
-        <option>3D Model</option> <!-- 3D Model -->
-        <option>3D Implant Model</option> <!-- 3D Implant Model -->
-        <option>Cement-Retained Full Zirconia Implant Crown</option> <!-- Cement-Retained -->
-        <option>Screw-Retained Full Zirconia Implant Crown</option> <!-- Screw-Retained -->
-        <option>Full Zirconia Crown</option> <!-- Full Zirconia Crown -->
-      </select>
+      <div class="field"> <!-- Last Name (우) -->
+        <label for="lastName">Last Name *</label> <!-- 검은 라벨 -->
+        <input id="lastName" name="lastName" type="text" placeholder="Last Name*" /> <!-- 입력칸 -->
+      </div>
 
-      <textarea name="message" placeholder="Message / Notes (optional)"></textarea> <!-- 메모(선택) -->
+      <div class="field"> <!-- Email (좌) -->
+        <label for="email">Email Address *</label> <!-- 검은 라벨 -->
+        <input id="email" name="email" type="email" placeholder="Email Address*" /> <!-- 입력칸 -->
+      </div>
 
-      <button type="submit">Let’s Connect!</button> <!-- 제출 버튼 -->
+      <div class="field"> <!-- Phone (우) -->
+        <label for="phone">Phone Number *</label> <!-- 검은 라벨 -->
+        <input id="phone" name="phone" type="tel" placeholder="000 - 000 - 0000" /> <!-- 입력칸 -->
+      </div>
+
+      <div class="field"> <!-- Company (좌) -->
+        <label for="company">Company Name *</label> <!-- 검은 라벨 -->
+        <input id="company" name="company" type="text" placeholder="Company Name*" /> <!-- 입력칸 -->
+      </div>
+
+      <div class="field"> <!-- Role (우, 드롭다운) -->
+        <label for="role">Role Position *</label> <!-- 검은 라벨 -->
+        <select id="role" name="role"> <!-- 드롭다운 (모바일에서도 텍스트박스와 동일 크기) -->
+          <option value="">Select</option> <!-- 기본 선택 -->
+          <option>Doctor</option>
+          <option>Office Manager</option>
+          <option>Lab Owner/Tech</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field"> <!-- Website (좌) -->
+        <label for="website">Website</label> <!-- 검은 라벨 -->
+        <input id="website" name="website" type="url" placeholder="Website" /> <!-- 선택 입력 -->
+      </div>
+
+      <div class="field"> <!-- Product (우, 드롭다운) -->
+        <label for="product">Product *</label> <!-- 검은 라벨 -->
+        <select id="product" name="product"> <!-- 드롭다운 -->
+          <option value="">Select</option> <!-- 기본 선택 -->
+          <option>3D Model</option>
+          <option>3D Implant Model</option>
+          <option>Cement-Retained Full Zirconia Implant Crown</option>
+          <option>Screw-Retained Full Zirconia Implant Crown</option>
+          <option>Full Zirconia Crown</option>
+        </select>
+      </div>
+
+      <div class="field span-2"> <!-- 메모 (2칸 전체) -->
+        <label for="message">Message / Notes (optional)</label> <!-- 검은 라벨 -->
+        <textarea id="message" name="message" placeholder="Message / Notes (optional)"></textarea> <!-- 텍스트영역 -->
+      </div>
+
+      <button type="submit" class="span-2">Let’s Connect!</button> <!-- 제출 버튼(2칸 전체) -->
     </form>
   </section>
-
-<!--
-
-  <div class="field"> 
-    <label for="firstName">First Name*</label> 
-    <input id="firstName" type="text" name="firstName" placeholder="First Name*" /> 
-  </div>
-
-  <div class="field"> 
-    <label for="lastName">Last Name*</label>
-    <input id="lastName" type="text" name="lastName" placeholder="Last Name*" />
-  </div>
-
-  <div class="field"> 
-    <label for="email">Email Address*</label>
-    <input id="email" type="email" name="email" placeholder="Email Address*" />
-  </div>
-
-  <div class="field"> 
-    <label for="phone">Phone Number*</label>
-    <input id="phone" type="tel" name="phone" placeholder="Phone Number*" />
-  </div>
-
-  <div class="field"> 
-    <label for="company">Company Name*</label>
-    <input id="company" type="text" name="company" placeholder="Company Name*" />
-  </div>
-
-  <div class="field"> 
-    <label for="role">Role Position*</label>
-    <select id="role" name="role">
-      <option value="">Role Position*</option>
-      <option>Doctor</option>
-      <option>Office Manager</option>
-      <option>Lab Owner/Tech</option>
-      <option>Other</option>
-    </select>
-  </div>
-
-  <div class="field"> 
-    <label for="website">Website</label>
-    <input id="website" type="url" name="website" placeholder="Website" />
-  </div>
-
-  <div class="field">
-    <label for="product">Product*</label>
-    <select id="product" name="product">
-      <option value="">Product*</option>
-      <option>3D Model</option>
-      <option>3D Implant Model</option>
-      <option>Cement-Retained Full Zirconia Implant Crown</option>
-      <option>Screw-Retained Full Zirconia Implant Crown</option>
-      <option>Full Zirconia Crown</option>
-    </select>
-  </div>
-
-  <div class="field span-2"> 
-    <label for="message">Message / Notes (optional)</label>
-    <textarea id="message" name="message" placeholder="Message / Notes (optional)"></textarea>
-  </div>
-
-  <button type="submit" class="span-2">Let’s Connect!</button> 
-</form>
-
--->
 
 
 <!-- ✅ FOOTER SECTION -->
