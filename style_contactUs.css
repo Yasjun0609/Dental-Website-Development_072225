@@ -186,6 +186,18 @@ body {
 }
 #cidForm button:hover { filter:brightness(.95); outline:3px solid #fff; } /* 호버 효과 */
 
+
+
+footer {
+  background: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 60px;
+}
+
+
 /* ======================================================================================== */
 /*                             REACTIVE Layout                                   */
 /* ======================================================================================== */
