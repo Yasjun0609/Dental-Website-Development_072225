@@ -1,104 +1,698 @@
-/* ===== Reset & Base ===== */
-*, *::before, *::after { box-sizing: border-box; }
-html, body, h1, h2, p, ul, li { margin:0; padding:0; }
-ul { list-style:none; }
-a { color:inherit; text-decoration:none; }
-html { scroll-behavior: smooth; }
-body { font-family:'Inter',sans-serif; color:#333; background:#fff; line-height:1.6; }
-
-/* 공통 컨트롤 높이(입력/셀렉트 동일) */
-:root { --control-h: 46px; }
-
-/* ===== Header (간단 버전) ===== */
-.site-header { position:sticky; top:0; z-index:100; background:#fff; border-bottom:1px solid #e5e7eb; }
-.nav-menu { max-width:1200px; margin:0 auto; padding:16px 24px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:12px; }
-.nav-links { display:flex; gap:16px; }
-.logo { justify-self:center; }
-.logo img { height:64px; display:block; }
-.login-button { justify-self:end; padding:8px 14px; background:#2c5282; color:#fff; border-radius:8px; font-weight:700; }
-
-/* ===== Contact Card ===== */
-.contact-form {
-  max-width:980px;                  /* 카드 자체 폭 */
-  margin:40px auto;                 /* 중앙 정렬 */
-  padding:36px;                     /* 내부 여백 */
-  background:#cbd5e1;               /* 카드 배경 */
-  border-radius:16px;
-  box-shadow:4px 4px 0 rgba(0,0,0,.25);
+/* Base styles for body */
+/* ========== RESET AND BASE ========== */
+body, h1, h2, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
-.contact-form h1 { font-size:44px; font-weight:800; color:#1f2937; text-align:center; margin-bottom:8px; }
-.contact-form p  { color:#4b5563; text-align:center; margin-bottom:28px; }
-.hidden { display:none; }
-
-/* ===== Form Grid ===== */
-#cidForm{
-  display:grid;
-  grid-template-columns: 1fr 1fr;   /* 카드 안쪽 가로를 정확히 2등분 */
-  gap:16px 24px;                    /* 행/열 간격 */
-  width:100%;                       /* 카드 안쪽을 꽉 채움 */
+html { 
+  scroll-behavior: smooth; /* 해시(#) 앵커 이동 시 스무스 */
 }
 
-/* 각 필드: 라벨 위, 컨트롤 아래 */
-#cidForm .field{ display:flex; flex-direction:column; gap:6px; }
-#cidForm .field label{ color:#111; font-weight:600; font-size:13px; }
-
-/* 컨트롤 공통(폭/높이 통일) */
-#cidForm input,
-#cidForm select,
-#cidForm textarea{
-  width:100%;
-  border:1px solid #cbd5e1;
-  border-radius:8px;
-  background:#fff;
-  padding:10px 12px;
-  outline:none;
-  font:inherit;
-}
-#cidForm input,
-#cidForm select{ height:var(--control-h); line-height:normal; }
-#cidForm textarea{ min-height:160px; resize:vertical; }
-
-/* 포커스 가시성 */
-#cidForm input:focus,
-#cidForm select:focus,
-#cidForm textarea:focus{
-  border-color:#2c5282;
-  box-shadow:0 0 0 3px rgba(44,82,130,.12);
+body {
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* 드롭다운 전용: 입력칸에 화살표 안 붙도록 select만 지정 */
-#cidForm select{
-  appearance:none; -webkit-appearance:none; -moz-appearance:none;
-  padding-right:36px; /* 화살표 공간 */
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 24 24'><path fill='%23677' d='M7 10l5 5 5-5z'/></svg>");
-  background-repeat:no-repeat;
-  background-position:right 12px center;
-  background-size:12px;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/* =================================== */     
+/*         Header styling */
+/* =================================== */
+/* Header styling */
+.site-header {
+  display: flex;
+  justify-content: center;
+  padding: 20px 40px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.site-header .nav-menu{
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+  width: 100%;           /* ⬅︎ 그리드를 가로로 펼쳐서 1fr이 공간을 먹을 수 있게 */
+  max-width: 1200px;     /* ⬅︎ 전체 퍼짐 1200px 제한 */
+  margin: 0 auto;        /* ⬅︎ 가운데 고정 */
+}
+.nav-right{
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo{
+  order: 2;
+  justify-self: center;
+}
+.logo img {
+  height: 80px;
+  display: block;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+  order: 1;
+}
+.nav-links li a {
+  color: #567896;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.nav-links li a:hover {
+  color: #345265;
 }
 
-/* 2칸 폭 요소(메시지/버튼) */
-#cidForm .span-2{ grid-column:1 / -1; max-width:none; }
-
-/* 제출 버튼 */
-#cidForm button{
-  padding:14px;
-  border:none;
-  border-radius:8px;
-  background:#2c5282;
-  color:#fff;
-  font-weight:700;
-  cursor:pointer;
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 10px;
+  background: none;
+  border: none;
+  color: rgb(0, 0, 0);
 }
-#cidForm button:hover{ filter:brightness(.95); }
 
-/* ===== Footer ===== */
-footer{ background:#f4f4f4; padding:20px; text-align:center; font-size:14px; color:#777; margin-top:40px; }
+.login-button {
+  order: 3;
+  padding: 8px 16px;
+  background-color: #567896;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  background-color: #FF7F00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  margin-left: 10px;
+}
 
-/* ===== Responsive ===== */
-/* 모바일: 1열 + 좌우 20px 마진 */
-@media (max-width:600px){
-  .contact-form{ margin:24px 20px; padding:24px; }
-  #cidForm{ grid-template-columns:1fr; gap:12px; }
-  .logo img{ height:56px; }
-  .login-button{ padding:8px 12px; }
+.login-button:hover {
+  background-color: #FF7F00;
+  outline: 3px solid #Ffffff;
+}
+
+
+
+/* =================================== */
+/*   HERO SECTION - Two-column layout  */
+/* =================================== */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 100px;
+  background-color: #ffffff; 
+  flex-wrap: wrap;
+}
+
+/* ✅ hero-text는 Dandy 느낌 카드화 */
+.hero-text {
+  background-color: #f0f2f5;
+  border-radius: 16px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  padding-left: 80px;
+  padding-right: 80px;
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 0px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
+}
+
+/* ✅ 타이틀 & 본문 스타일 보강 */
+.hero-text h1 {
+  text-align: left;
+  font-size: 3rem;
+  font-weight: 450;
+  color: #567896;
+  margin-bottom: 0px;
+  line-height: 60px;
+}
+
+.hero-text p {
+  text-align: left;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0px;
+  padding-bottom: 60px;
+  padding-top:40px
+}
+
+/* ✅ 이메일 + 버튼 정렬 */
+.hero-email {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-email-input[type="email"] {
+  flex: auto;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 4px solid #ccc;
+  border-radius: 8px;
+  min-width: 100px;
+  max-width: 400px;
+}
+
+.hero-email button {
+  flex: auto;
+  display: flex;
+  background-color: #2a5d9f;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  max-width: 150px;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  padding-bottom: 10px;
+}
+
+.hero-email button:hover {
+  
+  background-color: #2c5282;
+
+  outline: 3px solid #Ffffff;
+}
+
+
+
+/* =================================== */
+/*           Feature SECTION          */
+/* =================================== */
+.feature-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 40px;
+}
+
+.feature-row .text-block,
+.feature-row .image-block {
+  flex: 1;
+  max-width: 500px;
+}
+
+.feature-row .text-block {
+  display: flex;            /* enables flex layout inside text-block */
+  flex-direction: column;   /* stack h2 on top, then p below */
+  justify-content: flex-start; /* push content to the top */
+}
+
+.feature-row .text-block h2 {
+  margin-top: 0;   /* remove any default margin pushing it down */
+}
+
+.feature-row .text-block h2 {
+  color: #567896;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.feature-row .text-block p {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.feature-row .image-block img {
+  aspect-ratio: 4/3;
+  width: 100%;
+  border-radius: 8px;
+  /*box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);*/
+}
+
+.feature-row .row-right {
+  flex-direction: row-reverse;
+}
+
+
+/* =================================== */
+/*           WhyCID SECTION          */
+/* =================================== */
+
+.whyCID {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.whyCID h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #567896;
+  padding-top: 40px;
+  margin-bottom: 20px;
+}
+
+
+/* =================================== */
+/*           Products SECTION          */
+/* =================================== */
+.products {
+  justify-content: center;
+  align-items: center;
+  padding: 60px 40px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products h2 {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  color: #567896;
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 0.5fr));
+  column-gap: clamp(20px,4vw,60px);
+  row-gap: 40px;
+  justify-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.product-card:hover {
+  transform: scale(1.1); /* blowout effect */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  outline: 8px solid #2c5282;
+}
+
+.product-card img {
+  aspect-ratio: 4/3;
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.product-type {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.product-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  text-align: center;
+
+  display: -webkit-box;         /* enable line clamping */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;        /* show two lines max */
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  line-height: 1.2;             /* compute exact two-line height */
+  min-height: calc(1.2em * 2);  /* reserve space for 2 lines (keeps rows aligned) */
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2a5d9f;
+  margin-top: auto;
+}
+.product-card-6{
+  width: 300px;                 /* same as .product-card */
+  height: 400px;                /* same as .product-card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background-color: #2a5d9f;
+  color: rgb(253, 236, 236);
+  font-weight: 600;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;       /* match sizing model */
+}
+.product-card-6 h1 {
+  color:rgb(255, 255, 255);
+  padding: 0 16px;
+  text-wrap: nowrap;
+}
+
+.product-card-6:hover{
+  outline: 8px solid #2c5282;
+  transform: scale(1.1); /* blowout effect */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+
+
+/* =================================== */
+/*           Connections SECTION          */
+/* =================================== */
+
+.connections {
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 60px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.conntections_text{
+   padding-bottom: 0px;
+}
+.connections h2 {
+  padding-top: 100px;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  color: #567896;
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.connections p{
+  text-align: left;
+    font-size: 1rem;
+    padding-bottom: 60px;
+}
+
+/* =============== Connections Conveyor =============== */
+
+/* Section-level variables (desktop defaults) */
+.connections {
+  --conn-speed: 40s;     /* desktop belt speed (higher = slower) */
+  --conn-gap: 32px;      /* gap between cards */
+  --card-w: 300px;       /* match your product-card width */
+  --card-h: 400px;       /* match your product-card height */
+}
+
+.connection-grid {
+  position: relative;
+  overflow: hidden;      /* hide overflow to create conveyor window */
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.connection-track {
+  display: flex;
+  gap: var(--conn-gap);
+  animation-name: scrollLogos;         /* linear infinite belt */
+  animation-duration: var(--conn-speed);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;              /* performance hint */
+}
+
+/* Card: same footprint as product card */
+.connection-card {
+  width: var(--card-w);
+  height: var(--card-h);
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829); /* same style as product cards */
+  display: flex;
+  flex-direction: column;              /* image + label stack */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 16px;
+  transition: transform .3s ease, box-shadow .3s ease, outline-color .3s ease;
+}
+
+/* Logo: keep aspect ratio, no crop */
+.connection-card img {
+  max-width: 90%;
+  max-height: 70%;
+  object-fit: contain;                 /* don't crop or stretch */
+  display: block;
+}
+
+/* Optional small label under the logo */
+.connection-card span {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Hover effects: keep as requested */
+.connection-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 28px rgba(0,0,0,.35);
+  outline: 8px solid #2c5282;         /* same outline color as products */
+}
+
+/* Pause the belt when the whole area is hovered */
+.connection-grid:hover .connection-track { animation-play-state: paused; }
+
+/* Seamless loop: move by half because items are duplicated once */
+@keyframes scrollLogos {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+/*
+.connection-grid{
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding-top: 60px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.connection-track{
+  display: flex;
+  animation: scrollLogos 10s linear infinite;
+  gap: 32px;
+}
+
+.connection-track img {
+  height: 300px;
+  width: 200px;
+  aspect-ratio: 4/3;
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
+}
+
+.connection-track img:hover {
+  transform: scale(1.1); 
+  outline: 8px solid #2c5282;
+}
+.connection-grid:hover .connection-track {
+  animation-play-state: paused;
+}
+@keyframes scrollLogos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}*/
+
+
+/* =================================== */
+/*           Footer SECTION          */
+/* =================================== */
+
+footer {
+  background: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 60px;
+}
+
+/* ======================================================================================== */
+/*                             REACTIVE Layout                                   */
+/* ======================================================================================== */
+/* ──────────────────────────────
+  📱 MOBILE (iPhone 등, ≤600px)
+────────────────────────────── */
+@media (min-width: 240px) and (max-width: 600px) {
+ 
+  .nav-menu {
+    width: 100%;
+    position:relative;
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 8px;
+    right: auto;
+    background: #fff;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(44, 44, 44, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+  .logo{
+    justify-self: center;
+    grid-column: 2;
+    margin:0;
+  }
+  .login-button {
+    display: none;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+
+  .hero{
+      padding: 40px 20px;
+      flex-wrap: wrap;
+  }
+  .hero-text{
+    padding-top: 40px;
+    padding-bottom: 60px;
+    padding-left: 40px;
+    padding-right: 40px; 
+  }
+  .hero-text h1 {
+  text-align: left;
+  font-size: 2.4rem;
+  font-weight: 450;
+  color: #567896;
+  margin-bottom: 0px;
+  line-height: 50px;
+}
+.hero-text p{
+  padding-top:10px;
+  padding-bottom: 40px;
+}
+
+  .feature-row,
+  .feature-row .row-right {
+    flex-direction: row !important;
+    text-align: center;
+  }
+
+  .hero-text,
+  .text-block,
+  .image-block {
+    width: auto;
+  }
+  .hero-text p {
+    text-wrap: wrap;
+  }
+
+.hero-email-input[type="email"] {
+  flex: auto;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 4px solid #ccc;
+  border-radius: 8px;
+  min-width: 100px;
+  max-width: 400px;
+}
+
+.hero-email button {
+  flex: auto;
+  display: flex;
+  background-color: #2a5d9f;
+  text-align: center;
+  justify-content: center;
+  max-width: 400px;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  padding-bottom: 10px;
+}
+
+  .feature-row .image-block{
+    display: none;
+  }
+  .feature-row .image-block img {
+    display: none;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(180px, 1fr));
+    gap: 10px;
+    justify-items: center;
+    max-width: 240px;
+    padding: 40 30px;
+  }
+  .hero-text p{
+    text-wrap: wrap;
+  }
+
+  .feature-row .image-block img {
+    max-width: 95%;
+  }
+
+  .connections { --conn-speed: 22s; }  /* faster belt for mobile */
+
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .connection-track { animation: none; }
 }
