@@ -52,20 +52,27 @@
             It doesn’t matter
         </h1>
         <p>We make crowns, implants, and dentures with file from every type of scanners.</p>
-        
-        <form class = "hero-email">
-            <input type="email" placeholder="Email Address" class="hero-email-input" ></input>
-                    <form class = "hero-button">
-            <button> Let's Connect! </button> </form>
-            </form>
-            
-        
-            
-    </div>
 
-
+            <!-- ✅ 하나의 form만 사용: submit 시 contactUs.html로 이동 -->
+    <form class="hero-email" action="contactUs.html" method="get"> <!-- ← 이동 목적지는 여기 -->
+      <input type="email" placeholder="Email Address" class="hero-email-input" />
+      <div class="hero-button"> <!-- 기존 버튼 스타일 클래스 그대로 유지 -->
+        <button type="submit">Let's Connect!</button> <!-- submit → action으로 이동 -->
+      </div>
+    </form>
+  </div>
 </section>
-
+<!--        
+        <form class = "hero-email">
+            <input type="email" placeholder="Email Address" class="hero-email-input" >
+          </input>
+            <form class = "hero-button">
+              <button> Let's Connect! </button> 
+            </form>
+        </form>                        
+    </div>
+</section>
+-->
 <!-- ✅ Why CID SECTION -->
 <section class="whyCID" data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="top-bottom" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">  
     <h1> <strong> CID, Future Digital Dental Lab </strong></h1>
@@ -186,45 +193,7 @@
 
 </section>
 
-<!-- ✅ CONNECTIONS SECTION -->
-<!-- <section class="connections" id = "connections" data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">
-    <div class = "connections_text">
-        <h2><strong>Digital Connection Source</strong></h2>
-        <p> Doctors can send digital impression directly to CID Digital Dentistry with most major intraoral scanners.
-        Find the name of your scanner below and follow the instructions on how to add CID Digital Dentistry on your account.  
-        </p>
-    </div>
 
-  <div class = "connection-grid">
-    <div class = "connection-track">
-        <a href= "https://bff.cloud.myitero.com/login-legacy" target="_blank">
-            <img src="images/Itero_logo.jpg" alt="iTero">
-        </a>
-
-        <a href="https://portal.3shapecommunicate.com/login" target="_blank">
-            <img src="images/newenwewn.png" alt="3Shape">
-        </a>
-
-        <a href="https://envistab2c.b2clogin.com/envistab2c.onmicrosoft.com/b2c_1a_signup_signin/oauth2/v2.0/authorize?scope=openid&response_type=id_token&client_id=82e7ed62-f273-469d-8d97-8a0d6c0cb873&state=eyJzb3VyY2UiOiJob21lcGFnZSIsImRlc3QiOiJodHRwczpcL1wvZGVudGFsY29ubmVjdC5kZXhpcy5jb21cLyIsInN0YXRlIjoiNjc1YzdkYzQzZTRiNSJ9&redirect_uri=https%3A%2F%2Fdentalconnect.dexis.com&ui_locales=ko&prompt=login" target="_blank">
-            <img src="images/dexis.png" alt="Dexis">
-        </a>
-        
-        <a href="https://www.meditlink.com/login" target="_blank">
-            <img src="images/Logo_MEDIT_color@4x.png" alt="Medit">
-        </a>
-
-        <a href="https://sts.connectcasecenter.com/core/login-spa/login?ReturnUrl=%2Fcore%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dcustomer_fe%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520offline_access%2520portal_api%26redirect_uri%3Dhttps%253A%252F%252Fauthenticationservice.connectcasecenter.com%252Fauth%252Flogin%252Fpostlogin%252FcustomerFe%26state%3DOYoY598UBRjhIpq_wsTux2warn0Ul2MNqZ7FC0ZAihk%26nonce%3DhLUna1Bz-iVcK5bjiHEexYcWcMbamd7QcMbH1Vrn49k%26response_mode%3Dform_post" target="_blank">
-            <img src="images/Sirona-1.jpg" alt="Sirona">
-        </a>
-
-        <a href="#" target="_blank">
-            <img src="images/Helious.png" alt="Helios">
-        </a>
-    </div>
-  </div>
-
-</section>
--->
 
 <!-- CONNECTIONS: Conveyor Cards -->
 <section class="connections" id="connections" data-aos="fade-up" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">
