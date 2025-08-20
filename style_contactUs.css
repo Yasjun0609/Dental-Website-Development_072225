@@ -139,10 +139,10 @@ body {
 /* === 각 필드(라벨+컨트롤) === */
 #cidForm .field { 
   width: 100%;
-  font-size: 24px;
 } /* 라벨 위, 컨트롤 아래 */
 
-#cidForm .field label { color:#111; font-weight:600; font-size:13px; } /* 검은 라벨(요청사항) */
+#cidForm .field label { 
+  color:#111; font-weight:600; font-size:13px; } /* 검은 라벨(요청사항) */
 
 /* === 입력/셀렉트/텍스트영역 공통 === */
 #cidForm input,

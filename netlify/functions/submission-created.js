@@ -5,7 +5,7 @@ export const handler = async (event) => {
     // ⬇️ Netlify가 보내는 페이로드(JSON 문자열) 파싱
     const payload = JSON.parse(event.body);                        // 전체 이벤트
     const data = payload?.payload?.data || {};                     // 폼 필드(key-value)
-    const formName = payload?.payload?.form_name || "CID-Contact"; // 폼 이름(표시 용도)
+    const formName = payload?.payload?.form_name || "CID-Contact-sendrequest"; // 폼 이름(표시 용도)
     const ip = payload?.payload?.ip || "N/A";                      // 제출자 IP(참고)
 
     // ⬇️ 빈 값 보정 함수(값이 없거나 공백이면 N/A로 대체)
