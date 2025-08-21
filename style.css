@@ -680,7 +680,9 @@ footer {
   .feature-row .image-block img {
     max-width: 95%;
   }
-
+.conntections_text p{
+  font-size: 20px;
+}
   .connections { --conn-speed: 22s; }  /* faster belt for mobile */
 
 }
