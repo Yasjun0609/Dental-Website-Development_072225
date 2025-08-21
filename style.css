@@ -647,7 +647,18 @@ footer {
   outline: 3px solid #Ffffff;
 }
 
+.feature-row .text-block h2 {
+  color: #567896;
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
 
+.feature-row .text-block p {
+  color: #444;
+  font-size: 20px;
+  line-height: 1.6;
+}
   .feature-row .image-block{
     display: none;
   }
