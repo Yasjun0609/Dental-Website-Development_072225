@@ -187,16 +187,14 @@ body {
   font-weight: 600;
   border: none;
   border-radius: 8px;
-  padding: 12px 20px;
   cursor: pointer;
   white-space: nowrap;
-  padding-bottom: 10px;
+  padding: 12px 20px;
 }
 
 .hero-email button:hover {
   
   background-color: #2c5282;
-
   outline: 3px solid #Ffffff;
 }
 
@@ -304,6 +302,7 @@ body {
   margin: 0 auto;
 }
 
+
 .product-card {
   background: #fff;
   border-radius: 6px;
@@ -311,8 +310,6 @@ body {
   padding: 20px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 300px;
-  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -615,7 +612,7 @@ footer {
     text-wrap: wrap;
   }
 .hero-email{
-  --field-w: clamp(350px, 42vw, 440px);
+  --field-w: clamp(300px, 42vw, 440px);
 }
 .hero-email-input[type="email"] {
   flex: auto;
@@ -623,26 +620,33 @@ footer {
   font-size: 16px;
   border: 4px solid #ccc;
   border-radius: 8px;
-  min-width: 100px;
-  width: var(--field-width-email);
+  min-width: var(--field-w);
+  max-width: fit-content;
 }
 
 .hero-email button {
   flex: auto;
   display: flex;
   background-color: #2a5d9f;
-  text-align: center;
   justify-content: center;
-  width: var(--field-width-email);
+  justify-items: center;
+  text-align: center;
+  min-width: var(--field-w);  /*max-width: var(--field-width-email);*/
   color: white;
   font-weight: 600;
   border: none;
   border-radius: 8px;
-  padding: 12px 20px;
   cursor: pointer;
   white-space: nowrap;
-  padding-bottom: 10px;
+  padding: 12px 20px;
 }
+
+.hero-email button:hover {
+  
+  background-color: #2c5282;
+  outline: 3px solid #Ffffff;
+}
+
 
   .feature-row .image-block{
     display: none;
@@ -670,7 +674,229 @@ footer {
 
 }
 
+
+
+
+
+
 /* Respect user motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .connection-track { animation: none; }
+}
+
+
+
+/* ──────────────────────────────
+  📱 TABLET 태블릿(600~1024px)
+────────────────────────────── */
+@media (min-width: 601px) and (max-width: 1024px) {
+  
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 100px;
+  flex-wrap: wrap;
+}
+
+/* ✅ hero-text는 Dandy 느낌 카드화 */
+.hero-text {
+  background-color: #f0f2f5;
+  border-radius: 16px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  padding-left: 80px;
+  padding-right: 80px;
+  max-width: fit-content;
+  width: 100%;
+  margin-bottom: 0px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
+}
+
+/* ✅ 타이틀 & 본문 스타일 보강 */
+.hero-text h1 {
+  text-align: left;
+  font-size: 60px;
+  font-weight: 400;
+  color: #567896;
+  margin-bottom: 0px;
+  line-height: 70px;
+}
+.hero-text h1 strong{
+  font-weight: 800;
+}
+
+.hero-text p {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0px;
+  padding-bottom: 60px;
+  padding-top:40px;
+  text-wrap: wrap;
+}
+
+/* ✅ 이메일 + 버튼 정렬 */
+.hero-email {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-email-input[type="email"] {
+  flex: auto;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 4px solid #ccc;
+  border-radius: 8px;
+  min-width: 100px;
+  max-width: 400px;
+}
+
+.hero-email button {
+  flex: auto;
+  display: flex;
+  background-color: #2a5d9f;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  max-width: 150px;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 12px 20px;
+}
+
+.hero-email button:hover {
+  
+  background-color: #2c5282;
+
+  outline: 3px solid #Ffffff;
+}
+
+/* =================================== */
+/*           Products SECTION          */
+/* =================================== */
+.products {
+  justify-content: center;
+  align-items: center;
+  padding: 60px 40px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products h2 {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  color: #567896;
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 뷰포트에 맞춰 1~3열 자동 */
+  /*column-gap: clamp(16px, 10vw, 20px);*/
+  column-gap: 40px;
+  row-gap: 40px;
+  justify-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.product-card:hover {
+  transform: scale(1.1); /* blowout effect */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  outline: 8px solid #2c5282;
+}
+
+.product-card img {
+  aspect-ratio: 4/3;
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.product-type {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.product-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  text-align: center;
+
+  display: -webkit-box;         /* enable line clamping */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;        /* show two lines max */
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  line-height: 1.2;             /* compute exact two-line height */
+  min-height: calc(1.2em * 2);  /* reserve space for 2 lines (keeps rows aligned) */
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2a5d9f;
+  margin-top: auto;
+}
+.product-card-6{
+  width: 300px;                 /* same as .product-card */
+  height: 400px;                /* same as .product-card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background-color: #2a5d9f;
+  color: rgb(253, 236, 236);
+  font-weight: 600;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;       /* match sizing model */
+}
+.product-card-6 h1 {
+  color:rgb(255, 255, 255);
+  padding: 0 16px;
+  text-wrap: nowrap;
+}
+
+.product-card-6:hover{
+  outline: 8px solid #2c5282;
+  transform: scale(1.1); /* blowout effect */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+
+
 }
