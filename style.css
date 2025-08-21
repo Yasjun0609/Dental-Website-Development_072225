@@ -630,7 +630,7 @@ footer {
   justify-content: center;
   justify-items: center;
   text-align: center;
-  min-width: var(--field-w);  /*max-width: var(--field-width-email);*/
+  width:100%;
   color: white;
   font-weight: 600;
   border: none;
