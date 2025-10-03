@@ -69,4 +69,5 @@ export const handler = async (event) => {
     console.error("Function error:", err); // 에러 로그
     return { statusCode: 500, body: "error" }; // 서버 에러
   }
+  
 };
