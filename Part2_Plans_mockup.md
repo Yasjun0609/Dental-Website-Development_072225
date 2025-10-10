@@ -66,3 +66,13 @@ whether in an 'instance' or else.
 
 Oct 6 2026 Conclusion: It would be an excuse to say that you can't work on the server-end cuz we dont have full access to domain. 
 
+
+
+Oct 9 2026
+0) 즉시 확인(오늘)
+
+ 도메인 상태 확정: redemption/갱신 필요 여부 확인(도메인 소유자에게 문의).
+ - completed
+
+ 스테이징 주소 고정: Netlify 기본 도메인(*.netlify.app)로 계속 개발/검수 진행.
+ - completed
