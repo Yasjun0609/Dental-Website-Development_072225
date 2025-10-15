@@ -76,3 +76,8 @@ Oct 9 2026
 
  스테이징 주소 고정: Netlify 기본 도메인(*.netlify.app)로 계속 개발/검수 진행.
  - completed
+
+
+
+ 3rd week  October 2025
+ 
