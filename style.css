@@ -575,7 +575,10 @@ footer {
   }
 
   .hero{
-      padding: 40px 20px;
+    padding-top: 160px;
+    padding-bottom: 60px;
+    padding-left: 32px;
+    padding-right: 32px; 
       flex-wrap: wrap;
   }
   .hero-text{
@@ -625,12 +628,12 @@ footer {
   flex: auto;
   padding: 8px 12px;
   font-size: 16px;
-  border: 4px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 8px;
-  width:100%
+  width:100%z
 }
 
-.hero-email button {
+.hero-email button { /* Fill the box, but right now, its width of the text inside so Need Workaround. */
   flex: auto;
   display: flex;
   background-color: #2a5d9f;
@@ -819,15 +822,26 @@ footer {
   margin-bottom: 40px;
 }
 
-.product-grid {
+/* .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 뷰포트에 맞춰 1~3열 자동 */
   /*column-gap: clamp(16px, 10vw, 20px);*/
-  column-gap: 40px;
+/*  column-gap: 40px;
+  row-gap: 40px;
+  justify-items: center;
+  justify-content: center;
+  max-width: 750px;
+  margin: 0 auto;
+}                              OBSOLETE Jan 29th FB    */ 
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  column-gap: clamp(20px,4vw,60px);
   row-gap: 40px;
   justify-items: center;
   justify-content: center;
   max-width: 1000px;
+  min-width: 601px;
   margin: 0 auto;
 }
 
