@@ -1,1299 +1,982 @@
-/* Base styles for body */
-/* ========== RESET AND BASE ========== */
-body, h1, h2, p, ul, li, a {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
-html { 
-  scroll-behavior: smooth; /* 해시(#) 앵커 이동 시 스무스 */
-}
-
-body {
-  background-color: #f6faff;
-  color: #333;
-  line-height: 1.6;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-/* =================================== */     
-/*         Header styling */
-/* =================================== */
-/* Header styling */
-.site-header {
-  display: flex;
-  justify-content: center;
-  padding: 20px 40px;
-  background: white;
-  border-bottom: 1px solid #ddd;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-.site-header .nav-menu{
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: flex-end;
-  gap: 20px;
-  width: 100%;           /* ⬅︎ 그리드를 가로로 펼쳐서 1fr이 공간을 먹을 수 있게 */
-  max-width: 1200px;     /* ⬅︎ 전체 퍼짐 1200px 제한 */
-  margin: 0 auto;        /* ⬅︎ 가운데 고정 */
-}
-.nav-right{
-  justify-self: end;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.logo{
-  order: 2;
-  justify-self: center;
-}
-.logo img {
-  height: 80px;
-  display: block;
-}
-.nav-links {
-  display: flex;
-  gap: 20px;
-  order: 1;
-}
-.nav-links li a {
-  color: #567896;
-  font-size: 24px;
-  transition: color 0.3s;
-}
-.nav-links li a:hover {
-  color: #345265;
-}
-
-.hamburger {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-  margin-left: 10px;
-  background: none;
-  border: none;
-  color: rgb(0, 0, 0);
-}
-
-.login-button {
-  order: 3;
-  padding: 8px 16px;
-  background-color: #567896;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  background-color: #FF7F00;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-  margin-left: 10px;
-}
-
-.login-button:hover {
-  background-color: #FF7F00;
-  outline: 3px solid #Ffffff;
-}
-
-
-
-/* =================================== */
-/*   HERO SECTION - Two-column layout  */
-/* =================================== */
-
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 100px 100px;
-  flex-wrap: wrap;
-}
-
-/* ✅ hero-text는 Dandy 느낌 카드화 */
-.hero-text {
-  background-color: #f0f2f5;
-  border-radius: 16px;
-  padding-top: 60px;
-  padding-bottom: 80px;
-  padding-left: 80px;
-  padding-right: 80px;
-  max-width: fit-content;
-  width: 100%;
-  margin-bottom: 0px;
-  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
-}
-
-/* ✅ 타이틀 & 본문 스타일 보강 */
-.hero-text h1 {
-  text-align: left;
-  font-size: 100px;
-  font-weight: 400;
-  color: #567896;
-  margin-bottom: 0px;
-  line-height: 100px;
-}
-.hero-text h1 strong{
-  font-weight: 1000;
-}
-
-.hero-text p {
-  text-align: left;
-  font-size: 32px;
-  font-weight: 300;
-  color: #333;
-  margin-bottom: 0px;
-  padding-bottom: 60px;
-  padding-top:40px;
-  text-wrap: wrap;
-}
-
-/* ✅ 이메일 + 버튼 정렬 */
-.hero-email {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.hero-email-input[type="email"] {
-  flex: 1 1 20rem;
-  padding: 12px 20px;
-  font-size: 24px;
-  border: 4px solid #ccc;
-  border-radius: 8px;
-  min-width: 100px;
-  max-width: 1600px;
-}
-
-.hero-email button {
-  flex: 0 0 auto;
-  height: 100%;
-  display: flex;
-  background-color: #2a5d9f;
-  justify-self: center;
-  align-self: center;
-  justify-content: center;
-  text-align: center;
-  max-width: 300px;
-  color: white;
-  font-size: 20px;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  white-space: nowrap;
-  padding: 16px 30px;
-}
-
-.hero-email button:hover {
-  
-  background-color: #2c5282;
-  outline: 3px solid #Ffffff;
-}
-
-
-
-/* =================================== */
-/*           Feature SECTION          */
-/* =================================== */
-.feature-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  padding: 60px 40px;
-}
-
-.feature-row .text-block,
-.feature-row .image-block {
-  flex: 1;
-  max-width: 500px;
-}
-
-.feature-row .text-block {
-  display: flex;            /* enables flex layout inside text-block */
-  flex-direction: column;   /* stack h2 on top, then p below */
-  justify-content: flex-start; /* push content to the top */
-}
-
-.feature-row .text-block h2 {
-  margin-top: 0;   /* remove any default margin pushing it down */
-}
-
-.feature-row .text-block h2 {
-  color: #567896;
-  font-size: 40px;
-  font-weight: 400;
-  margin-bottom: 10px;
-}
-
-.feature-row .text-block p {
-  color: #444;
-  font-size: 20px;
-  line-height: 1.6;
-}
-
-.feature-row .image-block img {
-  aspect-ratio: 4/3;
-  width: 100%;
-  border-radius: 8px;
-  /*box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);*/
-}
-
-.feature-row .row-right {
-  flex-direction: row-reverse;
-}
-
-
-/* =================================== */
-/*           WhyCID SECTION          */
-/* =================================== */
-
-.whyCID {
-  padding: 60px 40px;
-  text-align: center;
-}
-
-.whyCID h1 {
-  font-size: 60px;
-  font-weight: 400;
-  color: #567896;
-  padding-top: 40px;
-  margin-bottom: 20px;
-}
-
-
-/* =================================== */
-/*           Products SECTION          */
-/* =================================== */
-.products {
-  justify-content: center;
-  align-items: center;
-  padding: 60px 40px;
-  text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.products h2 {
-  padding-top: 100px;
-  padding-bottom: 80px;
-  color: #567896;
-  font-size: 48px;
-  font-weight: 400;
-  margin-bottom: 40px;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(180px, 0.5fr));
-  column-gap: clamp(20px,4vw,60px);
-  row-gap: 40px;
-  justify-items: center;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-
-.product-card {
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-
-.product-card:hover {
-  transform: scale(1.1); /* blowout effect */
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-  outline: 8px solid #2c5282;
-}
-
-.product-card img {
-  aspect-ratio: 4/3;
-  width: auto;
-  height: 200px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.product-type {
-  font-size: 18px;
-  color: #888;
-  margin-bottom: 5px;
-}
-
-.product-name {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #333;
-  text-align: center;
-
-  display: -webkit-box;         /* enable line clamping */
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;        /* show two lines max */
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  line-height: 1.2;             /* compute exact two-line height */
-  min-height: calc(1.2em * 2);  /* reserve space for 2 lines (keeps rows aligned) */
-}
-
-.product-price {
-  font-size: 20px;
-  font-weight: bold;
-  color: #2a5d9f;
-  margin-top: auto;
-}
-.product-card-6{
-  width: 300px;                 /* same as .product-card */
-  height: 400px;                /* same as .product-card */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  background-color: #2a5d9f;
-  color: rgb(253, 236, 236);
-  font-weight: 600;
-  border-radius: 6px;
-  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box;       /* match sizing model */
-}
-.product-card-6 h1 {
-  color:rgb(255, 255, 255);
-  padding: 0 16px;
-  text-wrap: nowrap;
-}
-
-.product-card-6:hover{
-  outline: 8px solid #2c5282;
-  transform: scale(1.1); /* blowout effect */
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-}
-
-
-
-/* =================================== */
-/*           Connections SECTION          */
-/* =================================== */
-
-.connections {
-  justify-items: center;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  padding: 60px 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.conntections_text{
-   padding-bottom: 0px;
-}
-.connections h2 {
-  padding-top: 100px;
-  padding-bottom: 20px;
-  justify-content: center;
-  align-items: center;
-  color: #567896;
-  font-size: 48px;
-  font-weight: 400;
-  margin-bottom: 30px;
-}
-.connections p{
-  text-align: left;
-    font-size: 20px;
-    padding-bottom: 60px;
-}
-
-/* =============== Connections Conveyor =============== */
-
-/* Section-level variables (desktop defaults) */
-.connections {
-  --conn-speed: 40s;     /* desktop belt speed (higher = slower) */
-  --conn-gap: 32px;      /* gap between cards */
-  --card-w: 300px;       /* match your product-card width */
-  --card-h: 400px;       /* match your product-card height */
-}
-
-.connection-grid {
-  position: relative;
-  overflow: hidden;      /* hide overflow to create conveyor window */
-  display: grid;
-  place-items: center;
-  max-width: 100%;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.connection-track {
-  display: flex;
-  gap: var(--conn-gap);
-  animation-name: scrollLogos;         /* linear infinite belt */
-  animation-duration: var(--conn-speed);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  will-change: transform;              /* performance hint */
-}
-
-/* Card: same footprint as product card */
-.connection-card {
-  width: var(--card-w);
-  height: var(--card-h);
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829); /* same style as product cards */
-  display: flex;
-  flex-direction: column;              /* image + label stack */
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  box-sizing: border-box;
-  padding: 16px;
-  transition: transform .3s ease, box-shadow .3s ease, outline-color .3s ease;
-}
-
-/* Logo: keep aspect ratio, no crop */
-.connection-card img {
-  max-width: 90%;
-  max-height: 70%;
-  object-fit: contain;                 /* don't crop or stretch */
-  display: block;
-}
-
-/* Optional small label under the logo */
-.connection-card span {
-  margin-top: 10px;
-  font-weight: 600;
-  color: #333;
-}
-
-/* Hover effects: keep as requested */
-.connection-card:hover {
-  transform: scale(1.1);
-  box-shadow: 0 12px 28px rgba(0,0,0,.35);
-  outline: 8px solid #2c5282;         /* same outline color as products */
-}
-
-/* Pause the belt when the whole area is hovered */
-.connection-grid:hover .connection-track { animation-play-state: paused; }
-
-/* Seamless loop: move by half because items are duplicated once */
-@keyframes scrollLogos {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-
-/* =================================== */
-/*           Footer SECTION          */
-/* =================================== */
-
-footer {
-  background: #f4f4f4;
-  padding: 20px;
-  text-align: center;
-  font-size: 14px;
-  color: #777;
-  margin-top: 60px;
-}
-
-/* ======================================================================================== */
-/*                             REACTIVE Layout                                   */
-/* ======================================================================================== */
-/* ──────────────────────────────
-  📱 MOBILE (iPhone 등, ≤600px)
-────────────────────────────── */
-@media (min-width: 240px) and (max-width: 600px) {  /* 📱 MOBILE  */
- 
-  .nav-menu {
-    width: 100%;
-    position:relative;
-    grid-template-columns: 1fr auto 1fr;
-  }
-
-  .hamburger {
-    display: block;
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
-  }
-
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 8px;
-    right: auto;
-    background: #fff;
-    flex-direction: column;
-    box-shadow: 0 10px 20px rgba(44, 44, 44, 0.2);
-    padding: 10px;
-    border-radius: 8px;
-    z-index: 1000;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-  .logo{
-    justify-self: center;
-    grid-column: 2;
-    margin:0;
-  }
-
-  .login-button {
-    display: none;
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
-  }
-  
-  /*
-  .login-button {
-  order: 3;
-  padding: 8px 16px;
-  background-color: #567896;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  background-color: #FF7F00;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-  margin-left: 10px;
-}
-  */
-
-  .hero{
-    padding-top: 160px;
-    padding-bottom: 60px;
-    padding-left: 32px;
-    padding-right: 32px; 
-      flex-wrap: wrap;
-  }
-  .hero-text{
-    padding-top: 40px;
-    padding-bottom: 60px;
-    padding-left: 40px;
-    padding-right: 40px; 
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .hero-text h1 {
-  text-align: left;
-  font-size: 42px;
-  font-weight: 400;
-  color: #567896;
-  margin-bottom: 0px;
-  line-height: 50px;
-  }
-.hero-text p{
-  text-align: left;
-  font-size: 14px;
-  font-weight: 400;
-  color: #333;
-  margin-bottom: 0px;
-  padding-top:10px;
-  padding-bottom: 10px;
-}
-
-  .feature-row,
-  .feature-row .row-right {
-    flex-direction: row !important;
-    text-align: center;
-  }
-
-  .hero-text,
-  .text-block,
-  .image-block {
-    width: auto;
-  }
-  .hero-text p {
-    text-wrap: wrap;
-  }
-  /*
-.hero-email{
-  --field-w: clamp(300px, 42vw, 440px);
-}
-  */
-  /*
-.hero-email-input[type="email"] {
-  flex: auto;
-  padding: 8px 12px;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  width:100%z
-}
-  */
-/*
-.hero-email button { 
-  flex: auto;
-  display: flex;
-  background-color: #2a5d9f;
-  justify-content: center;
-  justify-items: center;
-  text-align: center;
-  width:100%;
-  color: white;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  white-space: nowrap;
-  padding: 12px 20px;
-  box-sizing: border-box;
-}*/
-/*
-.hero-email {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.hero-email-input[type="email"] {
-  flex: 1 1 20rem;
-  padding: 8px 12px;
-  font-size: 16px;
-  border: 4px solid #ccc;
-  border-radius: 8px;
-  min-width: 100px;
-  max-width: 600px;
-}
-
-.hero-email button {
-  flex: 0 0 auto;
-  height: 100%;
-  display: flex;
-  background-color: #2a5d9f;
-  justify-self: center;
-  align-self: center;
-  justify-content: center;
-  text-align: center;
-  min-width: ; 
-  max-width: 600px;
-  color: white;
-  font-size: 20px;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  white-space: nowrap;
-  padding: 12px 20px;
-}
-*/
-
-  .hero-email{
-    display: flex;
-    flex-direction: column;     /* ✅ 세로로 쌓기 */
-    align-items: stretch;       /* ✅ 자식들 가로폭 꽉 채우기 */
-    gap: 12px;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .hero-email-input[type="email"]{
-    width: 100%;                /* ✅ 버튼과 동일 폭 */
-    max-width: 600px;           /* (선택) 너가 원하면 제한 */
-    max-height: min-content;
-    box-sizing: border-box;
-    padding: 8px 12px;
-    font-size: 16px;
-    border: 4px solid #ccc;
-    border-radius: 8px;
-  }
-
-  .hero-email button{
-    width: 100%;                /* ✅ input과 동일 폭 */
-    max-width: 600px;           /* input이랑 동일하게 */
-    box-sizing: border-box;
-
-    /* ❌ 이건 제거해야 동일폭 됨 */
-    min-width: 0;               /* 기존 350px 때문에 깨졌던 부분 방지 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #2a5d9f;
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    white-space: nowrap;
-    padding: 12px 20px;
-  }
-}
-
-
-.hero-email button:hover {
-  
-  background-color: #2c5282;
-  outline: 3px solid #Ffffff;
-}
-
-.feature-row .text-block h2 {
-  color: #567896;
-  font-size: 40px;
-  font-weight: 400;
-  margin-bottom: 10px;
-}
-
-.feature-row .text-block p {
-  color: #444;
-  font-size: 20px;
-  line-height: 1.6;
-}
-  .feature-row .image-block{
-    display: none;
-  }
-  .feature-row .image-block img {
-    display: none;
-  }
-
-/* =================================== */
-/*           WhyCID SECTION  MOBILE        */
-/* =================================== */
-
-.whyCID {
-  padding: 60px 40px;
-  text-align: center;
-}
-
-.whyCID h1 {
-  font-size: 40px;
-  font-weight: 400;
-  color: #567896;
-  padding-top: 40px;
-  margin-bottom: 20px;
-}
-/* =================================== */
-/*           Products SECTION   MOBILE     */
-/* =================================== */
-/*.products {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.products h2 {
-  padding-top: 10px;
-  padding-bottom: 80px;
-  color: #567896;
-  font-size: 48px;
-  font-weight: 400;
-  margin-bottom: 40px;
-}
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(180px, 1fr));
-    gap: 50px;
-    justify-items: center;
-    max-width: 240px;
-    padding: 40px 30px;
-  }
-/*
-/* =================================== */
-/*           Products SECTION          */
-/* =================================== */
-.products {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.products h2 {
-  padding-top: 0px;
-  padding-bottom: 80px;
-  color: #567896;
-  font-size: 48px;
-  font-weight: 400;
-  margin-bottom: 40px;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(180px, 0.5fr));
-  column-gap: clamp(20px,4vw,60px);
-  row-gap: 40px;
-  justify-items: center;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.product-card {
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
-  padding-top: 10px;
-  padding-bottom: 50px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-
-.product-card:hover {
-  transform: scale(1.1); 
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-  outline: 4px solid #2c5282;
-}
-
-.product-card img {
-  padding-top: 50px;
-  aspect-ratio: 4/3;
-  width: auto;
-  height: 200px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.product-type {
-  font-size: 18px;
-  color: #888;
-  margin-bottom: 5px;
-}
-
-.product-name {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #333;
-  text-align: center;
-
-  display: -webkit-box;         
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;        
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  line-height: 1.2;             
-  min-height: calc(1.2em * 2);  
-}
-
-.product-price {
-  font-size: 20px;
-  font-weight: bold;
-  color: #2a5d9f;
-  margin-top: auto;
-}
-.product-card-6{
-  width: 300px;                 
-  height: 400px;                
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  background-color: #2a5d9f;
-  color: rgb(253, 236, 236);
-  font-weight: 600;
-  border-radius: 6px;
-  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box;      
-}
-.product-card-6 h1 {
-  color:rgb(255, 255, 255);
-  padding: 0 16px;
-  text-wrap: nowrap;
-}
-
-.product-card-6:hover{
-  outline: 4px solid #2c5282;
-  transform: scale(1.1); 
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-}
-
-
-
-  .hero-text p{
-    text-wrap: wrap;
-  }
-
-  .feature-row .image-block img {
-    max-width: 95%;
-  }
-
-/* =================================== */
-/*           Connections SECTION          */
-/* =================================== */
-
-.connections {
-  justify-items: center;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  padding: 20px 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.conntections_text{
-   padding-bottom: 0px;
-}
-.connections h2 {
-  padding-top: 0px;
-  padding-bottom: 20px;
-  justify-content: center;
-  align-items: center;
-  color: #567896;
-  font-size: 48px;
-  font-weight: 400;
-  margin-bottom: 30px;
-}
-.connections p{
-  text-align: left;
-    font-size: 20px;
-    padding-bottom: 60px;
-}
-
-/* =============== Connections Conveyor =============== */
-
-/* Section-level variables (desktop defaults) */
-.connections {
-  --conn-speed: 22s;     /* desktop belt speed (higher = slower) */
-  --conn-gap: 32px;      /* gap between cards */
-  --card-w: 300px;       /* match your product-card width */
-  --card-h: 400px;       /* match your product-card height */
-}
-
-.connection-grid {
-  position: relative;
-  overflow: hidden;      /* hide overflow to create conveyor window */
-  display: grid;
-  place-items: center;
-  max-width: 100%;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.connection-track {
-  display: flex;
-  gap: var(--conn-gap);
-  animation-name: scrollLogos;         /* linear infinite belt */
-  animation-duration: var(--conn-speed);
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  will-change: transform;              /* performance hint */
-}
-
-/* Card: same footprint as product card */
-.connection-card {
-  width: var(--card-w);
-  height: var(--card-h);
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829); /* same style as product cards */
-  display: flex;
-  flex-direction: column;              /* image + label stack */
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  box-sizing: border-box;
-  padding: 16px;
-  transition: transform .3s ease, box-shadow .3s ease, outline-color .3s ease;
-}
-
-/* Logo: keep aspect ratio, no crop */
-.connection-card img {
-  max-width: 90%;
-  max-height: 70%;
-  object-fit: contain;                 /* don't crop or stretch */
-  display: block;
-}
-
-/* Optional small label under the logo */
-.connection-card span {
-  margin-top: 10px;
-  font-weight: 600;
-  color: #333;
-}
-
-/* Hover effects: keep as requested */
-.connection-card:hover {
-  transform: scale(1.1);
-  box-shadow: 0 12px 28px rgba(0,0,0,.35);
-  outline: 8px solid #2c5282;         /* same outline color as products */
-}
-
-/* Pause the belt when the whole area is hovered */
-.connection-grid:hover .connection-track { animation-play-state: paused; }
-
-/* Seamless loop: move by half because items are duplicated once */
-@keyframes scrollLogos {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-
-/* Respect user motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .connection-track { animation: none; }
-}
-
-
-
-/* ──────────────────────────────
-  📱 TABLET 태블릿(600~1024px)
-────────────────────────────── */
-@media (min-width: 601px) and (max-width: 1024px) {  /*  📱 TABLET */
-  
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 100px 100px;
-  flex-wrap: wrap;
-}
-
-/* ✅ hero-text는 Dandy 느낌 카드화 */
-.hero-text {
-  background-color: #f0f2f5;
-  border-radius: 16px;
-  padding-top: 60px;
-  padding-bottom: 80px;
-  padding-left: 80px;
-  padding-right: 80px;
-  max-width: fit-content;
-  width: 100%;
-  margin-bottom: 0px;
-  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
-}
-
-/* ✅ 타이틀 & 본문 스타일 보강 */
-.hero-text h1 {
-  text-align: left;
-  font-size: 60px;
-  font-weight: 400;
-  color: #567896;
-  margin-bottom: 0px;
-  line-height: 70px;
-}
-.hero-text h1 strong{
-  font-weight: 800;
-}
-
-.hero-text p {
-  text-align: left;
-  font-size: 24px;
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 0px;
-  padding-bottom: 60px;
-  padding-top:40px;
-  text-wrap: wrap;
-}
-
-/* ✅ 이메일 + 버튼 정렬 */
-.hero-email {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.hero-email-input[type="email"] {
-  flex: auto;
-  padding: 8px 12px;
-  font-size: 16px;
-  border: 4px solid #ccc;
-  border-radius: 8px;
-  min-width: 100px;
-  max-width: 400px;
-}
-
-.hero-email button {
-  flex: auto;
-  display: flex;
-  background-color: #2a5d9f;
-  justify-content: center;
-  justify-items: center;
-  text-align: center;
-  max-width: 150px;
-  color: white;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  white-space: nowrap;
-  padding: 12px 20px;
-}
-
-.hero-email button:hover {
-  
-  background-color: #2c5282;
-
-  outline: 3px solid #Ffffff;
-}
-
-/* =================================== */
-/*           Products SECTION          */
-/* =================================== */
-.products {
-  justify-content: center;
-  align-items: center;
-  padding: 60px 40px;
-  text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.products h2 {
-  padding-top: 100px;
-  padding-bottom: 80px;
-  color: #567896;
-  font-size: 48px;
-  font-weight: 400;
-  margin-bottom: 40px;
-}
-
-/* .product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 뷰포트에 맞춰 1~3열 자동 */
-  /*column-gap: clamp(16px, 10vw, 20px);*/
-/*  column-gap: 40px;
-  row-gap: 40px;
-  justify-items: center;
-  justify-content: center;
-  max-width: 750px;
-  margin: 0 auto;
-}                              OBSOLETE Jan 29th FB    */ 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(180px, 1fr));
-  column-gap: clamp(20px,4vw,60px);
-  row-gap: 40px;
-  justify-items: center;
-  justify-content: center;
-  max-width: 1000px;
-  min-width: 601px;
-  margin: 0 auto;
-}
-
-.product-card {
-  background: #fff;
-  border-radius: 6px;
-  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 300px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-
-.product-card:hover {
-  transform: scale(1.1); /* blowout effect */
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-  outline: 8px solid #2c5282;
-}
-
-.product-card img {
-  aspect-ratio: 4/3;
-  width: auto;
-  height: 200px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.product-type {
-  font-size: 18px;
-  color: #888;
-  margin-bottom: 5px;
-}
-
-.product-name {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #333;
-  text-align: center;
-
-  display: -webkit-box;         /* enable line clamping */
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;        /* show two lines max */
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  line-height: 1.2;             /* compute exact two-line height */
-  min-height: calc(1.2em * 2);  /* reserve space for 2 lines (keeps rows aligned) */
-}
-
-.product-price {
-  font-size: 20px;
-  font-weight: bold;
-  color: #2a5d9f;
-  margin-top: auto;
-}
-.product-card-6{
-  width: 300px;                 /* same as .product-card */
-  height: 400px;                /* same as .product-card */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  background-color: #2a5d9f;
-  color: rgb(253, 236, 236);
-  font-weight: 600;
-  border-radius: 6px;
-  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box;       /* match sizing model */
-}
-.product-card-6 h1 {
-  color:rgb(255, 255, 255);
-  padding: 0 16px;
-  text-wrap: nowrap;
-}
-
-.product-card-6:hover{
-  outline: 8px solid #2c5282;
-  transform: scale(1.1); /* blowout effect */
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-}
-
-
-}
+/* ============================== */ /* Comment: section divider */
+ /*          RESET & BASE         */ /* Comment: reset + base styles */
+ /* ============================== */ /* Comment: section divider */
+
+body, h1, h2, p, ul, li, a { /* Comment: reset common elements */
+  margin: 0; /* Comment: remove default margin */
+  padding: 0; /* Comment: remove default padding */
+  text-decoration: none; /* Comment: remove underline on links */
+  list-style: none; /* Comment: remove bullets/numbers on lists */
+  box-sizing: border-box; /* Comment: include padding/border in size */
+  font-family: 'Inter', sans-serif; /* Comment: global font */
+} /* Comment: end reset */
+
+html { /* Comment: root element styles */
+  scroll-behavior: smooth; /* Comment: smooth anchor scrolling */
+} /* Comment: end html */
+
+body { /* Comment: page base styles */
+  background-color: #f6faff; /* Comment: page background */
+  color: #333; /* Comment: default text color */
+  line-height: 1.6; /* Comment: default line height */
+} /* Comment: end body */
+
+.container { /* Comment: reusable centered container */
+  max-width: 1200px; /* Comment: max layout width */
+  margin: 0 auto; /* Comment: center container */
+  padding: 0 20px; /* Comment: side padding */
+} /* Comment: end container */
+
+
+/* ============================== */ /* Comment: section divider */
+ /*            HEADER             */ /* Comment: header styles */
+ /* ============================== */ /* Comment: section divider */
+
+.site-header { /* Comment: header wrapper */
+  display: flex; /* Comment: flex layout */
+  justify-content: center; /* Comment: center content */
+  padding: 20px 40px; /* Comment: header spacing */
+  background: white; /* Comment: header background */
+  border-bottom: 1px solid #ddd; /* Comment: subtle bottom border */
+  position: sticky; /* Comment: keep header on top */
+  top: 0; /* Comment: stick to top */
+  z-index: 999; /* Comment: ensure header is above content */
+} /* Comment: end site-header */
+
+.site-header .nav-menu { /* Comment: header inner grid */
+  display: grid; /* Comment: grid layout for header */
+  grid-template-columns: 1fr auto 1fr; /* Comment: left links / logo / right actions */
+  align-items: flex-end; /* Comment: align items toward bottom */
+  gap: 20px; /* Comment: grid gap */
+  width: 100%; /* Comment: take full available width */
+  max-width: 1200px; /* Comment: limit header content width */
+  margin: 0 auto; /* Comment: center header content */
+} /* Comment: end nav-menu grid */
+
+.nav-right { /* Comment: right side header area */
+  justify-self: end; /* Comment: push to right column edge */
+  display: flex; /* Comment: flex row */
+  align-items: center; /* Comment: vertical alignment */
+  gap: 10px; /* Comment: spacing between right items */
+} /* Comment: end nav-right */
+
+.logo { /* Comment: logo container */
+  order: 2; /* Comment: keep logo in the middle order */
+  justify-self: center; /* Comment: center in grid column */
+} /* Comment: end logo */
+
+.logo img { /* Comment: logo image */
+  height: 80px; /* Comment: logo height */
+  display: block; /* Comment: remove inline gap */
+} /* Comment: end logo img */
+
+.nav-links { /* Comment: left navigation links */
+  display: flex; /* Comment: horizontal list */
+  gap: 20px; /* Comment: spacing between links */
+  order: 1; /* Comment: ensure left area order */
+} /* Comment: end nav-links */
+
+.nav-links li a { /* Comment: nav link styles */
+  color: #567896; /* Comment: link color */
+  font-size: 24px; /* Comment: link size */
+  transition: color 0.3s; /* Comment: hover transition */
+} /* Comment: end nav-links a */
+
+.nav-links li a:hover { /* Comment: nav link hover */
+  color: #345265; /* Comment: darker hover color */
+} /* Comment: end nav hover */
+
+.hamburger { /* Comment: hamburger button (hidden on desktop) */
+  display: none; /* Comment: hidden by default */
+  font-size: 24px; /* Comment: icon size */
+  cursor: pointer; /* Comment: pointer cursor */
+  margin-left: 10px; /* Comment: spacing from neighbors */
+  background: none; /* Comment: remove background */
+  border: none; /* Comment: remove border */
+  color: rgb(0, 0, 0); /* Comment: icon color */
+} /* Comment: end hamburger */
+
+.login-button { /* Comment: login button styles */
+  order: 3; /* Comment: keep on right */
+  padding: 8px 16px; /* Comment: button padding */
+  background-color: #FF7F00; /* Comment: button background */
+  color: white; /* Comment: text color */
+  border: none; /* Comment: remove border */
+  border-radius: 8px; /* Comment: rounded corners */
+  font-size: 20px; /* Comment: font size */
+  font-weight: bold; /* Comment: font weight */
+  transition: background 0.3s ease; /* Comment: hover transition */
+  margin-left: 10px; /* Comment: spacing from hamburger/others */
+} /* Comment: end login-button */
+
+.login-button:hover { /* Comment: login hover state */
+  background-color: #FF7F00; /* Comment: keep color (outline provides feedback) */
+  outline: 3px solid #ffffff; /* Comment: white outline on hover */
+} /* Comment: end login hover */
+
+
+/* ============================== */ /* Comment: section divider */
+ /*             HERO              */ /* Comment: hero section */
+ /* ============================== */ /* Comment: section divider */
+
+.hero { /* Comment: hero wrapper */
+  display: flex; /* Comment: flex layout */
+  align-items: center; /* Comment: vertically center */
+  justify-content: center; /* Comment: horizontally center */
+  padding: 100px 100px; /* Comment: hero spacing */
+  flex-wrap: wrap; /* Comment: allow wrapping */
+} /* Comment: end hero */
+
+.hero-text { /* Comment: hero content card */
+  background-color: #f0f2f5; /* Comment: card background */
+  border-radius: 16px; /* Comment: rounded corners */
+  padding-top: 60px; /* Comment: top padding */
+  padding-bottom: 80px; /* Comment: bottom padding */
+  padding-left: 80px; /* Comment: left padding */
+  padding-right: 80px; /* Comment: right padding */
+  max-width: fit-content; /* Comment: shrink to content width */
+  width: 100%; /* Comment: allow full width on small screens */
+  margin-bottom: 0px; /* Comment: remove bottom margin */
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829); /* Comment: card shadow */
+} /* Comment: end hero-text */
+
+.hero-text h1 { /* Comment: hero title */
+  text-align: left; /* Comment: left align */
+  font-size: 100px; /* Comment: large title */
+  font-weight: 400; /* Comment: base weight */
+  color: #567896; /* Comment: brand color */
+  margin-bottom: 0px; /* Comment: tight spacing */
+  line-height: 100px; /* Comment: line height */
+} /* Comment: end hero h1 */
+
+.hero-text h1 strong { /* Comment: bold emphasis in title */
+  font-weight: 1000; /* Comment: heavy weight */
+} /* Comment: end hero strong */
+
+.hero-text p { /* Comment: hero paragraph */
+  text-align: left; /* Comment: left align */
+  font-size: 32px; /* Comment: paragraph size */
+  font-weight: 300; /* Comment: lighter weight */
+  color: #333; /* Comment: text color */
+  margin-bottom: 0px; /* Comment: remove margin */
+  padding-bottom: 60px; /* Comment: space before email form */
+  padding-top: 40px; /* Comment: space after title */
+  text-wrap: wrap; /* Comment: allow wrapping */
+} /* Comment: end hero p */
+
+.hero-email { /* Comment: email + button row (desktop default) */
+  display: flex; /* Comment: horizontal layout */
+  gap: 12px; /* Comment: spacing between input and button */
+  flex-wrap: wrap; /* Comment: allow wrap if needed */
+  align-items: center; /* Comment: align vertically */
+  width: 100%; /* Comment: take full width */
+  margin: 0 auto; /* Comment: center within container */
+} /* Comment: end hero-email */
+
+.hero-email-input[type="email"] { /* Comment: email input */
+  flex: 1 1 20rem; /* Comment: flexible grow/shrink with base width */
+  padding: 12px 20px; /* Comment: input padding */
+  font-size: 24px; /* Comment: input text size */
+  border: 4px solid #ccc; /* Comment: input border */
+  border-radius: 8px; /* Comment: rounded corners */
+  min-width: 100px; /* Comment: prevent too small */
+  max-width: 1600px; /* Comment: cap on very wide screens */
+  box-sizing: border-box; /* Comment: consistent sizing */
+} /* Comment: end email input */
+
+.hero-email button { /* Comment: submit button (desktop default) */
+  flex: 0 0 auto; /* Comment: keep natural width */
+  height: auto; /* Comment: avoid height:100% mismatch */
+  display: flex; /* Comment: flex for centering label */
+  background-color: #2a5d9f; /* Comment: button background */
+  justify-content: center; /* Comment: center text horizontally */
+  align-items: center; /* Comment: center text vertically */
+  text-align: center; /* Comment: ensure text align */
+  max-width: 300px; /* Comment: cap button width */
+  color: white; /* Comment: text color */
+  font-size: 20px; /* Comment: text size */
+  font-weight: 600; /* Comment: text weight */
+  border: none; /* Comment: remove border */
+  border-radius: 8px; /* Comment: rounded corners */
+  cursor: pointer; /* Comment: pointer cursor */
+  white-space: nowrap; /* Comment: keep label in one line */
+  padding: 16px 30px; /* Comment: button padding */
+  box-sizing: border-box; /* Comment: consistent sizing */
+} /* Comment: end hero button */
+
+.hero-email button:hover { /* Comment: button hover */
+  background-color: #2c5282; /* Comment: darker hover */
+  outline: 3px solid #ffffff; /* Comment: white outline */
+} /* Comment: end hero button hover */
+
+
+/* ============================== */ /* Comment: section divider */
+ /*            FEATURE            */ /* Comment: feature rows */
+ /* ============================== */ /* Comment: section divider */
+
+.feature-row { /* Comment: feature row wrapper */
+  display: flex; /* Comment: flex layout */
+  align-items: center; /* Comment: vertical alignment */
+  justify-content: center; /* Comment: horizontal alignment */
+  gap: 40px; /* Comment: spacing between text and image */
+  padding: 60px 40px; /* Comment: section padding */
+} /* Comment: end feature-row */
+
+.feature-row .text-block, /* Comment: feature text column */
+.feature-row .image-block { /* Comment: feature image column */
+  flex: 1; /* Comment: equal columns */
+  max-width: 500px; /* Comment: limit width */
+} /* Comment: end columns */
+
+.feature-row .text-block { /* Comment: internal layout for text block */
+  display: flex; /* Comment: flex layout inside */
+  flex-direction: column; /* Comment: stack heading and paragraph */
+  justify-content: flex-start; /* Comment: start at top */
+} /* Comment: end text-block */
+
+.feature-row .text-block h2 { /* Comment: remove default top margin */
+  margin-top: 0; /* Comment: keep heading tight */
+} /* Comment: end h2 margin reset */
+
+.feature-row .text-block h2 { /* Comment: feature heading */
+  color: #567896; /* Comment: brand color */
+  font-size: 40px; /* Comment: heading size */
+  font-weight: 400; /* Comment: weight */
+  margin-bottom: 10px; /* Comment: spacing below */
+} /* Comment: end feature h2 */
+
+.feature-row .text-block p { /* Comment: feature paragraph */
+  color: #444; /* Comment: text color */
+  font-size: 20px; /* Comment: text size */
+  line-height: 1.6; /* Comment: readable spacing */
+} /* Comment: end feature p */
+
+.feature-row .image-block img { /* Comment: feature image */
+  aspect-ratio: 4/3; /* Comment: maintain shape */
+  width: 100%; /* Comment: fill column */
+  border-radius: 8px; /* Comment: rounded corners */
+} /* Comment: end feature img */
+
+.feature-row .row-right { /* Comment: optional reversed row */
+  flex-direction: row-reverse; /* Comment: reverse order */
+} /* Comment: end row-right */
+
+
+/* ============================== */ /* Comment: section divider */
+ /*            WhyCID             */ /* Comment: why section */
+ /* ============================== */ /* Comment: section divider */
+
+.whyCID { /* Comment: why section wrapper */
+  padding: 60px 40px; /* Comment: section padding */
+  text-align: center; /* Comment: center text */
+} /* Comment: end whyCID */
+
+.whyCID h1 { /* Comment: why section title */
+  font-size: 60px; /* Comment: title size */
+  font-weight: 400; /* Comment: weight */
+  color: #567896; /* Comment: brand color */
+  padding-top: 40px; /* Comment: spacing from top */
+  margin-bottom: 20px; /* Comment: spacing below */
+} /* Comment: end why h1 */
+
+
+/* ============================== */ /* Comment: section divider */
+ /*           PRODUCTS            */ /* Comment: products section */
+ /* ============================== */ /* Comment: section divider */
+
+.products { /* Comment: products wrapper */
+  justify-content: center; /* Comment: alignment (if used as flex) */
+  align-items: center; /* Comment: alignment (if used as flex) */
+  padding: 60px 40px; /* Comment: section padding */
+  text-align: center; /* Comment: center text */
+  max-width: 1200px; /* Comment: width cap */
+  margin: 0 auto; /* Comment: center section */
+} /* Comment: end products */
+
+.products h2 { /* Comment: products title */
+  padding-top: 100px; /* Comment: top spacing */
+  padding-bottom: 80px; /* Comment: spacing below title */
+  color: #567896; /* Comment: brand color */
+  font-size: 48px; /* Comment: title size */
+  font-weight: 400; /* Comment: weight */
+  margin-bottom: 40px; /* Comment: spacing below */
+} /* Comment: end products h2 */
+
+.product-grid { /* Comment: product cards grid */
+  display: grid; /* Comment: grid layout */
+  grid-template-columns: repeat(3, minmax(180px, 0.5fr)); /* Comment: 3 columns */
+  column-gap: clamp(20px, 4vw, 60px); /* Comment: responsive column gap */
+  row-gap: 40px; /* Comment: row gap */
+  justify-items: center; /* Comment: center items in cells */
+  justify-content: center; /* Comment: center grid */
+  max-width: 1000px; /* Comment: grid width cap */
+  margin: 0 auto; /* Comment: center grid */
+} /* Comment: end product-grid */
+
+.product-card { /* Comment: product card style */
+  background: #fff; /* Comment: card background */
+  border-radius: 6px; /* Comment: rounded corners */
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829); /* Comment: shadow */
+  padding: 20px; /* Comment: padding */
+  text-align: center; /* Comment: text alignment */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Comment: hover transition */
+  display: flex; /* Comment: flex layout */
+  flex-direction: column; /* Comment: stack content vertically */
+  justify-content: space-between; /* Comment: distribute content */
+  box-sizing: border-box; /* Comment: sizing model */
+} /* Comment: end product-card */
+
+.product-card:hover { /* Comment: product hover */
+  transform: scale(1.1); /* Comment: blowout effect */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35); /* Comment: stronger shadow */
+  outline: 8px solid #2c5282; /* Comment: outline on hover */
+} /* Comment: end product hover */
+
+.product-card img { /* Comment: product image */
+  aspect-ratio: 4/3; /* Comment: keep shape */
+  width: auto; /* Comment: natural width */
+  height: 200px; /* Comment: fixed height */
+  object-fit: cover; /* Comment: crop to fit */
+  margin-bottom: 10px; /* Comment: spacing below image */
+} /* Comment: end product img */
+
+.product-type { /* Comment: product type label */
+  font-size: 18px; /* Comment: size */
+  color: #888; /* Comment: muted color */
+  margin-bottom: 5px; /* Comment: spacing */
+} /* Comment: end product-type */
+
+.product-name { /* Comment: product name */
+  font-size: 20px; /* Comment: size */
+  font-weight: bold; /* Comment: emphasis */
+  margin-bottom: 5px; /* Comment: spacing */
+  color: #333; /* Comment: text color */
+  text-align: center; /* Comment: alignment */
+  display: -webkit-box; /* Comment: enable line clamp */
+  -webkit-box-orient: vertical; /* Comment: vertical clamp */
+  -webkit-line-clamp: 2; /* Comment: max 2 lines */
+  overflow: hidden; /* Comment: hide overflow */
+  text-overflow: ellipsis; /* Comment: ellipsis */
+  line-height: 1.2; /* Comment: line height */
+  min-height: calc(1.2em * 2); /* Comment: reserve 2-line space */
+} /* Comment: end product-name */
+
+.product-price { /* Comment: product price */
+  font-size: 20px; /* Comment: size */
+  font-weight: bold; /* Comment: emphasis */
+  color: #2a5d9f; /* Comment: brand blue */
+  margin-top: auto; /* Comment: push price to bottom */
+} /* Comment: end product-price */
+
+.product-card-6 { /* Comment: special 6th card */
+  width: 300px; /* Comment: match product-card width */
+  height: 400px; /* Comment: match product-card height */
+  display: flex; /* Comment: flex center */
+  justify-content: center; /* Comment: horizontal center */
+  align-items: center; /* Comment: vertical center */
+  text-align: center; /* Comment: text alignment */
+  background-color: #2a5d9f; /* Comment: background */
+  color: rgb(253, 236, 236); /* Comment: text color */
+  font-weight: 600; /* Comment: weight */
+  border-radius: 6px; /* Comment: rounded corners */
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829); /* Comment: shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Comment: hover transition */
+  box-sizing: border-box; /* Comment: sizing */
+} /* Comment: end product-card-6 */
+
+.product-card-6 h1 { /* Comment: special card title */
+  color: rgb(255, 255, 255); /* Comment: white text */
+  padding: 0 16px; /* Comment: horizontal padding */
+  text-wrap: nowrap; /* Comment: keep in one line */
+} /* Comment: end product-card-6 h1 */
+
+.product-card-6:hover { /* Comment: special card hover */
+  outline: 8px solid #2c5282; /* Comment: outline */
+  transform: scale(1.1); /* Comment: blowout */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35); /* Comment: stronger shadow */
+} /* Comment: end product-card-6 hover */
+
+
+/* ============================== */ /* Comment: section divider */
+ /*          CONNECTIONS          */ /* Comment: connections section */
+ /* ============================== */ /* Comment: section divider */
+
+.connections { /* Comment: connections wrapper */
+  justify-items: center; /* Comment: alignment for grid contexts */
+  justify-content: center; /* Comment: alignment */
+  text-align: center; /* Comment: center section text */
+  align-items: center; /* Comment: alignment */
+  padding: 60px 40px; /* Comment: section padding */
+  max-width: 1200px; /* Comment: width cap */
+  margin: 0 auto; /* Comment: center */
+  --conn-speed: 40s; /* Comment: default conveyor speed */
+  --conn-gap: 32px; /* Comment: gap between conveyor cards */
+  --card-w: 300px; /* Comment: conveyor card width */
+  --card-h: 400px; /* Comment: conveyor card height */
+} /* Comment: end connections */
+
+.conntections_text { /* Comment: typo class kept as-is */
+  padding-bottom: 0px; /* Comment: spacing */
+} /* Comment: end connections_text */
+
+.connections h2 { /* Comment: connections heading */
+  padding-top: 100px; /* Comment: top spacing */
+  padding-bottom: 20px; /* Comment: spacing */
+  justify-content: center; /* Comment: alignment */
+  align-items: center; /* Comment: alignment */
+  color: #567896; /* Comment: brand color */
+  font-size: 48px; /* Comment: title size */
+  font-weight: 400; /* Comment: weight */
+  margin-bottom: 30px; /* Comment: spacing */
+} /* Comment: end connections h2 */
+
+.connections p { /* Comment: connections paragraph */
+  text-align: left; /* Comment: left align */
+  font-size: 20px; /* Comment: text size */
+  padding-bottom: 60px; /* Comment: spacing below */
+} /* Comment: end connections p */
+
+.connection-grid { /* Comment: conveyor viewport */
+  position: relative; /* Comment: positioning context */
+  /*overflow: hidden; /* Comment: hide overflow for belt */
+  display: grid; /* Comment: grid for centering */
+  place-items: center; /* Comment: center content */
+  max-width: 100%; /* Comment: prevent overflow */
+  padding-top: 60px; /* Comment: top padding */
+  padding-bottom: 60px; /* Comment: bottom padding */
+} /* Comment: end connection-grid */
+
+.connection-track { /* Comment: moving belt */
+  display: flex; /* Comment: horizontal belt */
+  gap: var(--conn-gap); /* Comment: gap from variable */
+  animation-name: scrollLogos; /* Comment: keyframes name */
+  animation-duration: var(--conn-speed); /* Comment: speed from variable */
+  animation-timing-function: linear; /* Comment: constant speed */
+  animation-iteration-count: infinite; /* Comment: loop forever */
+  will-change: transform; /* Comment: performance hint */
+} /* Comment: end connection-track */
+
+.connection-card { /* Comment: conveyor card */
+  width: var(--card-w); /* Comment: width variable */
+  height: var(--card-h); /* Comment: height variable */
+  background: #fff; /* Comment: background */
+  border-radius: 6px; /* Comment: rounded corners */
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829); /* Comment: shadow */
+  display: flex; /* Comment: flex layout */
+  flex-direction: column; /* Comment: stack logo and text */
+  justify-content: center; /* Comment: center vertically */
+  align-items: center; /* Comment: center horizontally */
+  text-align: center; /* Comment: alignment */
+  box-sizing: border-box; /* Comment: sizing model */
+  padding: 16px; /* Comment: padding */
+  transition: transform .3s ease, box-shadow .3s ease, outline-color .3s ease; /* Comment: hover transition */
+} /* Comment: end connection-card */
+
+.connection-card img { /* Comment: partner logo image */
+  max-width: 90%; /* Comment: keep inside card */
+  max-height: 70%; /* Comment: keep inside card */
+  object-fit: contain; /* Comment: no crop */
+  display: block; /* Comment: remove inline gap */
+} /* Comment: end connection-card img */
+
+.connection-card span { /* Comment: optional label */
+  margin-top: 10px; /* Comment: spacing above */
+  font-weight: 600; /* Comment: emphasis */
+  color: #333; /* Comment: text color */
+} /* Comment: end connection-card span */
+
+.connection-card:hover { /* Comment: hover effect */
+  transform: scale(1.1); /* Comment: blowout */
+  box-shadow: 0 12px 28px rgba(0,0,0,.35); /* Comment: stronger shadow */
+  outline: 8px solid #2c5282; /* Comment: outline */
+} /* Comment: end connection hover */
+
+.connection-grid:hover .connection-track { /* Comment: pause belt on hover */
+  animation-play-state: paused; /* Comment: pause animation */
+} /* Comment: end pause on hover */
+
+@keyframes scrollLogos { /* Comment: conveyor animation */
+  0% { transform: translateX(0); } /* Comment: start position */
+  100% { transform: translateX(-50%); } /* Comment: loop position (half width due to duplication) */
+} /* Comment: end keyframes */
+
+@media (prefers-reduced-motion: reduce) { /* Comment: accessibility motion preference */
+  .connection-track { animation: none; } /* Comment: disable animation */
+} /* Comment: end reduced motion */
+
+
+/* ============================== */ /* Comment: section divider */
+ /*            FOOTER             */ /* Comment: footer styles */
+ /* ============================== */ /* Comment: section divider */
+
+footer { /* Comment: footer wrapper */
+  background: #f4f4f4; /* Comment: footer background */
+  padding: 20px; /* Comment: footer padding */
+  text-align: center; /* Comment: center text */
+  font-size: 14px; /* Comment: small text */
+  color: #777; /* Comment: muted color */
+  margin-top: 60px; /* Comment: spacing above footer */
+} /* Comment: end footer */
+
+
+/* ======================================================================================== */ /* Comment: section divider */
+ /*                                 RESPONSIVE LAYOUT                                        */ /* Comment: responsive section */
+ /* ======================================================================================== */ /* Comment: section divider */
+
+
+/* ============================== */ /* Comment: section divider */
+ /* 📱 MOBILE (≤600px)             */ /* Comment: mobile styles */
+ /* ============================== */ /* Comment: section divider */
+
+@media (max-width: 600px) { /* Comment: mobile breakpoint */
+
+  .nav-menu { /* Comment: mobile nav grid tweak */
+    width: 100%; /* Comment: full width */
+    position: relative; /* Comment: anchor for absolute children */
+    grid-template-columns: 1fr auto 1fr; /* Comment: keep 3 columns */
+  } /* Comment: end mobile nav-menu */
+
+  .hamburger { /* Comment: show hamburger on mobile */
+    display: block; /* Comment: visible */
+    position: absolute; /* Comment: absolute within nav-menu */
+    left: 12px; /* Comment: left offset */
+    top: 50%; /* Comment: vertical center reference */
+    transform: translateY(-50%); /* Comment: vertical centering */
+    margin: 0; /* Comment: remove margins */
+  } /* Comment: end mobile hamburger */
+
+  .nav-links { /* Comment: mobile dropdown menu */
+    display: none; /* Comment: hidden until active */
+    position: absolute; /* Comment: dropdown positioning */
+    top: calc(100% + 10px); /* Comment: below header area */
+    left: 8px; /* Comment: left offset */
+    right: auto; /* Comment: do not stretch full width */
+    background: #fff; /* Comment: dropdown background */
+    flex-direction: column; /* Comment: stack items */
+    box-shadow: 0 10px 20px rgba(44, 44, 44, 0.2); /* Comment: shadow */
+    padding: 10px; /* Comment: padding */
+    border-radius: 8px; /* Comment: rounding */
+    z-index: 1000; /* Comment: above content */
+  } /* Comment: end mobile nav-links */
+
+  .nav-links.active { /* Comment: dropdown open state */
+    display: flex; /* Comment: show dropdown */
+  } /* Comment: end nav-links active */
+
+  .logo { /* Comment: keep logo centered on mobile */
+    justify-self: center; /* Comment: center in grid cell */
+    grid-column: 2; /* Comment: force into middle column */
+    margin: 0; /* Comment: reset margins */
+  } /* Comment: end mobile logo */
+
+  .login-button { /* Comment: hide login button on mobile (as you had) */
+    display: none; /* Comment: hidden */
+    position: absolute; /* Comment: kept for future if you toggle */
+    right: 12px; /* Comment: right offset */
+    top: 50%; /* Comment: vertical center */
+    transform: translateY(-50%); /* Comment: vertical centering */
+    margin: 0; /* Comment: reset margins */
+  } /* Comment: end mobile login */
+
+  .hero { /* Comment: mobile hero padding */
+    padding-top: 160px; /* Comment: space under sticky header */
+    padding-bottom: 60px; /* Comment: bottom spacing */
+    padding-left: 32px; /* Comment: side padding */
+    padding-right: 32px; /* Comment: side padding */
+    flex-wrap: wrap; /* Comment: allow wrapping */
+  } /* Comment: end mobile hero */
+
+  .hero-text { /* Comment: mobile hero card padding */
+    padding-top: 40px; /* Comment: top padding */
+    padding-bottom: 60px; /* Comment: bottom padding */
+    padding-left: 40px; /* Comment: left padding */
+    padding-right: 40px; /* Comment: right padding */
+    margin-left: 10px; /* Comment: side margin */
+    margin-right: 10px; /* Comment: side margin */
+  } /* Comment: end mobile hero-text */
+
+  .hero-text h1 { /* Comment: mobile title size */
+    text-align: left; /* Comment: keep left */
+    font-size: 42px; /* Comment: smaller title */
+    font-weight: 400; /* Comment: weight */
+    color: #567896; /* Comment: brand color */
+    margin-bottom: 0px; /* Comment: tight spacing */
+    line-height: 50px; /* Comment: line height */
+  } /* Comment: end mobile hero h1 */
+
+  .hero-text p { /* Comment: mobile paragraph size */
+    text-align: left; /* Comment: keep left */
+    font-size: 14px; /* Comment: smaller text */
+    font-weight: 400; /* Comment: weight */
+    color: #333; /* Comment: text color */
+    margin-bottom: 0px; /* Comment: remove margin */
+    padding-top: 10px; /* Comment: spacing */
+    padding-bottom: 10px; /* Comment: spacing */
+    text-wrap: wrap; /* Comment: wrap */
+  } /* Comment: end mobile hero p */
+
+  .hero-email { /* Comment: mobile email stack */
+    display: flex; /* Comment: flex layout */
+    flex-direction: column; /* Comment: stack input and button */
+    align-items: stretch; /* Comment: make both full width */
+    gap: 12px; /* Comment: spacing */
+    width: 100%; /* Comment: full width */
+    margin: 0 auto; /* Comment: center */
+  } /* Comment: end mobile hero-email */
+
+  .hero-email-input[type="email"] { /* Comment: mobile input full width */
+    width: 100%; /* Comment: match button width */
+    max-width: 600px; /* Comment: cap width */
+    max-height: min-content; /* Comment: avoid weird height */
+    box-sizing: border-box; /* Comment: sizing model */
+    padding: 8px 12px; /* Comment: padding */
+    font-size: 16px; /* Comment: text size */
+    border: 4px solid #ccc; /* Comment: border */
+    border-radius: 8px; /* Comment: rounding */
+  } /* Comment: end mobile input */
+
+  .hero-email button { /* Comment: mobile button full width */
+    width: 100%; /* Comment: match input */
+    max-width: 600px; /* Comment: cap */
+    box-sizing: border-box; /* Comment: sizing model */
+    min-width: 0; /* Comment: prevent forced min width */
+    height: auto; /* Comment: avoid height:100% mismatch */
+    display: flex; /* Comment: flex for centering */
+    justify-content: center; /* Comment: center text horizontally */
+    align-items: center; /* Comment: center text vertically */
+    background-color: #2a5d9f; /* Comment: background */
+    color: white; /* Comment: text color */
+    font-size: 20px; /* Comment: text size */
+    font-weight: 600; /* Comment: weight */
+    border: none; /* Comment: no border */
+    border-radius: 8px; /* Comment: rounding */
+    cursor: pointer; /* Comment: pointer */
+    white-space: nowrap; /* Comment: no wrap */
+    padding: 12px 20px; /* Comment: padding */
+  } /* Comment: end mobile button */
+
+  .feature-row, /* Comment: mobile feature layout */
+  .feature-row .row-right { /* Comment: mobile reversed row */
+    flex-direction: row !important; /* Comment: keep row direction (your choice) */
+    text-align: center; /* Comment: center text */
+  } /* Comment: end feature direction */
+
+  .hero-text, /* Comment: widths for mobile blocks */
+  .text-block, /* Comment: widths for mobile blocks */
+  .image-block { /* Comment: widths for mobile blocks */
+    width: auto; /* Comment: let content define width */
+  } /* Comment: end widths */
+
+  .feature-row .image-block { /* Comment: hide feature images on mobile (your choice) */
+    display: none; /* Comment: hide */
+  } /* Comment: end hide image-block */
+
+  .feature-row .image-block img { /* Comment: hide images */
+    display: none; /* Comment: hide */
+  } /* Comment: end hide images */
+
+  .whyCID { /* Comment: mobile why section padding */
+    padding: 60px 40px; /* Comment: keep padding */
+    text-align: center; /* Comment: center */
+  } /* Comment: end mobile whyCID */
+
+  .whyCID h1 { /* Comment: mobile why title size */
+    font-size: 40px; /* Comment: smaller title */
+    font-weight: 400; /* Comment: weight */
+    color: #567896; /* Comment: brand */
+    padding-top: 40px; /* Comment: spacing */
+    margin-bottom: 20px; /* Comment: spacing */
+  } /* Comment: end mobile why h1 */
+
+  .products { /* Comment: mobile products wrapper */
+    justify-content: center; /* Comment: alignment */
+    align-items: center; /* Comment: alignment */
+    text-align: center; /* Comment: center text */
+    max-width: 1200px; /* Comment: width cap */
+    margin: 0 auto; /* Comment: center */
+  } /* Comment: end mobile products */
+
+  .products h2 { /* Comment: mobile products title spacing */
+    padding-top: 0px; /* Comment: remove extra top padding */
+    padding-bottom: 80px; /* Comment: keep spacing */
+    color: #567896; /* Comment: brand */
+    font-size: 48px; /* Comment: size */
+    font-weight: 400; /* Comment: weight */
+    margin-bottom: 40px; /* Comment: spacing */
+  } /* Comment: end mobile products h2 */
+
+  .product-grid { /* Comment: mobile product grid: 1 column */
+    display: grid; /* Comment: grid layout */
+    grid-template-columns: repeat(1, minmax(180px, 0.5fr)); /* Comment: 1 column */
+    column-gap: clamp(20px, 4vw, 60px); /* Comment: keep */
+    row-gap: 40px; /* Comment: keep */
+    justify-items: center; /* Comment: center items */
+    justify-content: center; /* Comment: center grid */
+    max-width: 1000px; /* Comment: cap */
+    margin: 0 auto; /* Comment: center */
+  } /* Comment: end mobile product-grid */
+
+  .product-card { /* Comment: mobile card padding tweak */
+    background: #fff; /* Comment: background */
+    border-radius: 6px; /* Comment: rounding */
+    box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829); /* Comment: shadow */
+    padding-top: 10px; /* Comment: smaller top padding */
+    padding-bottom: 50px; /* Comment: bigger bottom padding */
+    text-align: center; /* Comment: center text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Comment: transitions */
+    display: flex; /* Comment: flex */
+    flex-direction: column; /* Comment: stack */
+    justify-content: space-between; /* Comment: spacing */
+    box-sizing: border-box; /* Comment: sizing */
+  } /* Comment: end mobile product-card */
+
+  .product-card:hover { /* Comment: mobile hover */
+    transform: scale(1.1); /* Comment: blowout */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35); /* Comment: shadow */
+    outline: 4px solid #2c5282; /* Comment: thinner outline on mobile */
+  } /* Comment: end mobile product hover */
+
+  .product-card img { /* Comment: mobile image padding */
+    padding-top: 50px; /* Comment: spacing */
+    aspect-ratio: 4/3; /* Comment: keep */
+    width: auto; /* Comment: keep */
+    height: 200px; /* Comment: keep */
+    object-fit: cover; /* Comment: crop */
+    margin-bottom: 10px; /* Comment: spacing */
+  } /* Comment: end mobile product img */
+
+  .product-card-6 { /* Comment: mobile special card size tweak */
+    width: 310px; /* Comment: your mobile width */
+    height: 400px; /* Comment: height */
+    display: flex; /* Comment: flex */
+    justify-content: center; /* Comment: center */
+    align-items: center; /* Comment: center */
+    text-align: center; /* Comment: center */
+    background-color: #2a5d9f; /* Comment: background */
+    color: rgb(253, 236, 236); /* Comment: text */
+    font-weight: 600; /* Comment: weight */
+    border-radius: 6px; /* Comment: rounding */
+    box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829); /* Comment: shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Comment: transitions */
+    box-sizing: border-box; /* Comment: sizing */
+  } /* Comment: end mobile product-card-6 */
+
+  .product-card-6:hover { /* Comment: mobile special card hover */
+    outline: 4px solid #2c5282; /* Comment: thinner outline */
+    transform: scale(1.1); /* Comment: blowout */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35); /* Comment: shadow */
+  } /* Comment: end mobile product-card-6 hover */
+
+  .connections { /* Comment: mobile connections padding tweak */
+    justify-items: center; /* Comment: alignment */
+    justify-content: center; /* Comment: alignment */
+    text-align: center; /* Comment: center */
+    align-items: center; /* Comment: alignment */
+    padding: 20px 40px; /* Comment: smaller vertical padding */
+    max-width: 1200px; /* Comment: cap */
+    margin: 0 auto; /* Comment: center */
+    --conn-speed: 22s; /* Comment: faster belt on mobile */
+    --conn-gap: 32px; /* Comment: gap */
+    --card-w: 300px; /* Comment: card width */
+    --card-h: 400px; /* Comment: card height */
+  } /* Comment: end mobile connections */
+
+  .connections h2 { /* Comment: mobile connections title spacing */
+    padding-top: 0px; /* Comment: remove top padding */
+    padding-bottom: 20px; /* Comment: keep */
+    color: #567896; /* Comment: brand */
+    font-size: 48px; /* Comment: size */
+    font-weight: 400; /* Comment: weight */
+    margin-bottom: 30px; /* Comment: spacing */
+  } /* Comment: end mobile connections h2 */
+
+  .connections p { /* Comment: mobile connections paragraph */
+    text-align: left; /* Comment: left align */
+    font-size: 20px; /* Comment: size */
+    padding-bottom: 60px; /* Comment: spacing */
+  } /* Comment: end mobile connections p */
+
+} /* Comment: end mobile breakpoint */
+
+
+/* ============================== */ /* Comment: section divider */
+ /* 📱 TABLET (601px~1024px)       */ /* Comment: tablet styles */
+ /* ============================== */ /* Comment: section divider */
+
+@media (min-width: 601px) and (max-width: 1024px) { /* Comment: tablet breakpoint */
+
+  .hero { /* Comment: tablet hero layout */
+    display: flex; /* Comment: flex */
+    align-items: center; /* Comment: center vertically */
+    justify-content: center; /* Comment: center horizontally */
+    padding: 100px 100px; /* Comment: padding */
+    flex-wrap: wrap; /* Comment: wrap */
+  } /* Comment: end tablet hero */
+
+  .hero-text { /* Comment: tablet hero card */
+    background-color: #f0f2f5; /* Comment: background */
+    border-radius: 16px; /* Comment: rounding */
+    padding-top: 60px; /* Comment: top padding */
+    padding-bottom: 80px; /* Comment: bottom padding */
+    padding-left: 80px; /* Comment: left padding */
+    padding-right: 80px; /* Comment: right padding */
+    max-width: fit-content; /* Comment: fit content */
+    width: 100%; /* Comment: allow full width */
+    margin-bottom: 0px; /* Comment: spacing */
+    box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829); /* Comment: shadow */
+  } /* Comment: end tablet hero-text */
+
+  .hero-text h1 { /* Comment: tablet title */
+    text-align: left; /* Comment: left */
+    font-size: 60px; /* Comment: smaller title */
+    font-weight: 400; /* Comment: weight */
+    color: #567896; /* Comment: brand */
+    margin-bottom: 0px; /* Comment: tight */
+    line-height: 70px; /* Comment: line height */
+  } /* Comment: end tablet h1 */
+
+  .hero-text h1 strong { /* Comment: tablet strong */
+    font-weight: 800; /* Comment: weight */
+  } /* Comment: end tablet strong */
+
+  .hero-text p { /* Comment: tablet paragraph */
+    text-align: left; /* Comment: left */
+    font-size: 24px; /* Comment: size */
+    font-weight: 500; /* Comment: weight */
+    color: #333; /* Comment: color */
+    margin-bottom: 0px; /* Comment: tight */
+    padding-bottom: 60px; /* Comment: spacing */
+    padding-top: 40px; /* Comment: spacing */
+    text-wrap: wrap; /* Comment: wrap */
+  } /* Comment: end tablet p */
+
+  .hero-email { /* Comment: tablet email row */
+    display: flex; /* Comment: flex */
+    gap: 12px; /* Comment: gap */
+    flex-wrap: wrap; /* Comment: wrap */
+    align-items: center; /* Comment: align */
+  } /* Comment: end tablet hero-email */
+
+  .hero-email-input[type="email"] { /* Comment: tablet input */
+    flex: auto; /* Comment: flexible */
+    padding: 8px 12px; /* Comment: padding */
+    font-size: 16px; /* Comment: size */
+    border: 4px solid #ccc; /* Comment: border */
+    border-radius: 8px; /* Comment: rounding */
+    min-width: 100px; /* Comment: min */
+    max-width: 400px; /* Comment: cap */
+    box-sizing: border-box; /* Comment: sizing */
+  } /* Comment: end tablet input */
+
+  .hero-email button { /* Comment: tablet button */
+    flex: auto; /* Comment: flexible */
+    display: flex; /* Comment: flex */
+    justify-content: center; /* Comment: center */
+    align-items: center; /* Comment: center */
+    background-color: #2a5d9f; /* Comment: background */
+    text-align: center; /* Comment: align */
+    max-width: 150px; /* Comment: cap */
+    color: white; /* Comment: color */
+    font-weight: 600; /* Comment: weight */
+    border: none; /* Comment: no border */
+    border-radius: 8px; /* Comment: rounding */
+    cursor: pointer; /* Comment: pointer */
+    white-space: nowrap; /* Comment: no wrap */
+    padding: 12px 20px; /* Comment: padding */
+    height: auto; /* Comment: avoid mismatch */
+    box-sizing: border-box; /* Comment: sizing */
+  } /* Comment: end tablet button */
+
+  .products { /* Comment: tablet products wrapper */
+    justify-content: center; /* Comment: alignment */
+    align-items: center; /* Comment: alignment */
+    padding: 60px 40px; /* Comment: padding */
+    text-align: center; /* Comment: center */
+    max-width: 1200px; /* Comment: cap */
+    margin: 0 auto; /* Comment: center */
+  } /* Comment: end tablet products */
+
+  .products h2 { /* Comment: tablet products title */
+    padding-top: 100px; /* Comment: spacing */
+    padding-bottom: 80px; /* Comment: spacing */
+    color: #567896; /* Comment: brand */
+    font-size: 48px; /* Comment: size */
+    font-weight: 400; /* Comment: weight */
+    margin-bottom: 40px; /* Comment: spacing */
+  } /* Comment: end tablet products h2 */
+
+  .product-grid { /* Comment: tablet product grid */
+    display: grid; /* Comment: grid */
+    grid-template-columns: repeat(3, minmax(180px, 1fr)); /* Comment: 3 columns */
+    column-gap: clamp(20px, 4vw, 60px); /* Comment: gap */
+    row-gap: 40px; /* Comment: gap */
+    justify-items: center; /* Comment: center items */
+    justify-content: center; /* Comment: center grid */
+    max-width: 1000px; /* Comment: cap */
+    min-width: 601px; /* Comment: prevent too small layout */
+    margin: 0 auto; /* Comment: center */
+  } /* Comment: end tablet product-grid */
+
+  .product-card { /* Comment: tablet fixed card footprint */
+    background: #fff; /* Comment: background */
+    border-radius: 6px; /* Comment: rounding */
+    box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829); /* Comment: shadow */
+    padding: 20px; /* Comment: padding */
+    text-align: center; /* Comment: center */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Comment: transitions */
+    width: 300px; /* Comment: fixed width */
+    height: 400px; /* Comment: fixed height */
+    display: flex; /* Comment: flex */
+    flex-direction: column; /* Comment: stack */
+    justify-content: space-between; /* Comment: spacing */
+    box-sizing: border-box; /* Comment: sizing */
+  } /* Comment: end tablet product-card */
+
+  .product-card:hover { /* Comment: tablet hover */
+    transform: scale(1.1); /* Comment: blowout */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35); /* Comment: shadow */
+    outline: 8px solid #2c5282; /* Comment: outline */
+  } /* Comment: end tablet hover */
+
+  .product-card img { /* Comment: tablet image */
+    aspect-ratio: 4/3; /* Comment: ratio */
+    width: auto; /* Comment: auto */
+    height: 200px; /* Comment: height */
+    object-fit: cover; /* Comment: crop */
+    margin-bottom: 10px; /* Comment: spacing */
+  } /* Comment: end tablet img */
+
+  .product-card-6 { /* Comment: tablet special card */
+    width: 300px; /* Comment: match */
+    height: 400px; /* Comment: match */
+  } /* Comment: end tablet special */
+
+} /* Comment: end tablet breakpoint */
+
+
+/* ============================== */ /* Comment: section divider */
+ /* 🖥️ DESKTOP (≥1025px)           */ /* Comment: desktop-only styles */
+ /* ============================== */ /* Comment: section divider */
+
+@media (min-width: 1025px) { /* Comment: desktop breakpoint */
+
+  .hero-email { /* Comment: desktop email row lock (explicit) */
+    display: flex; /* Comment: row layout */
+    flex-direction: row; /* Comment: horizontal */
+    align-items: center; /* Comment: align */
+    gap: 12px; /* Comment: spacing */
+  } /* Comment: end desktop hero-email */
+
+  .hero-email-input[type="email"] { /* Comment: desktop input rule (explicit) */
+    flex: 1 1 20rem; /* Comment: flexible */
+    max-width: 1600px; /* Comment: cap */
+  } /* Comment: end desktop input */
+
+  .hero-email button { /* Comment: desktop button rule (explicit) */
+    flex: 0 0 auto; /* Comment: natural width */
+    max-width: 300px; /* Comment: cap */
+    height: auto; /* Comment: avoid mismatch */
+  } /* Comment: end desktop button */
+
+} /* Comment: end desktop breakpoint */
 

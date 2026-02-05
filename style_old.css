@@ -1,0 +1,1304 @@
+/* Base styles for body */
+/* ========== RESET AND BASE ========== */
+body, h1, h2, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+html { 
+  scroll-behavior: smooth; /* 해시(#) 앵커 이동 시 스무스 */
+}
+
+body {
+  background-color: #f6faff;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/* =================================== */     
+/*         Header styling */
+/* =================================== */
+/* Header styling */
+.site-header {
+  display: flex;
+  justify-content: center;
+  padding: 20px 40px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.site-header .nav-menu{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: flex-end;
+  gap: 20px;
+  width: 100%;           /* ⬅︎ 그리드를 가로로 펼쳐서 1fr이 공간을 먹을 수 있게 */
+  max-width: 1200px;     /* ⬅︎ 전체 퍼짐 1200px 제한 */
+  margin: 0 auto;        /* ⬅︎ 가운데 고정 */
+}
+.nav-right{
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo{
+  order: 2;
+  justify-self: center;
+}
+.logo img {
+  height: 80px;
+  display: block;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+  order: 1;
+}
+.nav-links li a {
+  color: #567896;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+.nav-links li a:hover {
+  color: #345265;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 10px;
+  background: none;
+  border: none;
+  color: rgb(0, 0, 0);
+}
+
+.login-button {
+  order: 3;
+  padding: 8px 16px;
+  background-color: #567896;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  background-color: #FF7F00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  margin-left: 10px;
+}
+
+.login-button:hover {
+  background-color: #FF7F00;
+  outline: 3px solid #Ffffff;
+}
+
+
+
+/* =================================== */
+/*   HERO SECTION - Two-column layout  */
+/* =================================== */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 100px;
+  flex-wrap: wrap;
+}
+
+/* ✅ hero-text는 Dandy 느낌 카드화 */
+.hero-text {
+  background-color: #f0f2f5;
+  border-radius: 16px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  padding-left: 80px;
+  padding-right: 80px;
+  max-width: fit-content;
+  width: 100%;
+  margin-bottom: 0px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
+}
+
+/* ✅ 타이틀 & 본문 스타일 보강 */
+.hero-text h1 {
+  text-align: left;
+  font-size: 100px;
+  font-weight: 400;
+  color: #567896;
+  margin-bottom: 0px;
+  line-height: 100px;
+}
+.hero-text h1 strong{
+  font-weight: 1000;
+}
+
+.hero-text p {
+  text-align: left;
+  font-size: 32px;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 0px;
+  padding-bottom: 60px;
+  padding-top:40px;
+  text-wrap: wrap;
+}
+
+/* ✅ 이메일 + 버튼 정렬 */
+.hero-email {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-email-input[type="email"] {
+  flex: 1 1 20rem;
+  padding: 12px 20px;
+  font-size: 24px;
+  border: 4px solid #ccc;
+  border-radius: 8px;
+  min-width: 100px;
+  max-width: 1600px;
+}
+
+.hero-email button {
+  flex: 0 0 auto;
+  height: 100%;
+  display: flex;
+  background-color: #2a5d9f;
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 300px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 16px 30px;
+}
+
+.hero-email button:hover {
+  
+  background-color: #2c5282;
+  outline: 3px solid #Ffffff;
+}
+
+
+
+/* =================================== */
+/*           Feature SECTION          */
+/* =================================== */
+.feature-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 40px;
+}
+
+.feature-row .text-block,
+.feature-row .image-block {
+  flex: 1;
+  max-width: 500px;
+}
+
+.feature-row .text-block {
+  display: flex;            /* enables flex layout inside text-block */
+  flex-direction: column;   /* stack h2 on top, then p below */
+  justify-content: flex-start; /* push content to the top */
+}
+
+.feature-row .text-block h2 {
+  margin-top: 0;   /* remove any default margin pushing it down */
+}
+
+.feature-row .text-block h2 {
+  color: #567896;
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.feature-row .text-block p {
+  color: #444;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.feature-row .image-block img {
+  aspect-ratio: 4/3;
+  width: 100%;
+  border-radius: 8px;
+  /*box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);*/
+}
+
+.feature-row .row-right {
+  flex-direction: row-reverse;
+}
+
+
+/* =================================== */
+/*           WhyCID SECTION          */
+/* =================================== */
+
+.whyCID {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.whyCID h1 {
+  font-size: 60px;
+  font-weight: 400;
+  color: #567896;
+  padding-top: 40px;
+  margin-bottom: 20px;
+}
+
+
+/* =================================== */
+/*           Products SECTION          */
+/* =================================== */
+.products {
+  justify-content: center;
+  align-items: center;
+  padding: 60px 40px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products h2 {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  color: #567896;
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 0.5fr));
+  column-gap: clamp(20px,4vw,60px);
+  row-gap: 40px;
+  justify-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+.product-card {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.product-card:hover {
+  transform: scale(1.1); /* blowout effect */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  outline: 8px solid #2c5282;
+}
+
+.product-card img {
+  aspect-ratio: 4/3;
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.product-type {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.product-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  text-align: center;
+
+  display: -webkit-box;         /* enable line clamping */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;        /* show two lines max */
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  line-height: 1.2;             /* compute exact two-line height */
+  min-height: calc(1.2em * 2);  /* reserve space for 2 lines (keeps rows aligned) */
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2a5d9f;
+  margin-top: auto;
+}
+.product-card-6{
+  width: 300px;                 /* same as .product-card */
+  height: 400px;                /* same as .product-card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background-color: #2a5d9f;
+  color: rgb(253, 236, 236);
+  font-weight: 600;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;       /* match sizing model */
+}
+.product-card-6 h1 {
+  color:rgb(255, 255, 255);
+  padding: 0 16px;
+  text-wrap: nowrap;
+}
+
+.product-card-6:hover{
+  outline: 8px solid #2c5282;
+  transform: scale(1.1); /* blowout effect */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+
+
+/* =================================== */
+/*           Connections SECTION          */
+/* =================================== */
+
+.connections {
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 60px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.conntections_text{
+   padding-bottom: 0px;
+}
+.connections h2 {
+  padding-top: 100px;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  color: #567896;
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.connections p{
+  text-align: left;
+    font-size: 20px;
+    padding-bottom: 60px;
+}
+
+/* =============== Connections Conveyor =============== */
+
+/* Section-level variables (desktop defaults) */
+.connections {
+  --conn-speed: 40s;     /* desktop belt speed (higher = slower) */
+  --conn-gap: 32px;      /* gap between cards */
+  --card-w: 300px;       /* match your product-card width */
+  --card-h: 400px;       /* match your product-card height */
+}
+
+.connection-grid {
+  position: relative;
+  overflow: hidden;      /* hide overflow to create conveyor window */
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.connection-track {
+  display: flex;
+  gap: var(--conn-gap);
+  animation-name: scrollLogos;         /* linear infinite belt */
+  animation-duration: var(--conn-speed);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;              /* performance hint */
+}
+
+/* Card: same footprint as product card */
+.connection-card {
+  width: var(--card-w);
+  height: var(--card-h);
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829); /* same style as product cards */
+  display: flex;
+  flex-direction: column;              /* image + label stack */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 16px;
+  transition: transform .3s ease, box-shadow .3s ease, outline-color .3s ease;
+}
+
+/* Logo: keep aspect ratio, no crop */
+.connection-card img {
+  max-width: 90%;
+  max-height: 70%;
+  object-fit: contain;                 /* don't crop or stretch */
+  display: block;
+}
+
+/* Optional small label under the logo */
+.connection-card span {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Hover effects: keep as requested */
+.connection-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 28px rgba(0,0,0,.35);
+  outline: 8px solid #2c5282;         /* same outline color as products */
+}
+
+/* Pause the belt when the whole area is hovered */
+.connection-grid:hover .connection-track { animation-play-state: paused; }
+
+/* Seamless loop: move by half because items are duplicated once */
+@keyframes scrollLogos {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* =================================== */
+/*           Footer SECTION          */
+/* =================================== */
+
+footer {
+  background: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 60px;
+}
+
+/* ======================================================================================== */
+/*                             REACTIVE Layout                                   */
+/* ======================================================================================== */
+/* ──────────────────────────────
+  📱 MOBILE (iPhone 등, ≤600px)
+────────────────────────────── */
+@media (min-width: 240px) and (max-width: 600px) {  /* 📱 MOBILE  */
+ 
+  .nav-menu {
+    width: 100%;
+    position:relative;
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 8px;
+    right: auto;
+    background: #fff;
+    flex-direction: column;
+    box-shadow: 0 10px 20px rgba(44, 44, 44, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+  .logo{
+    justify-self: center;
+    grid-column: 2;
+    margin:0;
+  }
+
+  .login-button {
+    display: none;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+  
+  /*
+  .login-button {
+  order: 3;
+  padding: 8px 16px;
+  background-color: #567896;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  background-color: #FF7F00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  margin-left: 10px;
+}
+  */
+
+  .hero{
+    padding-top: 160px;
+    padding-bottom: 60px;
+    padding-left: 32px;
+    padding-right: 32px; 
+      flex-wrap: wrap;
+  }
+  .hero-text{
+    padding-top: 40px;
+    padding-bottom: 60px;
+    padding-left: 40px;
+    padding-right: 40px; 
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .hero-text h1 {
+  text-align: left;
+  font-size: 42px;
+  font-weight: 400;
+  color: #567896;
+  margin-bottom: 0px;
+  line-height: 50px;
+  }
+.hero-text p{
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 0px;
+  padding-top:10px;
+  padding-bottom: 10px;
+}
+
+  .feature-row,
+  .feature-row .row-right {
+    flex-direction: row !important;
+    text-align: center;
+  }
+
+  .hero-text,
+  .text-block,
+  .image-block {
+    width: auto;
+  }
+  .hero-text p {
+    text-wrap: wrap;
+  }
+  /*
+.hero-email{
+  --field-w: clamp(300px, 42vw, 440px);
+}
+  */
+  /*
+.hero-email-input[type="email"] {
+  flex: auto;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  width:100%z
+}
+  */
+/*
+.hero-email button { 
+  flex: auto;
+  display: flex;
+  background-color: #2a5d9f;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  width:100%;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 12px 20px;
+  box-sizing: border-box;
+}*/
+/*
+.hero-email {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-email-input[type="email"] {
+  flex: 1 1 20rem;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 4px solid #ccc;
+  border-radius: 8px;
+  min-width: 100px;
+  max-width: 600px;
+}
+
+.hero-email button {
+  flex: 0 0 auto;
+  height: 100%;
+  display: flex;
+  background-color: #2a5d9f;
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+  min-width: ; 
+  max-width: 600px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 12px 20px;
+}
+*/
+
+  .hero-email{
+    display: flex;
+    flex-direction: column;     /* ✅ 세로로 쌓기 */
+    align-items: stretch;       /* ✅ 자식들 가로폭 꽉 채우기 */
+    gap: 12px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-email-input[type="email"]{
+    width: 100%;                /* ✅ 버튼과 동일 폭 */
+    max-width: 600px;           
+    max-height: min-content;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 4px solid #ccc;
+    border-radius: 8px;
+  }
+
+  .hero-email button{
+    width: 100%;                /* ✅ input과 동일 폭 */
+    max-width: 600px;           /* input이랑 동일하게 */
+    box-sizing: border-box;
+
+    min-width: 0;             
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2a5d9f;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 12px 20px;
+  }
+}
+
+
+.hero-email button:hover {
+  
+  background-color: #2c5282;
+  outline: 3px solid #Ffffff;
+}
+
+.feature-row .text-block h2 {
+  color: #567896;
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.feature-row .text-block p {
+  color: #444;
+  font-size: 20px;
+  line-height: 1.6;
+}
+  .feature-row .image-block{
+    display: none;
+  }
+  .feature-row .image-block img {
+    display: none;
+  }
+
+/* =================================== */
+/*           WhyCID SECTION  MOBILE        */
+/* =================================== */
+
+.whyCID {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.whyCID h1 {
+  font-size: 40px;
+  font-weight: 400;
+  color: #567896;
+  padding-top: 40px;
+  margin-bottom: 20px;
+}
+/* =================================== */
+/*           Products SECTION   MOBILE     */
+/* =================================== */
+/*.products {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products h2 {
+  padding-top: 10px;
+  padding-bottom: 80px;
+  color: #567896;
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(180px, 1fr));
+    gap: 50px;
+    justify-items: center;
+    max-width: 240px;
+    padding: 40px 30px;
+  }
+/*
+/* =================================== */
+/*           Products SECTION          */
+/* =================================== */
+.products {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products h2 {
+  padding-top: 0px;
+  padding-bottom: 80px;
+  color: #567896;
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(180px, 0.5fr));
+  column-gap: clamp(20px,4vw,60px);
+  row-gap: 40px;
+  justify-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
+  padding-top: 10px;
+  padding-bottom: 50px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.product-card:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  outline: 4px solid #2c5282;
+}
+
+.product-card img {
+  padding-top: 50px;
+  aspect-ratio: 4/3;
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.product-type {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.product-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  text-align: center;
+
+  display: -webkit-box;         
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;        
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  line-height: 1.2;             
+  min-height: calc(1.2em * 2);  
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2a5d9f;
+  margin-top: auto;
+}
+.product-card-6{
+  width: 310px;                 
+  height: 400px;                
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background-color: #2a5d9f;
+  color: rgb(253, 236, 236);
+  font-weight: 600;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;      
+}
+.product-card-6 h1 {
+  color:rgb(255, 255, 255);
+  padding: 0 16px;
+  text-wrap: nowrap;
+}
+
+.product-card-6:hover{
+  outline: 4px solid #2c5282;
+  transform: scale(1.1); 
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+
+
+  .hero-text p{
+    text-wrap: wrap;
+  }
+
+  .feature-row .image-block img {
+    max-width: 95%;
+  }
+
+/* =================================== */
+/*           Connections SECTION          */
+/* =================================== */
+
+.connections {
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.conntections_text{
+   padding-bottom: 0px;
+}
+.connections h2 {
+  padding-top: 0px;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  color: #567896;
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.connections p{
+  text-align: left;
+    font-size: 20px;
+    padding-bottom: 60px;
+}
+
+/* =============== Connections Conveyor =============== */
+
+/* Section-level variables (desktop defaults) */
+.connections {
+  --conn-speed: 22s;     /* desktop belt speed (higher = slower) */
+  --conn-gap: 32px;      /* gap between cards */
+  --card-w: 300px;       /* match your product-card width */
+  --card-h: 400px;       /* match your product-card height */
+}
+
+.connection-grid {
+  position: relative;
+  overflow: hidden;      /* hide overflow to create conveyor window */
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.connection-track {
+  display: flex;
+  gap: var(--conn-gap);
+  animation-name: scrollLogos;         /* linear infinite belt */
+  animation-duration: var(--conn-speed);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;              /* performance hint */
+}
+
+/* Card: same footprint as product card */
+.connection-card {
+  width: var(--card-w);
+  height: var(--card-h);
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829); /* same style as product cards */
+  display: flex;
+  flex-direction: column;              /* image + label stack */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 16px;
+  transition: transform .3s ease, box-shadow .3s ease, outline-color .3s ease;
+}
+
+/* Logo: keep aspect ratio, no crop */
+.connection-card img {
+  max-width: 90%;
+  max-height: 70%;
+  object-fit: contain;                 /* don't crop or stretch */
+  display: block;
+}
+
+/* Optional small label under the logo */
+.connection-card span {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Hover effects: keep as requested */
+.connection-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 28px rgba(0,0,0,.35);
+  outline: 8px solid #2c5282;         /* same outline color as products */
+}
+
+/* Pause the belt when the whole area is hovered */
+.connection-grid:hover .connection-track { animation-play-state: paused; }
+
+/* Seamless loop: move by half because items are duplicated once */
+@keyframes scrollLogos {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .connection-track { animation: none; }
+}
+
+
+
+/* ──────────────────────────────
+  📱 TABLET 태블릿(600~1024px)
+────────────────────────────── */
+@media (min-width: 601px) and (max-width: 1024px) {  /*  📱 TABLET */
+  
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 100px;
+  flex-wrap: wrap;
+}
+
+/* ✅ hero-text는 Dandy 느낌 카드화 */
+.hero-text {
+  background-color: #f0f2f5;
+  border-radius: 16px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  padding-left: 80px;
+  padding-right: 80px;
+  max-width: fit-content;
+  width: 100%;
+  margin-bottom: 0px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
+}
+
+/* ✅ 타이틀 & 본문 스타일 보강 */
+.hero-text h1 {
+  text-align: left;
+  font-size: 60px;
+  font-weight: 400;
+  color: #567896;
+  margin-bottom: 0px;
+  line-height: 70px;
+}
+.hero-text h1 strong{
+  font-weight: 800;
+}
+
+.hero-text p {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0px;
+  padding-bottom: 60px;
+  padding-top:40px;
+  text-wrap: wrap;
+}
+
+/* ✅ 이메일 + 버튼 정렬 */
+.hero-email {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-email-input[type="email"] {
+  flex: auto;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 4px solid #ccc;
+  border-radius: 8px;
+  min-width: 100px;
+  max-width: 400px;
+}
+
+.hero-email button {
+  flex: auto;
+  display: flex;
+  background-color: #2a5d9f;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  max-width: 150px;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 12px 20px;
+}
+
+.hero-email button:hover {
+  
+  background-color: #2c5282;
+
+  outline: 3px solid #Ffffff;
+}
+
+/* =================================== */
+/*           Products SECTION          */
+/* =================================== */
+.products {
+  justify-content: center;
+  align-items: center;
+  padding: 60px 40px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products h2 {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  color: #567896;
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+/* .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 뷰포트에 맞춰 1~3열 자동 */
+  /*column-gap: clamp(16px, 10vw, 20px);*/
+/*  column-gap: 40px;
+  row-gap: 40px;
+  justify-items: center;
+  justify-content: center;
+  max-width: 750px;
+  margin: 0 auto;
+}                              OBSOLETE Jan 29th FB    */ 
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  column-gap: clamp(20px,4vw,60px);
+  row-gap: 40px;
+  justify-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  min-width: 601px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.product-card:hover {
+  transform: scale(1.1); /* blowout effect */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  outline: 8px solid #2c5282;
+}
+
+.product-card img {
+  aspect-ratio: 4/3;
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.product-type {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.product-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+  text-align: center;
+
+  display: -webkit-box;         /* enable line clamping */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;        /* show two lines max */
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  line-height: 1.2;             /* compute exact two-line height */
+  min-height: calc(1.2em * 2);  /* reserve space for 2 lines (keeps rows aligned) */
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2a5d9f;
+  margin-top: auto;
+}
+.product-card-6{
+  width: 300px;                 /* same as .product-card */
+  height: 400px;                /* same as .product-card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background-color: #2a5d9f;
+  color: rgb(253, 236, 236);
+  font-weight: 600;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgba(44, 44, 44, 0.829);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;       /* match sizing model */
+}
+.product-card-6 h1 {
+  color:rgb(255, 255, 255);
+  padding: 0 16px;
+  text-wrap: nowrap;
+}
+
+.product-card-6:hover{
+  outline: 8px solid #2c5282;
+  transform: scale(1.1); /* blowout effect */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+@media (min-width: 602px)  {  /* 📱 DESKTOP  */
+
+
+
+
+}
+
+}
