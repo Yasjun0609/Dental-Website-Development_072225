@@ -440,7 +440,9 @@ body { /* Comment: page base styles */
   position: relative; /* Comment: positioning context */
   /*overflow: hidden; /* Comment: hide overflow for belt */
   display: grid; /* Comment: grid for centering */
-  place-items: center; /* Comment: center content */
+  /*place-items: center; /* Comment: center content */
+  align-items: center;
+  justify-items: start;
   max-width: 100%; /* Comment: prevent overflow */
   padding-top: 60px; /* Comment: top padding */
   padding-bottom: 60px; /* Comment: bottom padding */
@@ -579,8 +581,8 @@ footer { /* Comment: footer wrapper */
   } /* Comment: end mobile login */
 
   .hero { /* Comment: mobile hero padding */
-    padding-top: 160px; /* Comment: space under sticky header */
-    padding-bottom: 60px; /* Comment: bottom spacing */
+    padding-top: 100px; /* Comment: space under sticky header */
+    padding-bottom: 40px; /* Comment: bottom spacing */
     padding-left: 32px; /* Comment: side padding */
     padding-right: 32px; /* Comment: side padding */
     flex-wrap: wrap; /* Comment: allow wrapping */
@@ -977,6 +979,32 @@ footer { /* Comment: footer wrapper */
     max-width: 300px; /* Comment: cap */
     height: auto; /* Comment: avoid mismatch */
   } /* Comment: end desktop button */
+
+
+  /* style.css - .connection-grid 수정 */
+  .connection-grid {
+  position: relative;
+  /* overflow: ;        /* ✨ [수정] 주석 해제! (좌우 흔들림 해결) */
+  display: grid;
+  /* place-items: center; */ /* ❌ [삭제] 이게 있으면 가운데 정렬됨 */
+  align-items: center;     /* 세로(위아래)는 가운데 정렬 유지 */
+  justify-items: start;    /* ✨ [추가] 가로(좌우)는 왼쪽부터 시작 (피드백 #4 해결) */
+  max-width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  }
+
+  .connection-track { /* Comment: moving belt */
+  max-width: 100%; /*  */
+  display: flex; /* Comment: horizontal belt */
+  gap: var(--conn-gap); /* Comment: gap from variable */
+  animation-name: scrollLogos; /* Comment: keyframes name */
+  animation-duration: var(--conn-speed); /* Comment: speed from variable */
+  animation-timing-function: linear; /* Comment: constant speed */
+  animation-iteration-count: infinite; /* Comment: loop forever */
+  will-change: transform; /* Comment: performance hint */
+  } /* Comment: end connection-track */
 
 } /* Comment: end desktop breakpoint */
 
