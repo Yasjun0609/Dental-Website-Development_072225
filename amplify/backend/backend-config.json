@@ -1,0 +1,67 @@
+{
+  "api": {
+    "contactUsApi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "contactUsFunction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "contactUsFunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_contactUsFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactUsFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_contactUsFunction_fromEmail": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactUsFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_contactUsFunction_region": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactUsFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_contactUsFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactUsFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_contactUsFunction_toEmail": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contactUsFunction"
+        }
+      ]
+    }
+  }
+}

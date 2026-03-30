@@ -141,29 +141,75 @@
   </script>
 
   <script> /* 제출 직전 "빈칸 → N/A" 치환 스크립트 */
-    document.getElementById('cidForm').addEventListener('submit', function(e){ /* 폼 제출 이벤트 */
-      const fields = this.querySelectorAll('input, select, textarea'); /* 모든 입력 요소 수집 */
-      fields.forEach(el => { /* 각 요소에 대해 */
-        if (el.name === 'form-name' || el.name === 'bot-field') return; /* Netlify용/허니팟 제외 */
-        if (!el.value || String(el.value).trim() === '') { /* 값이 비었으면 */
-          el.value = 'N/A'; /* N/A로 치환(placeholder가 아니라 실제 value로) */
-        }
-      });
-      /* 이후 Netlify가 직렬화하여 저장/함수로 전달 → 이메일 본문에도 N/A 반영됨 */
-    });
-  </script>
+// contactUs.html 파일 하단의 <script> 태그 안에 넣을 코드입니다.
 
-  <script>
-  (function () {
-    var params = new URLSearchParams(window.location.search);
-    var e = (params.get('user-email') || '').trim(); // ← name이 'user-email'
-    if (!e) return;
-    var input = document.getElementById('email');    // ← 연락처 폼의 이메일 input id
-    if (input) {
-      input.value = e;
-      input.focus();
+document.getElementById("cidForm").addEventListener("submit", async function(event) {
+    // 1. 기본 제출(새로고침 및 action="thank-you.html"로 바로 넘어가는 것)을 막습니다.
+    event.preventDefault();
+
+    // 2. 제출 버튼 상태 변경 (로딩 중 표시)
+    // 버튼에 ID가 없으므로 querySelector로 form 안의 submit 버튼을 찾습니다.
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerText; // 원래 글자("Let’s Connect!") 기억하기
+
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Sending...";
     }
-  })();
+
+    // 3. 기존 Netlify용 로직 통합: 빈칸을 "N/A"로 치환
+    const fields = this.querySelectorAll('input, select, textarea');
+    fields.forEach(el => {
+        if (el.name === 'form-name' || el.name === 'bot-field') return;
+        if (!el.value || String(el.value).trim() === '') {
+            el.value = 'N/A';
+        }
+    });
+
+    // 4. 폼 데이터 수집
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
+
+    // 5. 방금 우리가 만든 AWS API 주소
+    const API_URL = "https://m8e6m2l7qi.execute-api.us-west-1.amazonaws.com/dev/contactUs";
+
+    try {
+        // 6. AWS 서버로 데이터를 쏩니다! (POST 방식)
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        // 7. 결과 처리
+        if (response.ok) {
+            // 성공 시 폼을 비우고 기존처럼 thank-you.html 페이지로 이동시킵니다!
+            this.reset();
+            window.location.href = "thank-you.html"; 
+        } else {
+            // 서버 에러 시
+            alert("Oops! Something went wrong. Please try again.");
+            console.error("Server response:", await response.text());
+            
+            // 에러가 났을 때만 버튼을 다시 원래대로 복구
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalBtnText;
+            }
+        }
+    } catch (error) {
+        // 인터넷 연결 문제 등
+        console.error("Network Error:", error);
+        alert("Network error. Please try again later.");
+        
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalBtnText;
+        }
+    }
+});
 </script>
 
 
