@@ -18,7 +18,7 @@
           "toEmail": "contact.cidentistry@gmail.com",
           "region": "us-west-1",
           "deploymentBucketName": "amplify-ciddentistry-dev-bea83-deployment",
-          "s3Key": "amplify-builds/contactUsFunction-79676165315238766349-build.zip"
+          "s3Key": "amplify-builds/contactUsFunction-4246484545465a687163-build.zip"
         }
       },
       "api": {
