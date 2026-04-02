@@ -15,18 +15,18 @@ exports.handler = async (event) => {
         
         // 3. 이메일 본문(텍스트) 구성 (반드시 백틱 ` 사용)
         const emailContent = [
-            `New CID-Contact-sendrequest submission (via AWS)`,
+            `Contact Us Submission through CID Advertisement Website (via AWS)`,
             `----------------------------------`,
-            `First Name: ${get("firstName")}`,
-            `Last Name: ${get("lastName")}`,
-            `Email: ${get("email")}`,
-            `Phone: ${get("phone")}`,
-            `Company: ${get("company")}`,
-            `Role: ${get("role")}`,
-            `Website: ${get("website")}`,
-            `Product: ${get("product")}`,
-            `Message: ${get("message")}`,
-            `Submitted At: ${new Date().toISOString()}`,
+            `First Name:    ${get("firstName")}`,
+            `Last Name:     ${get("lastName")}`,
+            `Email:         ${get("email")}`,
+            `Phone:         ${get("phone")}`,
+            `Company:       ${get("company")}`,
+            `Role:          ${get("role")}`,
+            `Website:       ${get("website")}`,
+            `Product:       ${get("product")}`,
+            `Message:       ${get("message")}`,
+            `Submitted At:  ${new Date().toISOString()}`,
         ].join("\n");
 
         // 4. AWS SES 전송 세팅
@@ -37,7 +37,7 @@ exports.handler = async (event) => {
             },
             Message: {
                 Subject: {
-                    Data: `CID Contact: ${get("firstName")} ${get("lastName")} | ${get("product")}`,
+                    Data: `CID Website Customer Request: ${get("firstName")} ${get("lastName")} | ${get("product")}`,
                     Charset: "UTF-8"
                 },
                 Body: {
